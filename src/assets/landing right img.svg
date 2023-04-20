@@ -1,7 +1,7 @@
-<svg width="436" height="543" viewBox="0 0 436 543" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M4.34375 543V200.986C6.43732 137.989 49.3365 10.3949 204.185 4" stroke="white" stroke-width="8"/>
+<svg width="436" height="524" viewBox="0 0 436 524" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M4.34375 523V200.986C6.43732 137.989 49.3365 10.3949 204.185 4" stroke="white" stroke-width="8"/>
 <g clip-path="url(#clip0_1237_226)">
-<path d="M19.1885 206.696C19.1885 102.949 103.292 18.8452 207.039 18.8452C310.786 18.8452 394.89 102.949 394.89 206.696V523.587H19.1885V206.696Z" fill="#3E8A59"/>
+<path d="M19.1885 206.696C19.1885 102.949 103.292 18.8452 207.039 18.8452V18.8452C310.786 18.8452 394.89 102.949 394.89 206.696V523.587H19.1885V206.696Z" fill="#3E8A59"/>
 <circle cx="-7.64688" cy="415.673" r="215.257" fill="#6FB6CC"/>
 <circle cx="370.909" cy="313.468" r="122.189" fill="#D7C66E"/>
 <rect x="46.5957" y="87.3623" width="322.03" height="461.347" fill="url(#pattern0)"/>

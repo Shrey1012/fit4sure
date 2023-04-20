@@ -4,12 +4,14 @@
   justify-content: center;
   align-items: center;
   height: 88px;
+  width: 100%;
+  position: fixed;
 }
 .nav{
     color: #1F1704;
     display: flex;
     justify-content: space-between;
-    width: 1300px;
+    width: 85%;
     align-items: center;
     
   }
@@ -32,7 +34,7 @@
 
 .line {
     position: absolute;
-    width: 1300px;
+    width: 85%;
     height: 0px;
   
     top: 80px;
