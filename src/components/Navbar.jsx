@@ -4,7 +4,7 @@ import './Navbar.css'
 
 const Navbar = () => {
   return (
-    <>
+    <div className='navbar'>
     <nav className='nav'>
         <a href='/'>Fit4Sure</a>
         <ul>
@@ -27,7 +27,7 @@ const Navbar = () => {
         <button className='btn'>Sign in</button>
     </nav>
         <hr className='line'/>
-        </>
+        </div>
 
   )
 }
