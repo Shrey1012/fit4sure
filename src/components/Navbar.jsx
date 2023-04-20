@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import './Navbar.css'
+import fflogo from '../assets/fflogo.svg';
 
 const Navbar = () => {
   return (
     <div className='navbar'>
     <nav className='nav'>
-        <a href='/'>Fit4Sure</a>
+        <div className='left_nav'><img src={fflogo} alt="Fit4sure logo" /></div>
         <ul>
             <li>
               <a href='/'>Home</a>  
