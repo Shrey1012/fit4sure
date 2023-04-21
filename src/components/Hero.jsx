@@ -16,8 +16,10 @@ const Home = () => {
       <div className="hero-line"/>
       <button className="hero-button">Get Started</button>
       </div>
+      <div className="hero-right">
+        <img className="hero-image" src={landingRightImg} alt="img" />
+        </div>
       
-      <img className="hero-image" src={landingRightImg} alt="img" />
       <div className="highlight1"></div>
       <img className="star-img" src={outerstar} alt="starr" />
     </div>

@@ -6,6 +6,7 @@
   height: 88px;
   width: 100%;
   position: fixed;
+  z-index: 3;
 }
 .nav{
     color: #1F1704;
@@ -21,10 +22,17 @@
     margin: 0;
     list-style: none;
     display: flex;
-    gap: 60px;
     font-weight: 600;
     font-size: 18px;
     color: #1F1704;
+    width:50%;
+    justify-content: center;
+  
+
+}
+
+.nav ul li{
+  margin:3%;
 }
 
 .nav a{

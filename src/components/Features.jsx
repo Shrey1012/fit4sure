@@ -6,6 +6,17 @@ import { FeaturesData } from '../data'
 const Features = () => {
   return (
     <div>
+      <div className="features-top">
+        <div className='top-text'>
+          <span>Personalized & Psychological approach For Sustainable</span>
+          <span className='high-text'>Weight-loss</span>
+        </div>
+      </div>
+      <div className="features-bottom">
+        <div className='feature-card1'>
+        </div>
+      </div>
+    
       { FeaturesData.map((feature) => (
             <FeatureCard 
               key={feature.id}
