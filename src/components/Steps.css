@@ -1,0 +1,40 @@
+.steps-main{
+    background-color: #F2EEE5;
+    height: 100vh;
+}
+.step1{
+    height: 254px;
+    width: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+.top-text1{
+    font-size: 28px;
+    font-weight: 700px;
+    color: #1F1704;
+}
+.top-text2{
+    font-size: 18px;
+    font-weight: 600px;
+    color: #5E5E5F;
+}
+.num-txt{
+    font-weight: 700;
+    font-size: 64px;
+    border-radius: nullpx;
+    color: #BD3C2A;
+}
+.steps-line{
+    width: 72px;
+    height: 2px;
+    background: #CC8E85;
+}
+.steps-txt{
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    color:#5E5E5F;
+    ;
+}
