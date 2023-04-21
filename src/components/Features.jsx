@@ -1,33 +1,24 @@
-import React from 'react'
-import './Features.css'
-import FeatureCard from './FeatureCard'
-import { FeaturesData } from '../data'
+import React from "react";
+import "./Features.css";
+import { FeaturesData } from "../data";
+import FeatureCarousel from "./FeatureCarousel";
 
 const Features = () => {
+  
   return (
     <div>
       <div className="features-top">
-        <div className='top-text'>
+        <div className="top-text">
           <span>Personalized & Psychological approach For Sustainable</span>
-          <span className='high-text'>Weight-loss</span>
+          <span className="high-text">Weight-loss</span>
         </div>
       </div>
       <div className="features-bottom">
-        <div className='feature-card1'>
-        </div>
+        <div className="feature-card1"></div>
       </div>
-    
-      { FeaturesData.map((feature) => (
-            <FeatureCard 
-              key={feature.id}
-              img={feature.img}
-              title={feature.title}
-              desc = {feature.data}
-            />
-        ))}
-
+      <FeatureCarousel featureCards={FeaturesData} />
     </div>
-  )
-}
+  );
+};
 
-export default Features
+export default Features;
