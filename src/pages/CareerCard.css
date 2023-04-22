@@ -4,18 +4,88 @@
     background-color: white;
     box-shadow: 0px 0px 12px 0px #0000001F;
     border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 .card-title{
     background-color: #F3EDD0;
     height: 7%;
     padding-top: 2%;
     padding-left: 4%;
-
+    margin-bottom: 2%;
+ 
     color: #1F1704;
     font-family: Nunito;
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0em;
     text-align: left;
+}
+.card-field{
+    display: flex;
+    justify-content: flex-start;
+    height: max-content;
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    gap: 7%;
+ 
+    color: #433F37;
+    font-family: Nunito;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.field-title{
+    width: 20%;
+    
+    font-weight: 700;
+    color: #1F1704;
+}
+.field-value{
+    width: 80%;
+}
+.about-job{
+    margin-left: 3%;
+    padding-top: 3%;
+    color: #1F1704;
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 35%;
+    border-top: solid 2px #BD3C2A;
+}
+.career-card-mid{
+    margin-bottom: 4%;
+}
+.Career-card p{
+    padding-left: 3%;
+    padding-right: 3%;
+    height: 24%;
+    color: #433F37;
+    font-family: Nunito;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.apply-now{
+    width: 24%;
+    height: 7%;
+    background-color: #BD3C2A;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    margin-left: 3%;
 
+    color: white;
+    font-family: nunito;
+    font-size: 14px;
+    font-weight: 600;
 }

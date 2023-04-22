@@ -87,7 +87,7 @@ export const Careersdata = [
     {
         id:2,
         Job_title : 'Junior Nutritionist/Dietitian',
-        Qualification : "Bachelor's/Masters Degree/Diploma in Food/ Nutrition/ Dietetics or related field",
+        Qualification : "Bachelor's/Masters Degree/Diploma in Food/ Nutrition/ Dietetics or related field Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         Experience : '2+ years',
         Location : 'Ahmedabad/Remote',
         Type : 'Full time',

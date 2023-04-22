@@ -11,7 +11,7 @@ const Career = () => {
       {
         Careersdata.map((Career_options) => (
 
-          <CareerCard
+          <CareerCard 
             key={Career_options.id}
             Job_title={Career_options.Job_title}
             Qualification={Career_options.Qualification}
