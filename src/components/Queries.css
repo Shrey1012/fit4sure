@@ -1,0 +1,89 @@
+.queries-main{
+    background-color: #F2EEE5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.queries-box{
+    background-color: #Ffffff;
+    height: 65%;
+    width: 80%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+.qbox-left{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.qbox-left img{
+    width: 55%;
+    padding-left: 18%;
+}
+.qbox-right{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.queries-txt1{
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1F1704;
+    padding-bottom: 3%;
+}
+.queries-txt2{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #433F37;
+    padding-bottom: 4%;
+}
+.queries-txt3{
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #433F37;
+    padding-bottom: 7%;
+}
+.qbox-right-bottom{
+    padding: 0;
+    margin: 0;
+    height: 10%;
+    display: flex;
+    justify-content: flex-start;
+}
+.qbox-right-bottom input{
+    height: 100%;
+    width: 40%;
+    border-radius: 25px;
+    border: solid 1px #C2C2C2;
+    margin-right: 4%;
+}
+
+.qbox-right-bottom button{
+    height: 100%;
+    width:25%;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+
+    font-family: nunito;
+    font-size: 16px;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

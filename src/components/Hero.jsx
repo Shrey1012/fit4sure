@@ -8,7 +8,7 @@ const Home = () => {
     <div className="hero-container">
       <div className="hero_left">
         <div className="hero-text1">Only workout!? No, It's all about Fitness.. </div>
-        <div className="hero-text2">
+        <div className="hero-text2"> 
         We make you do the exercise you like, provide constant encouragement,
         amend your mindset to live life like a fitness freak. The exercise
         tracking tool and 8 other tools act as the cherry on the cake.

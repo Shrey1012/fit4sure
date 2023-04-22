@@ -1,0 +1,77 @@
+.services-main{
+    background-color: #FCFBF9;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.ser-txt1{
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #1F1704;
+}
+.ser-txt2{
+    width: 80%;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #433F37;
+    padding-top: 0.5%;
+    
+}
+.all-plans{
+    width: 80%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.ser-buttons{
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+
+}
+.view-all{
+    height: 100%;
+    width: 20%;
+    border-radius: 30px;
+    border: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #332A3B;
+    color: white;
+    font-family: nunito;
+    font-size: 16px;
+    font-weight: 600;
+}
+.Talk-expert{
+    height: 100%;
+    width: 20%;
+    border-radius: 30px;
+    gap: 8px;
+    border: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: nunito;
+    background-color: #BD3C2A;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}

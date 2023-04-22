@@ -1,11 +1,13 @@
 import React from 'react'
 import './Features.css'
-import FeatureCard from './FeatureCard'
+import FeatureCard from './FeatureCard';
+import arrow_right from '../assets/arrow_right.svg';
+import arrow_left from '../assets/arrow_left.svg';
 import { FeaturesData } from '../data'
 
 const Features = () => {
   return (
-    <div>
+    <div className='features-main'>
       <div className="features-top">
         <div className='top-text'>
           <span>Personalized & Psychological approach For Sustainable</span>
@@ -13,11 +15,12 @@ const Features = () => {
         </div>
       </div>
       <div className="features-bottom">
-        <div className='feature-card1'>
+        <div className='fet-arrows'>
+          <img src={arrow_left} alt="prev" />
+          <img src={arrow_right} alt="next" />
         </div>
-      </div>
-    
-      { FeaturesData.map((feature) => (
+        <div className='feature-cards'>
+        { FeaturesData.map((feature) => (
             <FeatureCard 
               key={feature.id}
               img={feature.img}
@@ -25,7 +28,8 @@ const Features = () => {
               desc = {feature.data}
             />
         ))}
-
+        </div>
+      </div>
     </div>
   )
 }

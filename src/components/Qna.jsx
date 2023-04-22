@@ -7,7 +7,7 @@ const Qna = () => {
     <div className='qna-main'>
         <div className='qna-left'></div>
         <div className='qna-right'>
-          <img src={Ask} alt="img" />
+          {/* <img src={Ask} alt="img" /> */}
         </div>
     </div>
   )
