@@ -24,12 +24,3 @@
     text-align: center;
     width: 80%;
 }
-.fet-arrows{
-    position: absolute;
-    margin-top: 19%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 72%;
-}

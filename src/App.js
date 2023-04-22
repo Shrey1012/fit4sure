@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { Navbar } from "./components";
+import { Footer, Navbar } from "./components";
 import { Aboutus, Career, Contactus, Plans, Home } from "./pages";
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
         <Route path="/career" element={<Career />}></Route>
         <Route path="/contactus" element={<Contactus />}></Route>
       </Routes>
+      <Footer/>
     </>
   );
 }

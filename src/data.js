@@ -75,4 +75,23 @@ export const servicesData = [
     }
 
 ]
+export const Careersdata = [
+    {
+        id:1,
+        Job_title : 'Senior Nutritionist/Dietitian',
+        Qualification : "Bachelor's/Masters Degree/Diploma in Food/ Nutrition/ Dietetics or related field",
+        Experience : '2+ years',
+        Location : 'Ahmedabad/Remote',
+        Type : 'Full time',
+    },
+    {
+        id:2,
+        Job_title : 'Junior Nutritionist/Dietitian',
+        Qualification : "Bachelor's/Masters Degree/Diploma in Food/ Nutrition/ Dietetics or related field",
+        Experience : '2+ years',
+        Location : 'Ahmedabad/Remote',
+        Type : 'Full time',
+    }
+
+]
 

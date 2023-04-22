@@ -2,6 +2,9 @@ import React from 'react'
 import './Features.css'
 import FeatureCard from './FeatureCard'
 import { FeaturesData } from '../data'
+import arrow_left from '../assets/arrow_left.svg';
+import arrow_right from '../assets/arrow_right.svg';
+
 
 const Features = () => {
   
@@ -14,10 +17,7 @@ const Features = () => {
         </div>
       </div>
       <div className="features-bottom">
-        <div className='feature-card1'>
-        </div>
-      </div>
-    
+        <div className='feature-cards'>
       { FeaturesData.map((feature) => (
             <FeatureCard 
               key={feature.id}
@@ -26,6 +26,12 @@ const Features = () => {
               desc = {feature.data}
             />
         ))}
+        </div>
+        <div className='fet-arrows'>
+          <img src={arrow_left} alt="prev" />
+          <img src={arrow_right} alt="next" />
+        </div>
+      </div>
 
     </div>
   );
