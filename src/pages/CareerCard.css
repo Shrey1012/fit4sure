@@ -1,6 +1,6 @@
 .Career-card{
     width: 80%;
-    height: 80%;
+    height: 100%;
     background-color: white;
     box-shadow: 0px 0px 12px 0px #0000001F;
     border-radius: 2%;
@@ -12,9 +12,11 @@
 .card-title{
     background-color: #F3EDD0;
     height: 7%;
+    width: 96%;
     padding-top: 2%;
     padding-left: 4%;
     margin-bottom: 2%;
+    border-radius: 10px;
  
     color: #1F1704;
     font-family: Nunito;
@@ -57,11 +59,16 @@
     font-weight: 600;
     letter-spacing: 0em;
     text-align: left;
-    width: 35%;
+    width: 45%;
+    height: 7%;
     border-top: solid 2px #BD3C2A;
+    display: flex;
+    justify-content: flex-start;
+    
 }
 .career-card-mid{
-    margin-bottom: 4%;
+    /* margin-bottom: 2%; */
+    height: 40%;
 }
 .Career-card p{
     padding-left: 3%;
@@ -81,7 +88,7 @@
     color: white;
     border: 0;
     border-radius: 10px;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     margin-left: 3%;
 
     color: white;

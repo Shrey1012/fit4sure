@@ -1,5 +1,6 @@
 import featureLogo from './assets/featureLogo.svg';
 import services_img from './assets/services_img.png';
+import weightloss from './assets/weightloss.svg';
 export const FeaturesData = [
     {
         id: 1,
@@ -93,5 +94,54 @@ export const Careersdata = [
         Type : 'Full time',
     }
 
+]
+export const Storiesdata = [
+    {
+        id:1,
+        image : weightloss,
+        person_name : 'Niyati',
+        person_age : '28 yrs',
+        person_occ : 'Teacher',
+        weight_loss : "25 kg weight loss in just 8 weeks",
+        story_loss : 'It build my confidence Lorem ipsum dolor sit amet. Nam voluptatibus provident ea magnam dicta ea architecto deserunt in aliquid soluta aut labore asperiores.',  
+    },
+    {
+        id:2,
+        image : weightloss,
+        person_name : 'Sakshi',
+        person_age : '24 yrs',
+        person_occ : 'House wife',
+        weight_loss : "20 kg weight loss in just 8 weeks",
+        story_loss : 'It build my confidence Lorem ipsum dolor sit amet. Nam voluptatibus provident ea magnam dicta ea architecto deserunt in aliquid soluta aut labore asperiores.',  
+    
+    },
+    {
+        id:3,
+        image : weightloss,
+        person_name : 'Sakshi',
+        person_age : '24 yrs',
+        person_occ : 'House wife',
+        weight_loss : "20 kg weight loss in just 8 weeks",
+        story_loss : 'It build my confidence Lorem ipsum dolor sit amet. Nam voluptatibus provident ea magnam dicta ea architecto deserunt in aliquid soluta aut labore asperiores.',  
+    
+    }
+
+]
+export const faqdata = [
+    {
+        id:1,
+        Faq_Question : "How can Fit4sure help me to improve my mental strength?",
+        Faq_Answer : "Lorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur et itaque labore in porro commodi.",  
+    },
+    {
+        id:2,
+        Faq_Question : "How can Fit4sure help me to improve my mental strength?",
+        Faq_Answer : "Lorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur etLorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur et itaque labore in porro commodi.",  
+    },
+    {
+        id:3,
+        Faq_Question : "How can Fit4sure help me to improve my mental strength?",
+        Faq_Answer : "",  
+    }
 ]
 

@@ -1,0 +1,37 @@
+.stories-main{
+    background-color: #F2EEE5;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.stories-main h2{
+    margin: 0;
+    padding-bottom: 1%;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1F1704;
+}
+.stories-main p{
+    margin: 0;
+    padding-bottom: 2%;
+    width: 60%;
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+.all-stories{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 65%;
+    gap: 3%;
+}
