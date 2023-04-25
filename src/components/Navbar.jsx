@@ -7,10 +7,10 @@ const Navbar = () => {
   return (
     <div className='navbar'>
     <nav className='nav'>
-        <div className='left_nav'><img src={fflogo} alt="Fit4sure logo" /></div>
+        <div className='left_nav'><a href='/'><img src={fflogo} alt="Fit4sure logo" /></a></div>
         <ul>
             <li>
-              <a href='/'>Home</a>  
+              <a href='/getcoach'>Get a coach</a>  
             </li>
             <li>
               <a href='/aboutus'>About Us</a>  
