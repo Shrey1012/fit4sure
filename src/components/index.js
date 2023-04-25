@@ -9,6 +9,7 @@ import Stories from './Stories';
 import Steps from './Steps';
 import Download from './Download';
 import Faq from './Faq';
+import Milestone from './Milestone';
 
 export {
     Navbar,
@@ -21,5 +22,6 @@ export {
     Stories,
     Steps,
     Download,
-    Faq
+    Faq,
+    Milestone
 };

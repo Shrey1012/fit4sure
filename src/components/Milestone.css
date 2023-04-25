@@ -1,0 +1,14 @@
+ .Milestone-main{
+    height: 30vh;
+    width: 100%;
+    background: #F2EEE5;
+    display: flex;
+    justify-content: center;
+ }
+ .Milestone-box{
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    border-top: solid 4px #DAC55A;
+    border-radius: 6px;
+ }

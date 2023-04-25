@@ -13,7 +13,7 @@ const Steps = () => {
           <div className='num-txt'>1</div>
           <div className='steps-line'></div>
           <div className='steps-txt'>Provide basic information about your body</div>
-        </div>
+        </div> 
         <img src={y_arrow} alt="next" />
         <div className='stepall'>
           <div className='num-txt'>2</div>

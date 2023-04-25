@@ -145,6 +145,38 @@ export const faqdata = [
         Faq_Question : "How can Fit4sure help me to improve my mental strength?",
         Faq_Answer : "Lorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur et itaque labore in porro commodi.",
         open : false
+    },
+    {
+        id:4,
+        Faq_Question : "How can Fit4sure help me to improve my mental strength?",
+        Faq_Answer : "Lorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur et itaque labore in porro commodi.",
+        open : false
+    },
+    {
+        id:5,
+        Faq_Question : "How can Fit4sure help me to improve my mental strength?",
+        Faq_Answer : "Lorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur et itaque labore in porro commodi.",
+        open : false
+    },
+    {
+        id:6,
+        Faq_Question : "How can Fit4sure help me to improve my mental strength?",
+        Faq_Answer : "Lorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur et itaque labore in porro commodi.",
+        open : false
+    },
+    {
+        id:7,
+        Faq_Question : "How can Fit4sure help me to improve my mental strength?",
+        Faq_Answer : "Lorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur et itaque labore in porro commodi.",
+        open : false
     }
 ]
 
+export const qnadata = [
+    {
+        id:1,
+        Qna_Question : "How can Fit4sure help me to improve my mental strength?",
+        Qna_Answer_title : "With fitforsure, eat that chocolate cake without any worry!!!",
+        Qna_Answer_para : "We make you fit in a sustainable manner by using the science of fitness and providing constant support. Our certified and top-rated professional experts provide long-lasting support, making personalized schedules at times convenient for you.",  
+    }
+]

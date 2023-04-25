@@ -1,0 +1,8 @@
+.qna-main{
+    background-color: #FCFBF9;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
