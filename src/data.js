@@ -21,30 +21,30 @@ export const FeaturesData = [
         img: featureLogo,
         data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     },
-    // {
-    //     id: 4,
-    //     title:'Track your reports',
-    //     img: featureLogo,
-    //     data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    // },
-    // {
-    //     id: 5,
-    //     title:'Track your reports',
-    //     img: featureLogo,
-    //     data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    // },
-    // {
-    //     id: 6,
-    //     title:'Track your reports',
-    //     img: featureLogo,
-    //     data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    // },
-    // {
-    //     id: 7,
-    //     title:'Track your reports',
-    //     img: featureLogo,
-    //     data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    // },
+    {
+        id: 4,
+        title:'Track your reports',
+        img: featureLogo,
+        data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    },
+    {
+        id: 5,
+        title:'Track your reports',
+        img: featureLogo,
+        data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    },
+    {
+        id: 6,
+        title:'Track your reports',
+        img: featureLogo,
+        data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    },
+    {
+        id: 7,
+        title:'Track your reports',
+        img: featureLogo,
+        data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    },
 ]
 
 export const servicesData = [
@@ -132,16 +132,19 @@ export const faqdata = [
         id:1,
         Faq_Question : "How can Fit4sure help me to improve my mental strength?",
         Faq_Answer : "Lorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur et itaque labore in porro commodi.",  
+        open : false
     },
     {
         id:2,
         Faq_Question : "How can Fit4sure help me to improve my mental strength?",
-        Faq_Answer : "Lorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur etLorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur et itaque labore in porro commodi.",  
+        Faq_Answer : "Lorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur etLorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur et itaque labore in porro commodi.",
+        open : false 
     },
     {
         id:3,
         Faq_Question : "How can Fit4sure help me to improve my mental strength?",
-        Faq_Answer : "",  
+        Faq_Answer : "Lorem ipsum dolor sit amet. Qui consequatur eveniet et dolor mollitia aut internos totam ut quia quidem. Sed internos voluptas eum quidem consequuntur et itaque labore in porro commodi.",
+        open : false
     }
 ]
 

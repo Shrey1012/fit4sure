@@ -1,13 +1,14 @@
 .features-main{
-    background-color: #F2EEE5;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background-color: #F2EEE5;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.features-top{
-    background-color: #FCFBF9;
+
+.features-top {
+  background-color: #FCFBF9;
     height: 184px;
     width: 100%;
     display: flex;
@@ -27,28 +28,30 @@
 .high-text {
   color: #bd3c2a;
 }
-.features-bottom{
+
+.features-bottom {
     width: 100%;
     height: 82%;
-    /* background-color: #F2EEE5; */
     display: flex;
     justify-content: center;
-    
-    }
-.feature-cards{
-    width: 90%;
-    /* background-color: #1F1704; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3%;
 }
+
+.feature-cards{
+  width: 90%;
+  /* background-color: #1F1704; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+}
+
 .fet-arrows{
-    position: absolute;
-    margin-top: 18%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 72%;
+  position: absolute;
+  margin-top: 18%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 72%;
+  cursor: pointer;
 }
