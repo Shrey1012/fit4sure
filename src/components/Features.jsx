@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, useRef, useEffect} from "react";
 import "./Features.css";
 import FeatureCard from "./FeatureCard";
 import { FeaturesData } from "../data";
