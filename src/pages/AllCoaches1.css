@@ -1,0 +1,8 @@
+.all-coaches{
+    height: 100vh;
+    width: 100%;
+    background-color: #F2EEE5;
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}

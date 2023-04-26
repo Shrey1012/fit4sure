@@ -1,6 +1,7 @@
 import featureLogo from './assets/featureLogo.svg';
 import services_img from './assets/services_img.png';
 import weightloss from './assets/weightloss.svg';
+import Coach1 from './assets/Coach1.png';
 export const FeaturesData = [
     {
         id: 1,
@@ -178,5 +179,35 @@ export const qnadata = [
         Qna_Question : "How can Fit4sure help me to improve my mental strength?",
         Qna_Answer_title : "With fitforsure, eat that chocolate cake without any worry!!!",
         Qna_Answer_para : "We make you fit in a sustainable manner by using the science of fitness and providing constant support. Our certified and top-rated professional experts provide long-lasting support, making personalized schedules at times convenient for you.",  
+    }
+]
+export const AllCoach1Data = [
+    {
+        id:1,
+        img : Coach1,
+        Coach_name : "Nidhi Awasthi",
+        Coach_star : "5",
+        Coach_trained : "1228 People trained",
+    },
+    {
+        id:2,
+        img : Coach1,
+        Coach_name : "Aman Krishnamurthy",
+        Coach_star : "5",
+        Coach_trained : "1155 People trained",
+    },
+    {
+        id:3,
+        img : Coach1,
+        Coach_name : "Disha Patel",
+        Coach_star : "4",
+        Coach_trained : "1088 People trained",
+    },
+    {
+        id:4,
+        img : Coach1,
+        Coach_name : "Nirmal Patel",
+        Coach_star : "4",
+        Coach_trained : "1088 People trained",
     }
 ]

@@ -1,0 +1,89 @@
+.Coach-card{
+    width: 17%;
+    height: 40%;
+    background-color: #F8F6F2;
+    margin-top: 10%;
+
+    border-radius: 5px;
+    /* box-shadow: 0px 0px 20px 0px #0000001A; */
+    padding-top: 2%;
+    padding-bottom: 1%;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.Coach-card img{
+    height: 50%;
+    border-radius: 50%;
+    margin-bottom: 7%;
+}
+.coach-name{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #1F1704;
+}
+.coach-star{
+    height: 10%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    margin-bottom: 5%;
+}
+.coach-star img{
+    height: 60%;
+}
+.coach-star div{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #433F37;
+}
+.coches-trained{
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #433F37;
+}
+.coach-buttons{
+    width: 80%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+}
+.message-btn{
+    background-color: #BD3C2A;
+    border: 0;
+    border-radius: 8px;
+
+    height: 100%;
+    aspect-ratio: 1;
+
+    padding-top: 3%;
+}
+.message-btn img{
+    width: 70%;
+    height: 70%;
+}
+.view-coach-btn{
+    border: 0;
+    border-radius: 8px;
+    height: 100%;
+    width: 60%;
+
+    color: #BD3C2A;
+    border: solid 1px #BD3C2A;
+    font-family: Nunito;
+    font-size: 14px;
+    font-weight: 600;
+    
+}
