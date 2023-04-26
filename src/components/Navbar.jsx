@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from "react-router-dom";
+import React,{useState} from 'react'
 import './Navbar.css'
 import fflogo from '../assets/fflogo.svg';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -9,21 +9,21 @@ const Navbar = () => {
     <nav className='nav'>
         <div className='left_nav'><a href='/'><img src={fflogo} alt="Fit4sure logo" /></a></div>
         <ul>
-            <li>
-              <a href='/getcoach'>Get a coach</a>  
-            </li>
-            <li>
-              <a href='/aboutus'>About Us</a>  
-            </li>
-            <li>
-              <a href='/plans'>Plans</a>  
-            </li>
-            <li>
-              <a href='/career'>Career</a>  
-            </li>
-            <li>
-              <a href='/contactus'>Contact us</a>  
-            </li>
+        <li>
+            <NavLink to='/getcoach' className='nav-link' activeClassName='active'>Get a coach</NavLink>
+          </li>
+          <li>
+            <NavLink to='/aboutus' className='nav-link' activeClassName='active'>About Us</NavLink>
+          </li>
+          <li>
+            <NavLink to='/plans' className='nav-link' activeClassName='active'>Plans</NavLink>
+          </li>
+          <li>
+            <NavLink to='/career' className='nav-link' activeClassName='active'>Career</NavLink>
+          </li>
+          <li>
+            <NavLink to='/contactus' className='nav-link' activeClassName='active'>Contact us</NavLink>
+          </li>
         </ul>
         <button className='btn'>Sign in</button>
     </nav>

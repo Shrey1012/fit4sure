@@ -35,12 +35,12 @@
   margin:3%;
 }
 
-.nav a{
+.nav-link{
     color: inherit;
     text-decoration: none;
 } 
 
-.nav a:hover{
+.nav-link:hover{
     color: #876661;
 }
 
@@ -63,4 +63,8 @@
     border-radius: 20px;
     padding: 8px 24px 8px 24px;
 
+  }
+
+  .active{
+    color: #BD3C2A;
   }
