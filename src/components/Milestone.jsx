@@ -18,8 +18,8 @@ const Milestone = () => {
                 <div className='ms-bottomtxt'>Lives impacted</div>
             </div>
             <div>
-                <div className='ms-toptxt'></div>
-                <div className='ms-bottomtxt'></div>
+                <div className='ms-toptxt'>105k+</div>
+                <div className='ms-bottomtxt'>users in India</div>
             </div>
         </div>
     </div>
