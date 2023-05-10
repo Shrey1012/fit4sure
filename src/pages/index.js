@@ -6,6 +6,7 @@ import Home from "./Home";
 import GetCoach from "./GetCoach";
 import AllCoaches1 from "./AllCoaches1";
 import AllCoaches2 from "./AllCoaches2";
+import UserHome from "./UserDashboard/UserHome";
 
 export {
     Aboutus,
@@ -15,5 +16,6 @@ export {
     Home,
     GetCoach,
     AllCoaches1,
-    AllCoaches2
+    AllCoaches2,
+    UserHome
 }

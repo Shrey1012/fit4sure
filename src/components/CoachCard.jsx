@@ -10,10 +10,12 @@ const CoachCard = ({img, Coach_name, Coach_star, Coach_trained}) => {
 
   const handleButtonClick = () => {
     setShowPopup(true);
+    document.body.classList.add("no-scroll");
   };
 
   const handlePopupClose = () => {
     setShowPopup(false);
+    document.body.classList.remove("no-scroll")
   };
   return (
     <>

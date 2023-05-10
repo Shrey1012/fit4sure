@@ -1,7 +1,7 @@
 import React from 'react'
 import './AllCoaches1.css';
 import { AllCoach1Data } from '../data'
-import CoachCard from './CoachCard'
+import { CoachCard } from '../components'
 
 const AllCoaches1 = () => {
   return (

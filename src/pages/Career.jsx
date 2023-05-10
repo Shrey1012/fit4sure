@@ -1,7 +1,7 @@
 import React from 'react';
 import './Career.css';
 import { Careersdata } from '../data'
-import CareerCard from './CareerCard'
+import { CareerCard } from '../components'
 
 const Career = () => {
   return (

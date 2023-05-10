@@ -10,6 +10,8 @@ import Steps from './Steps';
 import Download from './Download';
 import Faq from './Faq';
 import Milestone from './Milestone';
+import CoachCard from './CoachCard';
+import CareerCard from './CareerCard';
 
 export {
     Navbar,
@@ -23,5 +25,7 @@ export {
     Steps,
     Download,
     Faq,
-    Milestone
+    Milestone,
+    CoachCard,
+    CareerCard
 };
