@@ -2,6 +2,7 @@ import featureLogo from './assets/featureLogo.svg';
 import services_img from './assets/services_img.png';
 import weightloss from './assets/weightloss.svg';
 import Coach1 from './assets/Coach1.png';
+import Tool1 from './assets/Tool1.png';
 export const FeaturesData = [
     {
         id: 1,
@@ -209,5 +210,12 @@ export const AllCoach1Data = [
         Coach_name : "Nirmal Patel",
         Coach_star : "4",
         Coach_trained : "1088 People trained",
+    }
+]
+export const UserToolsData = [
+    {
+        id:1,
+        img : Tool1,
+        Tool_name : "Track water",
     }
 ]

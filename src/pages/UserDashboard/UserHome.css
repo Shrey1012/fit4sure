@@ -1,0 +1,58 @@
+.User-home-main{
+    background-color: #F2EEE5;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.User-home-bottom{
+    width: 100%;
+    height: 91%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+
+    
+}
+.User-home-left{
+    width: 37%;
+    height: 95%;
+    /* background-color: blue; */
+    margin-left: 8.5%;
+    margin-right: 1.5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.User-home-plans{
+    height: 26%;
+    width: 100%;
+    background-color: white;
+
+    box-shadow: 0px 0px 20px 0px #0000001A;
+    border-radius: 10px;
+
+}
+.User-home-tools{
+    height: 71%;
+    width: 100%;
+    background-color: white;
+
+    box-shadow: 0px 0px 20px 0px #0000001A;
+    border-radius: 10px;
+
+}
+.User-home-right{
+    width: 52%;
+    height: 95%;
+    background-color: white;
+
+    box-shadow: 0px 0px 20px 0px #0000001A;
+    border-radius: 10px;
+}

@@ -7,6 +7,9 @@ import GetCoach from "./GetCoach";
 import AllCoaches1 from "./AllCoaches1";
 import AllCoaches2 from "./AllCoaches2";
 import UserHome from "./UserDashboard/UserHome";
+import User_dash_nav from "./UserDashboard/User_dash_nav";
+import UserCommunity from "./UserDashboard/UserCommunity";
+import Signin from "./Signin";
 
 export {
     Aboutus,
@@ -17,5 +20,8 @@ export {
     GetCoach,
     AllCoaches1,
     AllCoaches2,
-    UserHome
+    UserHome,
+    UserCommunity,
+    User_dash_nav,
+    Signin
 }
