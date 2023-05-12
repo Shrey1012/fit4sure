@@ -1,13 +1,13 @@
 import React from 'react'
 import './UserHome.css'
-import User_dash_nav from './User_dash_nav';
+import UserDashNav from './UserDashNav';
 import { UserToolsData } from '../../data'
 import ToolCard from './ToolCard'
 
 const UserHome = () => {
   return (
     <>
-    <User_dash_nav />
+    <UserDashNav />
     <div className='User-home-main'>
     <div className='User-home-top'></div>
     <div className='User-home-bottom'>

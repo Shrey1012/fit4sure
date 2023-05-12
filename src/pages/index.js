@@ -7,9 +7,11 @@ import GetCoach from "./GetCoach";
 import AllCoaches1 from "./AllCoaches1";
 import AllCoaches2 from "./AllCoaches2";
 import UserHome from "./UserDashboard/UserHome";
-import User_dash_nav from "./UserDashboard/User_dash_nav";
+import UserDashNav from "./UserDashboard/UserDashNav";
 import UserCommunity from "./UserDashboard/UserCommunity";
 import Signin from "./Signin";
+import AllPosts from "./UserDashboard/AllPosts";
+import CategoryPage from "./UserDashboard/CategoryPage";
 
 export {
     Aboutus,
@@ -22,6 +24,8 @@ export {
     AllCoaches2,
     UserHome,
     UserCommunity,
-    User_dash_nav,
-    Signin
+    UserDashNav,
+    Signin,
+    AllPosts,
+    CategoryPage
 }
