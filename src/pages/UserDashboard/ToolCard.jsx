@@ -4,9 +4,8 @@ import './ToolCard.css';
 const ToolCard = ({img, Tool_name}) => {
   return (
     <div className='Tool-card'>
-        <div>
-            <img src={img} alt="Track here" />
-        </div>
+        
+        <img src={img} alt="Track here" /> 
         <div className='Tool-name'>
             {Tool_name} 
         </div>

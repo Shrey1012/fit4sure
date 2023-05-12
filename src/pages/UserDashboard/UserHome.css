@@ -15,15 +15,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
-
-    
 }
 .User-home-left{
     width: 37%;
     height: 95%;
     /* background-color: blue; */
-    margin-left: 8.5%;
+    margin-left: 7.5%;
     margin-right: 1.5%;
 
     display: flex;
@@ -47,12 +44,61 @@
     box-shadow: 0px 0px 20px 0px #0000001A;
     border-radius: 10px;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.User-tools-title{
+    width: 88%;
+    display: flex;
+    justify-content: space-between;
+}
+.User-tools-title h2{
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #1F1704;
+}
+.User-tools-title p{
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #BD3C2A;
+    text-decoration: underline solid 1px;
+}
+.User-tool-cards{
+    height: 86%;
+    width: 88%;
+    /* background-color: wheat; */
+
+    display: grid;
+    grid-template-columns: 34.5% 34.5% 34.5%;
+    grid-template-rows: repeat(2, 50%);
+    row-gap: 1%;
+    
 }
 .User-home-right{
-    width: 52%;
+    width: 53%;
     height: 95%;
     background-color: white;
 
     box-shadow: 0px 0px 20px 0px #0000001A;
     border-radius: 10px;
 }
+.User-home-vid{
+    width: 90%;
+    height: 40%;
+    background-color: cadetblue ;
+}
+.vid-card{
+    height: 100%;
+    aspect-ratio: 0.5625;
+}
+.vid-card img{
+    height: 100%;
+    border-radius: 5px;
+}
+

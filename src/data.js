@@ -2,7 +2,7 @@ import featureLogo from './assets/featureLogo.svg';
 import services_img from './assets/services_img.png';
 import weightloss from './assets/weightloss.svg';
 import Coach1 from './assets/Coach1.png';
-import Tool1 from './assets/Tool1.png';
+import Tool1 from'./assets/Tool1.svg';
 export const FeaturesData = [
     {
         id: 1,
@@ -217,5 +217,25 @@ export const UserToolsData = [
         id:1,
         img : Tool1,
         Tool_name : "Track water",
+    },
+    {
+        id:2,
+        img : Tool1,
+        Tool_name : "Track weight",
+    },
+    {
+        id:3,
+        img : Tool1,
+        Tool_name : "Workout",
+    },
+    {
+        id:4,
+        img : Tool1,
+        Tool_name : "Track steps",
+    },
+    {
+        id:5,
+        img : Tool1,
+        Tool_name : "Track fat",
     }
 ]
