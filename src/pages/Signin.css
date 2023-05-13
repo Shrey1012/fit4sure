@@ -1,5 +1,119 @@
 .Signin-main{
     width: 100%;
-    height: 500px;
+    height: 100vh;
+    background-color: #F2EEE5;
+
+    display: flex;
+}
+.Signin-left{
+    width: 40%;
+    height: 100%;
     background-color: white;
+}
+.Signin-right{
+    width: 60%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Signin-right h2{
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #1F1704;
+    margin-bottom: 0.6%;
+}
+.Signin-right h3{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #BD3C2A;
+    margin-bottom: 6%;
+}
+.Input-part{
+    width: 34%;
+    height: 11%;
+    margin-bottom: 0.5%;
+}
+.Signin-right p{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.Input-part input{
+    width: 98%;
+    height: 35%;
+    padding-left: 3%;
+
+    border: solid 2px #DEDEDD;
+    border-radius: 5px;
+
+}
+.Input-part p{
+    margin: 0;
+    padding: 0;
+
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    text-align: start;
+    color: #433F37;
+
+    padding-bottom: 3% ;
+}
+.S-button{
+    width: 34%;
+    height: 6%;
+
+    background-color: black;
+    color: white;
+    font-family: Nunito;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+
+    margin-top: 2%;
+
+}
+.G-button{
+    width: 34%;
+    height: 6%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+
+    background-color: white;
+    color: #1F1704;
+    border: solid 2px #adadad;
+    font-family: Nunito;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.G-button img{
+    height: 70%;
+}
+.Signup-switch{
+   
+    font-size: 16px;
+    font-weight: 600;
+    text-align: start;
+    color: #433F37;
+    margin-top: 1%;
+
+    display: flex;
+    justify-content: center;
+}
+.Signup-switch span{
+    color: #BD3C2A;
+    font-weight: 700;
 }
