@@ -27,6 +27,7 @@ const UserHome = () => {
               key={Tools.id}
               Tool_name={Tools.Tool_name}
               img={Tools.img}
+              link={Tools.link}
               
             />
           ))

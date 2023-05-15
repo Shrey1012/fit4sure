@@ -216,26 +216,37 @@ export const UserToolsData = [
     {
         id:1,
         img : Tool1,
-        Tool_name : "Track water",
+        Tool_name : "BMI Calculator",
+        link : "/bmi"
     },
     {
         id:2,
         img : Tool1,
-        Tool_name : "Track weight",
+        Tool_name : "BMR Calculator",
+        link : "/bmr"
     },
     {
         id:3,
         img : Tool1,
-        Tool_name : "Workout",
+        Tool_name : "BFP Calculator",
+        link : "/bfp"
     },
     {
         id:4,
         img : Tool1,
-        Tool_name : "Track steps",
+        Tool_name : "TDEE Calculator",
+        link : "/tdee"
     },
     {
         id:5,
         img : Tool1,
-        Tool_name : "Track fat",
-    }
+        Tool_name : "Workout Planner",
+        link : "/workoutplanner"
+    },
+    {
+        id:6,
+        img : Tool1,
+        Tool_name : "Calorie Calculator",
+        link : "/dailycalorie"
+    },
 ]

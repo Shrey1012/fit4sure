@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { Footer, Navbar } from "./components";
-import { Aboutus, Career, Contactus, Plans, Home, GetCoach, AllCoaches1, AllCoaches2, UserHome, UserCommunity, UserDashNav, Signin, AllPosts, CategoryPage } from "./pages";
+import { Aboutus, Career, Contactus, Plans, Home, GetCoach, AllCoaches1, AllCoaches2, UserHome, UserCommunity, UserDashNav, Signin, AllPosts, CategoryPage,BMI, BMR, BFP, TDEE, WorkoutPlanner,DailyCalorie } from "./pages";
 
 function App() {
   return (
@@ -21,6 +21,12 @@ function App() {
         <Route path="/signin" element={<Signin />}></Route>
         <Route path="/posts/all" element={<AllPosts />}></Route>
         <Route path="/posts/:category" element={<CategoryPage />}></Route>
+        <Route path="/bmi" element={<BMI />}></Route>
+        <Route path="/bmr" element={<BMR />}></Route>
+        <Route path="/bfp" element={<BFP />}></Route>
+        <Route path="/tdee" element={<TDEE />}></Route>
+        <Route path="/workoutplanner" element={<WorkoutPlanner />}></Route>
+        <Route path="/dailycalorie" element={<DailyCalorie />}></Route>
       </Routes>
       {/* <Footer/> */}
     </>
