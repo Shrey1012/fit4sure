@@ -10,6 +10,7 @@ import UserHome from "./UserDashboard/UserHome";
 import UserDashNav from "./UserDashboard/UserDashNav";
 import UserCommunity from "./UserDashboard/UserCommunity";
 import Signin from "./Signin";
+import Signup from "./Signup";
 import AllPosts from "./UserDashboard/AllPosts";
 import CategoryPage from "./UserDashboard/CategoryPage";
 import BMI from "./UserDashboard/Tools/BMI";
@@ -32,6 +33,7 @@ export {
     UserCommunity,
     UserDashNav,
     Signin,
+    Signup,
     AllPosts,
     CategoryPage,
     BMI,

@@ -8,7 +8,6 @@ import thumbnail1 from '../../assets/thumbnail1.svg'
 const UserHome = () => {
   return (
     <>
-    <UserDashNav />
     <div className='User-home-main'>
     <div className='User-home-top'></div>
     <div className='User-home-bottom'>

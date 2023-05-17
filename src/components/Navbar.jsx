@@ -2,8 +2,12 @@ import React,{useState} from 'react'
 import './Navbar.css'
 import fflogo from '../assets/fflogo.svg';
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className='navbar'>
     <nav className='nav'>
@@ -25,7 +29,7 @@ const Navbar = () => {
             <NavLink to='/contactus' className='nav-link' activeClassName='active'>Contact us</NavLink>
           </li>
         </ul>
-        <button className='btn'>Sign in</button>
+        <button className='btn' onClick={()=> {navigate('/signin')}}>Sign in</button>
     </nav>
         <hr className='line'/>
         </div>

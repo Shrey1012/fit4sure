@@ -1,25 +1,26 @@
-.Signin-main{
+.Signup-main {
     width: 100%;
     height: 100vh;
     background-color: #F2EEE5;
-
     display: flex;
-}
-.Signin-left{
+  }
+  
+  .Signup-left {
     width: 40%;
     height: 100%;
     background-color: white;
-}
-.Signin-right{
+  }
+  
+  .Signup-right {
     width: 60%;
     height: 100%;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.Signin-right h2{
+  }
+  
+  .Signup-right h2 {
     margin: 0;
     font-size: 28px;
     font-weight: 700;
@@ -27,50 +28,41 @@
     text-align: center;
     color: #1F1704;
     margin-bottom: 0.6%;
-}
-.Signin-right h3{
-    margin: 0;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0em;
-    text-align: center;
-    color: #BD3C2A;
-    margin-bottom: 6%;
-}
-.Input-part{
+  }
+  
+  .Input-part {
     width: 34%;
     height: 11%;
     margin-bottom: 0.5%;
-}
-.Signin-right p{
+  }
+  
+  .Signup-right p {
     margin-top: 1%;
     margin-bottom: 1%;
-}
-.Input-part input{
+  }
+  
+  .Input-part input {
     width: 98%;
     height: 35%;
     padding-left: 3%;
-
     border: solid 2px #DEDEDD;
     border-radius: 5px;
-
-}
-.Input-part label{
+  }
+  
+  .Input-part label {
     margin: 0;
     padding: 0;
-
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0em;
     text-align: start;
     color: #433F37;
-
-    padding-bottom: 3% ;
-}
-.S-button{
+    padding-bottom: 3%;
+  }
+  
+  .S-button {
     width: 34%;
     height: 6%;
-
     background-color: black;
     color: white;
     font-family: Nunito;
@@ -78,19 +70,16 @@
     font-weight: 600;
     border-radius: 5px;
     border: none;
-
     margin-top: 2%;
-
-}
-/* .G-button{
+  }
+  
+  .G-button {
     width: 34%;
     height: 6%;
-
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3%;
-
     background-color: white;
     color: #1F1704;
     border: solid 2px #adadad;
@@ -98,32 +87,38 @@
     font-size: 16px;
     font-weight: 600;
     border-radius: 5px;
-} */
-
-#g-button{
-    border: none;
-}
-
-#g-button:hover{
-    box-shadow: none;
-}
-
-.G-button img{
+  }
+  
+  .G-button img {
     height: 70%;
-}
-.Signin-switch{
-   
+  }
+  
+  .Signup-switch {
     font-size: 16px;
     font-weight: 600;
     text-align: start;
     color: #433F37;
     margin-top: 1%;
-
     display: flex;
     justify-content: center;
-}
-.Signin-switch span{
+  }
+  
+  .Signup-switch span {
     color: #BD3C2A;
     font-weight: 700;
     cursor: pointer;
-}
+  }
+
+  .Password-input {
+    position: relative;
+  }
+  
+  .Password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #adadad;
+  }
+  
