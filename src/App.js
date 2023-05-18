@@ -6,7 +6,7 @@ import { Aboutus, Career, Contactus, Plans, Home, GetCoach, AllCoaches1, AllCoac
 function App() {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/getcoach" element={<GetCoach />}></Route>
@@ -22,7 +22,7 @@ function App() {
         <Route path="/posts/all" element={<AllPosts />}></Route>
         <Route path="/posts/:category" element={<CategoryPage />}></Route>
       </Routes>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 }

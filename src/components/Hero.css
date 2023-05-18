@@ -14,46 +14,62 @@
     justify-content: flex-start;
     margin-left: 10%;
     margin-top: 13%;
-    z-index: 2;
+    z-index: 2; 
 }
 .hero-text1{
     font-family: Nunito;
     font-size: 44px;
     font-weight: 700;
-    line-height: 60px;
     letter-spacing: 0em;
     text-align: left;
     color: #1F1704;
-    margin-bottom: 28px;
-    ;
+    margin-bottom: 7%;
 }
+.hero-text1 strong {
+    position: relative;
+  }
+  
+.hero-text1 strong::before {
+    /* Highlight color */
+    background-color: #E8DDAC;
+  
+    content: "";
+    position: absolute;
+    width: calc(100%);
+    height: 60%;
+    bottom: 0;
+    z-index: -1;
+  }
 .hero-text2{
     font-family: Nunito;
     font-size: 18px;
     font-weight: 400;
-    line-height: 25px;
     letter-spacing: 0em;
     text-align: left;
     color:#433F37;
-    margin-bottom: 54px;
+    margin-bottom: 10%;
 }
 .hero-line{
     background: #DAC55A;
     height: 4px;
-    width: 112px;
-    margin-bottom: 54px;
+    width: 22%;
+    margin-bottom: 10%;
 }
 .hero-button{
-    height: 57px;
-    width: 279px;
-    left: 108px;
-    top: 552px;
+    height: 12%;
+    width: 50%;
     border-radius: 30px;
-    padding: 16px 44px 16px 44px;
+    font-family: Nunito;
+    border: none;
     background: #BD3C2A;
     color: white;
     font-size: 18px;
     font-weight: 700;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
 }
 .highlight1{
     position: absolute;
@@ -66,7 +82,7 @@
     z-index: 1;
 }
 .hero-image{
-    width: 458px;
+    height: 75%;
 }
 .hero-right{
     width: 50%;
