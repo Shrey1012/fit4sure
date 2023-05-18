@@ -1,0 +1,67 @@
+.bmr-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bmr-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.bmr-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bmr-input-container {
+  margin-bottom: 10px;
+}
+
+.bmr-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.bmr-input {
+  flex: 1;
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.bmr-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.bmr-message {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.bmr-result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.bmr-info {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

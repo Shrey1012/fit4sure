@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
-import "./Signin.css";
+import "./Signup.css";
 import googleLogo from "../assets/googleLogo.svg";
-import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import { useDispatch } from "react-redux";
-import { signin } from "../actions/auth";
+import { signup } from "../actions/auth";
 
-const Signin = () => {
+const Signup = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleTogglePassword = () => {
@@ -23,6 +26,8 @@ const Signin = () => {
     if (response.credential) {
       // Success scenario
       const credential = jwtDecode(response.credential);
+
+      console.log(credential);
 
       // Send the Google authentication response to the server
       const requestOptions = {
@@ -62,23 +67,54 @@ const Signin = () => {
     });
   }, []);
 
-  const handleSignIn = (e) => {
+  const handleSignUp = (e) => {
     e.preventDefault();
-    const userObject = { email, password };
-    dispatch(signin(userObject, navigate));
+    if (password === confirmPassword) {
+      const userObject = {
+        firstName,
+        lastName,
+        email,
+        password,
+        confirmPassword,
+      };
+      dispatch(signup(userObject, navigate));
+    }
   };
 
   return (
-    <div className="Signin-main">
-      <div className="Signin-left"></div>
-      <div className="Signin-right">
-        <h2>Welcome back!</h2>
-        <h3>Sign in to continue.</h3>
+    <div className="Signup-main">
+      <div className="Signup-left"></div>
+      <div className="Signup-right">
+        <h2>Create an account</h2>
+        <div className="Input-part">
+          <label htmlFor="firstname">First Name</label>
+          <input
+            id="firstname"
+            type="text"
+            placeholder="First Name"
+            value={firstName}
+            onChange={(e) => {
+              setFirstName(e.target.value);
+            }}
+          />
+        </div>
+        <div className="Input-part">
+          <label htmlFor="lastname">Last Name</label>
+          <input
+            id="lastname"
+            type="text"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => {
+              setLastName(e.target.value);
+            }}
+          />
+        </div>
         <div className="Input-part">
           <label htmlFor="email">Email</label>
           <input
             id="email"
-            type="text"
+            type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => {
@@ -111,19 +147,31 @@ const Signin = () => {
             )}
           </div>
         </div>
-        <button className="S-button" onClick={handleSignIn}>
-          Signin
+        <div className="Input-part">
+          <label htmlFor="confirm">Confirm Password</label>
+          <input
+            id="confirm"
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e) => {
+              setConfirmPassword(e.target.value);
+            }}
+          />
+        </div>
+        <button className="S-button" onClick={handleSignUp}>
+          Sign Up
         </button>
         <p>-or-</p>
         <button id="g-button"></button>
-        <div className="Signin-switch">
-          Haven't registered yet?{" "}
+        <div className="Signup-switch">
+          Already have an account?{" "}
           <span
             onClick={() => {
-              navigate("/signup");
+              navigate("/signin");
             }}
           >
-            Signup
+            Sign In
           </span>
         </div>
       </div>
@@ -131,4 +179,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Signup;

@@ -10,8 +10,15 @@ import UserHome from "./UserDashboard/UserHome";
 import UserDashNav from "./UserDashboard/UserDashNav";
 import UserCommunity from "./UserDashboard/UserCommunity";
 import Signin from "./Signin";
+import Signup from "./Signup";
 import AllPosts from "./UserDashboard/AllPosts";
 import CategoryPage from "./UserDashboard/CategoryPage";
+import BMI from "./UserDashboard/Tools/BMI";
+import BMR from "./UserDashboard/Tools/BMR";
+import BFP from "./UserDashboard/Tools/BFP";
+import TDEE from "./UserDashboard/Tools/TDEE";
+import WorkoutPlanner from "./UserDashboard/Tools/WorkoutPlanner";
+import DailyCalorie from "./UserDashboard/Tools/DailyCalorie";
 
 export {
     Aboutus,
@@ -26,6 +33,13 @@ export {
     UserCommunity,
     UserDashNav,
     Signin,
+    Signup,
     AllPosts,
-    CategoryPage
+    CategoryPage,
+    BMI,
+    BMR,
+    BFP,
+    TDEE,
+    WorkoutPlanner,
+    DailyCalorie
 }

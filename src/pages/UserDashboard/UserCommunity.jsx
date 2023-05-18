@@ -98,7 +98,6 @@ const UserCommunity = () => {
 
   return (
     <>
-      <UserDashNav />
       <div className="community-main">
         <PostButtons />
         <div className="com-blogs">
