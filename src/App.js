@@ -24,6 +24,7 @@ import {
   TDEE,
   WorkoutPlanner,
   DailyCalorie,
+  PostDetails,
 } from "./pages";
 
 function App() {
@@ -103,6 +104,14 @@ function App() {
           element={
             <PrivateRoute>
               <AllPosts />
+            </PrivateRoute>
+          }
+        ></Route>
+        <Route
+          path="/post-details/:postId"
+          element={
+            <PrivateRoute>
+              <PostDetails />
             </PrivateRoute>
           }
         ></Route>

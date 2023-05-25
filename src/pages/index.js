@@ -19,6 +19,7 @@ import BFP from "./UserDashboard/Tools/BFP";
 import TDEE from "./UserDashboard/Tools/TDEE";
 import WorkoutPlanner from "./UserDashboard/Tools/WorkoutPlanner";
 import DailyCalorie from "./UserDashboard/Tools/DailyCalorie";
+import PostDetails from "./UserDashboard/PostDetails";
 
 export {
     Aboutus,
@@ -41,5 +42,6 @@ export {
     BFP,
     TDEE,
     WorkoutPlanner,
-    DailyCalorie
+    DailyCalorie,
+    PostDetails
 }
