@@ -108,8 +108,8 @@ const AllPosts = () => {
               <img src={post.imageURL} alt="Post" />
               <h6>By: {post?.user?.name}</h6>
               <div className="all-post-likes">
-                <p>{post.likes.length} likes</p>
-                {post.likes.includes(userId) ? (
+                <p>{post.likes?.length} likes</p>
+                {post.likes?.includes(userId) ? (
                   <button
                     onClick={(event) => {
                       event.stopPropagation();
@@ -131,7 +131,7 @@ const AllPosts = () => {
               </div>
               <div className="all-posts-comments">
             <h4>Comments:</h4>
-            {post.comments.map((comment) => (
+            {post?.comments?.map((comment) => (
               <div key={comment._id}>
                 <p>{comment.text}</p>
                 <p>By: {comment.user.name}</p>

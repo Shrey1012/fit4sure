@@ -54,7 +54,7 @@ const UserDashNav = () => {
         <NavLink to='/userhome' className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
             <img src={home_icon} alt="home" />
         </NavLink>
-        <NavLink to='/UserCommunity'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
+        <NavLink to='/usercommunity'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
           <img src={Community} alt="Community" />
         </NavLink>
         {/* <img src={home_icon} alt="home" /> */}

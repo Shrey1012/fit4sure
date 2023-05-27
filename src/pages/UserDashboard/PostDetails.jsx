@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import config from "../../firebase.config";
 import { initializeApp } from "firebase/app";
+import { useNavigate } from "react-router-dom";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import "./PostDetails.css";
 import heartOutline from "../../assets/heart_outline.svg";
@@ -12,6 +13,7 @@ const PostDetails = () => {
   const [post, setPost] = useState(null);
   const [imageURL, setImageURL] = useState("");
   const [commentText, setCommentText] = useState("");
+  const navigate = useNavigate();
 
   const userId = JSON.parse(localStorage.getItem("profile")).result._id;
 
@@ -82,6 +84,18 @@ const PostDetails = () => {
     }
   };
 
+  const handleDeletePost = async () => {
+    try {
+      await API.delete(`/app/post/${postId}`);
+
+      navigate("/usercommunity");
+
+      
+    } catch (error) {
+      console.error("Error deleting the post:", error);
+    }
+  };
+
   if (!post) {
     return <div>Loading...</div>;
   }
@@ -92,9 +106,12 @@ const PostDetails = () => {
       <h3>{post.text}</h3>
       <img src={imageURL} alt="Post" />
       <h6>By: {post?.user?.name}</h6>
+      {post.user._id === userId && (
+        <button onClick={handleDeletePost}>Delete Post</button>
+      )}
       <div className="post-detail-likes">
-        <p>{post.likes.length}</p>
-        {post.likes.includes(userId) ? (
+        <p>{post.likes?.length}</p>
+        {post.likes?.includes(userId) ? (
           <button onClick={handleUnlike}>Unlike</button>
         ) : (
           <button onClick={handleLike}>Like</button>
@@ -102,7 +119,7 @@ const PostDetails = () => {
       </div>
       <div className="post-detail-comments">
         <h4>Comments:</h4>
-        {post.comments.map((comment) => (
+        {post?.comments?.map((comment) => (
           <div key={comment._id}>
             <p>{comment.text}</p>
             <p>By: {comment.user.name}</p>
