@@ -74,7 +74,6 @@ const PostDetails = () => {
         comment: commentText,
       });
 
-      // Clear the comment text field after submitting
       setCommentText("");
 
       fetchPostDetails();
@@ -107,7 +106,6 @@ const PostDetails = () => {
           <div key={comment._id}>
             <p>{comment.text}</p>
             <p>By: {comment.user.name}</p>
-            {console.log(comment.user)}
           </div>
         ))}
       </div>

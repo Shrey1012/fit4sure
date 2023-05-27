@@ -12,6 +12,7 @@ import PostButtons from "./PostButtons";
 const CategoryPage = () => {
   const { category } = useParams();
   const [posts, setPosts] = useState([]);
+  const [commentText, setCommentText] = useState("");
 
   const navigate = useNavigate();
 
@@ -76,6 +77,22 @@ const CategoryPage = () => {
     }
   };
 
+  const handleCommentSubmit = async (event, postId) => {
+    event.preventDefault();
+
+    try {
+      await API.post(`/app/post/${postId}/comment`, {
+        comment: commentText,
+      });
+
+      setCommentText("");
+
+      fetchPosts();
+    } catch (error) {
+      console.error("Error submitting comment:", error);
+    }
+  };
+
   return (
     <>
       <UserDashNav />
@@ -112,6 +129,29 @@ const CategoryPage = () => {
                 </button>
               )}
             </div>
+            <div className="all-posts-comments">
+            <h4>Comments:</h4>
+            {post.comments.map((comment) => (
+              <div key={comment._id}>
+                <p>{comment.text}</p>
+                <p>By: {comment.user.name}</p>
+              </div>
+            ))}
+          </div>
+          <form onSubmit={(event) => handleCommentSubmit(event, post._id)}>
+            <input
+              type="text"
+              placeholder="Add a comment"
+              value={commentText}
+              onClick={(event) => event.stopPropagation()}
+              onChange={(event) => {
+                setCommentText(event.target.value);
+              }}
+            />
+            <button onClick={(e) => e.stopPropagation()} type="submit">
+              Submit
+            </button>
+          </form>
           </div>
         ))}
       </div>

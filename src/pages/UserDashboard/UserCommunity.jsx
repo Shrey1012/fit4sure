@@ -9,6 +9,7 @@ import axios from "axios";
 
 const PostCategory = ({ category, categoryTitle }) => {
   const [posts, setPosts] = useState([]);
+  const [commentText, setCommentText] = useState("");
 
   const navigate = useNavigate();
 
@@ -47,7 +48,7 @@ const PostCategory = ({ category, categoryTitle }) => {
 
   useEffect(() => {
     fetchPosts();
-  }, [category]);
+  }, [category, posts]);
 
   const handleLike = async (postId) => {
     try {
@@ -64,6 +65,22 @@ const PostCategory = ({ category, categoryTitle }) => {
       fetchPosts(); // Refresh the posts after unliking
     } catch (error) {
       console.error("Error unliking the post:", error);
+    }
+  };
+
+  const handleCommentSubmit = async (event, postId) => {
+    event.preventDefault();
+
+    try {
+      await API.post(`/app/post/${postId}/comment`, {
+        comment: commentText,
+      });
+
+      setCommentText("");
+
+      fetchPosts();
+    } catch (error) {
+      console.error("Error submitting comment:", error);
     }
   };
 
@@ -101,6 +118,29 @@ const PostCategory = ({ category, categoryTitle }) => {
               </button>
             )}
           </div>
+          <div className="all-posts-comments">
+            <h4>Comments:</h4>
+            {post.comments.map((comment) => (
+              <div key={comment._id}>
+                <p>{comment.text}</p>
+                <p>By: {comment.user.name}</p>
+              </div>
+            ))}
+          </div>
+          <form onSubmit={(event) => handleCommentSubmit(event, post._id)}>
+            <input
+              type="text"
+              placeholder="Add a comment"
+              value={commentText}
+              onClick={(event) => event.stopPropagation()}
+              onChange={(event) => {
+                setCommentText(event.target.value);
+              }}
+            />
+            <button onClick={(e) => e.stopPropagation()} type="submit">
+              Submit
+            </button>
+          </form>
         </div>
       ))}
     </div>
