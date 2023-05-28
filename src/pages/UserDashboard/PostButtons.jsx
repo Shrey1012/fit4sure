@@ -11,15 +11,14 @@ const PostButtons = () => {
   const [image, setImage] = useState(null);
   const navigate = useNavigate();
 
+  const userId = JSON.parse(localStorage.getItem("profile")).result._id;
+
   const handleAddPost = async () => {
-    // Implement the logic to add the post using the entered values
-    // Make an API request to submit the form data (e.g., using axios)
-    // Include the selected category, text, and image in the request
-    // Reset the form fields and close the modal
     try {
       const formData = new FormData();
       formData.append("category", category);
       formData.append("text", text);
+      formData.append("userId", userId);
       if (image) {
         formData.append("image", image);
       }
@@ -28,11 +27,13 @@ const PostButtons = () => {
 
       API.interceptors.request.use((req) => {
         if (localStorage.getItem("profile")) {
-            req.headers.authorization = `Bearer ${JSON.parse(localStorage.getItem("profile")).token}`;
+          req.headers.authorization = `Bearer ${
+            JSON.parse(localStorage.getItem("profile")).token
+          }`;
         }
-    
+
         return req;
-    });
+      });
       await API.post("/app/post/add", formData);
 
       setCategory("discussion");
@@ -45,7 +46,6 @@ const PostButtons = () => {
   };
 
   const handleCategoryClick = (category) => {
-    // Navigate to the corresponding page based on the category
     navigate(`/posts/${category}`);
   };
 
