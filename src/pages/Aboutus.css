@@ -1,0 +1,71 @@
+.Aboutus-main{
+    height: 200vh;
+    width: 100%;
+    background-color: #F2EEE5;
+}
+.About1{
+    padding-top: 20vh;
+    height: 50vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.About1-left{
+    height: 100%;
+    width: 50%;
+}
+.About1-lt{
+    height: 20%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    font-family: Nunito;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: left;
+    color: #1F1704;
+    padding-left: 4%;
+
+    border-left: solid 4px #DAC55A
+}
+.About1-lm{
+    height: 50%;
+    width: 90%;
+
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    color: #433F37;
+    padding-left: 4%;
+    padding-top: 2%;
+    border-left: solid 4px #FCFBF9;
+}
+.About1-lb{
+    width: 40%;
+    height: 8%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5%;
+    padding-left: 4%;
+    padding-bottom: 5%;
+    border-left: solid 4px #FCFBF9;
+}
+.About1-right{
+    height: 95%;
+    width: 30%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    
+}
+.About1-right img{
+    width: 65%;
+    margin-left: 8%;
+}

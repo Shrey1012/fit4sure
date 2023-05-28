@@ -8,9 +8,11 @@ const Download = () => {
     <div className='download-main'>
       <div className='download-left'>
         <div className='download-left-text'>
-          <div className='download-text1'>Only workout!? No, It's all about Fitness..</div>
+          <div className='download-text1'>Join Fit4sure and stay rest assured; within <strong>16 weeks</strong>, your healthy, mindful,<span className='high-text'> guilt-free fitness</span> is ensured.</div>
           <div className='download-text2'>
-          Access your custom plan, talk to your dedicated coach, and explore exclusive content across nutrition and fitness on your Fitelo app Access your custom plan, talk to your dedicated coach, and explore exclusive content across nutrition and fitness on your Fitelo app.
+          Whether you are a college student, a retired individual, or a business person, we offer personalized premium services at a price-friendly cost.
+
+In order to help you feel more self-assured and inspired every day, our professionals will help you at every stage. Let's beat obesity together.
           </div>
         </div>
         <div className='download-buttons'>

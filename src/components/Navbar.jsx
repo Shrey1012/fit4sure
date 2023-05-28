@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-  return (
+  return ( 
     <div className='navbar'>
     <nav className='nav'>
         <div className='left_nav'><a href='/'><img src={fflogo} alt="Fit4sure logo" /></a></div>

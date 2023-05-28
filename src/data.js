@@ -13,31 +13,31 @@ export const FeaturesData = [
     },
     {
         id: 2,
-        title:'Track your reports',
+        title:'Diet plans for you',
         img: featureLogo,
-        data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboullamco laboris nisi ut aliquip ex ea commodo consequat.',
     },
     {
         id: 3,
-        title:'Track your reports',
+        title:'Healthy recipes',
         img: featureLogo,
         data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     },
     {
         id: 4,
-        title:'Track your reports',
+        title:'Workout inspirations',
         img: featureLogo,
         data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     },
     {
         id: 5,
-        title:'Track your reports',
+        title:'Set weight gain & lose goals',
         img: featureLogo,
         data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     },
     {
         id: 6,
-        title:'Track your reports',
+        title:'Transformation idols',
         img: featureLogo,
         data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     },
@@ -177,7 +177,7 @@ export const faqdata = [
 export const qnadata = [
     {
         id:1,
-        Qna_Question : "How can Fit4sure help me to improve my mental strength?",
+        Qna_Question : "Are you resisting those much-loved Cheat Meals every week to lose weight?",
         Qna_Answer_title : "With fitforsure, eat that chocolate cake without any worry!!!",
         Qna_Answer_para : "We make you fit in a sustainable manner by using the science of fitness and providing constant support. Our certified and top-rated professional experts provide long-lasting support, making personalized schedules at times convenient for you.",  
     }

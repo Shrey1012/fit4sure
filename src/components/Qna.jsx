@@ -16,10 +16,10 @@ const Qna = () => {
             Qna_Answer_title={qnadata.Qna_Answer_title}
             Qna_Answer_para={qnadata.Qna_Answer_para}
           />
-        ))
+        )) 
       }
     </div>
-  )
+  ) 
 }
 
 export default Qna

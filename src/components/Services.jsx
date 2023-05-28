@@ -17,16 +17,7 @@ const Services = () => {
       <div className='ser-txt1'>Plans & Services</div>
       <div className='ser-txt2'>We provide the following plans and services by the healthcare industry experts</div>
       <div className='all-plans'>
-      {
-        servicesData.map((service) => (
-
-          <PlanCard
-            key={service.id}
-            image={service.img}
-            title={service.title}
-          />
-        ))
-      }
+      
       </div>
       <div className='ser-buttons'>
         <button className='view-all' onClick={()=>{navigate('/plans')}}>View all plans & services</button>
