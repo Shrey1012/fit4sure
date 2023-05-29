@@ -2,9 +2,12 @@ import React,{useState, useEffect} from 'react'
 import './Faq.css';
 import axios from "axios";
 import FaqCard from './FaqCard'
+import { useNavigate } from "react-router-dom";
 
 const Faq = () => {
   const [faqs, setFaqs] = useState([])
+
+  const navigate = useNavigate();
 
   const toggleFaq = (index) => {
     setFaqs(
