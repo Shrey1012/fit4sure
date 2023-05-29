@@ -1,13 +1,27 @@
 import React, { useState, useRef, useEffect} from "react";
 import "./Features.css";
 import FeatureCard from "./FeatureCard";
-import { FeaturesData } from "../data";
+import axios from "axios";
 import arrow_left from "../assets/arrow_left.svg";
 import arrow_right from "../assets/arrow_right.svg";
 
 const Features = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const [FeaturesData, setFeaturesData] = useState([]);
   const numFeatures = FeaturesData.length;
+
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/admin/web_features/all")
+      .then((res) => {
+        const featuresArray = Object.values(res.data.features); // Convert the object to an array
+      setFeaturesData(featuresArray);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const handlePrevClick = () => {
     let nextIndex = startIndex - 1;
@@ -39,10 +53,10 @@ const Features = () => {
           {FeaturesData.slice(startIndex, startIndex + 3).map(
             (feature, index) => (
               <FeatureCard
-                key={feature.id}
-                img={feature.img}
+                key={feature._id}
+                img={feature.image}
                 title={feature.title}
-                desc={feature.data}
+                desc={feature.description}
                 index={startIndex + index}
               />
             )

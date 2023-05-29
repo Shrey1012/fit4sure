@@ -7,7 +7,7 @@ const Queries = () => {
     <div className='queries-main'>
       <div className='queries-box'>
         <div className='qbox-left'>
-          <img className src={Ask} alt="img" />
+          <img src={Ask} alt="img" />
         </div>
         <div className='qbox-right'>
           <div className='queries-txt1'>Facing similar kinds of issues?</div>

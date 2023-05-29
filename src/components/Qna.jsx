@@ -1,20 +1,34 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './Qna.css';
-import { qnadata } from '../data'
+import axios from 'axios';
 import QnaCard from './QnaCard'
 
 const Qna = () => {
+  const [qnaData, setQnaData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/admin/web_qna/all")
+      .then((res) => {
+        const qnaArray = Object.values(res.data.qna);
+        setQnaData(qnaArray);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div className='qna-main'>
       <div className='all-qna'></div>
       {
-        qnadata.map((qnadata) => (
+        qnaData.map((qna) => (
 
           <QnaCard 
-            key={qnadata.id}
-            Qna_Question={qnadata.Qna_Question}
-            Qna_Answer_title={qnadata.Qna_Answer_title}
-            Qna_Answer_para={qnadata.Qna_Answer_para}
+            key={qna._id}
+            question={qna.question}
+            title={qna.title}
+            para={qna.description}
           />
         ))
       }
