@@ -39,7 +39,14 @@ function App() {
             </GuestRoute>
           }
         ></Route>
-        <Route path="/getcoach" element={<GetCoach />}></Route>
+        <Route 
+          path="/getcoach" 
+          element={
+            <GuestRoute>
+              <GetCoach />
+            </GuestRoute>
+        }
+        ></Route>
         <Route
           path="/aboutus"
           element={
@@ -48,7 +55,14 @@ function App() {
             </GuestRoute>
           }
         ></Route>
-        <Route path="/plans" element={<Plans />}></Route>
+        <Route
+          path="/plans"
+          element={
+            <GuestRoute>
+              <Plans />
+            </GuestRoute>
+          }
+        ></Route>
         <Route
           path="/career"
           element={

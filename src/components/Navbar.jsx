@@ -8,13 +8,9 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="navbar">
-      <nav className="nav">
-        <div className="left_nav">
-          <a href="/">
-            <img src={fflogo} alt="Fit4sure logo" />
-          </a>
-        </div>
+    <div className='navbar'>
+    <nav className='nav'>
+        <div className='left_nav'><a href='/'><img src={fflogo} alt="Fit4sure logo" /></a></div>
         <ul>
           <li>
             <NavLink

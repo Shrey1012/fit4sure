@@ -87,7 +87,7 @@ export const Storiesdata = [
 export const qnadata = [
     {
         id:1,
-        Qna_Question : "How can Fit4sure help me to improve my mental strength?",
+        Qna_Question : "Are you resisting those much-loved Cheat Meals every week to lose weight?",
         Qna_Answer_title : "With fitforsure, eat that chocolate cake without any worry!!!",
         Qna_Answer_para : "We make you fit in a sustainable manner by using the science of fitness and providing constant support. Our certified and top-rated professional experts provide long-lasting support, making personalized schedules at times convenient for you.",  
     }

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import "./Faq.css";
+import React,{useState, useEffect} from 'react'
+import './Faq.css';
 import axios from "axios";
-import FaqCard from "./FaqCard";
+import FaqCard from './FaqCard'
 
 const Faq = () => {
-  const [faqs, setFaqs] = useState([]);
+  const [faqs, setFaqs] = useState([])
 
   const toggleFaq = (index) => {
     setFaqs(
@@ -46,7 +46,9 @@ const Faq = () => {
           />
         ))}
       </div>
-      <div className="closed-faq"></div>
+      <div className='closed-faq'></div>
+      <div className='faq-more'>Can't find the answer you are looking for? <button color='link' className='view-all' onClick={()=>{navigate('/plans')}}> Reach us</button></div>
+
     </div>
   );
 };

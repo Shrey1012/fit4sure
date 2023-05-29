@@ -10,9 +10,7 @@ const Home = () => {
       <div className="hero_left">
         <div className="hero-text1">Only workout!? No, It's all about <strong>Fitness</strong>.. </div>
         <div className="hero-text2"> 
-        We make you do the exercise you like, provide constant encouragement,
-        amend your mindset to live life like a fitness freak. The exercise
-        tracking tool and 8 other tools act as the cherry on the cake.
+        Achieve Your Fitness Dreams with Fit4sure. Our Tailored Programs and Support Ensure Success. A flexible app that curates plans as per your versatile schedule. Join Us Today!
         </div>
       <div className="hero-line"/>
       <button className="hero-button"> Get Started<img src={arrownxt} alt=" " /></button>

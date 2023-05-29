@@ -30,10 +30,10 @@ const Qna = () => {
             title={qna.title}
             para={qna.description}
           />
-        ))
+        )) 
       }
     </div>
-  )
+  ) 
 }
 
 export default Qna

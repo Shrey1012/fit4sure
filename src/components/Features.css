@@ -16,10 +16,10 @@
     align-items: center;
 }
 .top-text {
-  width: 508px;
+  width: 50%;
   color: #1f1704;
   font-family: Nunito;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 700;
   line-height: 38px;
   letter-spacing: 0em;
@@ -27,6 +27,22 @@
 }
 .high-text {
   color: #bd3c2a;
+}
+.fet-highlight {
+  position: relative;
+  z-index: 0;
+}
+
+.fet-highlight::before {
+  /* Highlight color */
+  background-color: #E8DDAC;
+
+  content: "";
+  position: absolute;
+  width: calc(100%);
+  height: 60%;
+  bottom: 0;
+  z-index: -1;
 }
 
 .features-bottom {

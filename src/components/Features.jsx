@@ -44,8 +44,8 @@ const Features = () => {
     <div className="features-main">
       <div className="features-top">
         <div className="top-text">
-          <span>Personalized & Psychological approach For Sustainable</span>
-          <span className="high-text">Weight-loss</span>
+          <span>Bid Farewell to Unsuccessful Diets and Welcome <strong className="fet-highlight">Sustainable</strong> Results with
+ Our Customized and Comprehensive <span className="high-text">Weight-loss</span> Plans</span> 
         </div>
       </div>
       <div className="features-bottom">
