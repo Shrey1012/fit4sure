@@ -1,0 +1,39 @@
+.Settings-main{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+}
+.Settings-nav{
+    margin-left: 80px ;
+    width: 16%;
+    height: 100%;
+    background-color: #F2EEE5;
+}
+.Settings-nav ul{
+    list-style-type:none;
+    margin-top: 12%;
+}
+.Settings-nav ul li{
+    padding-bottom: 14%;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+}
+.Settings-nav-title{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+    color: #1F1704;
+    margin-bottom: 20%;
+}
+
+.settings-nav-link{
+    text-decoration: none;
+    color: #433F37;
+}
+
+.active{
+    color: #ce2727;
+}

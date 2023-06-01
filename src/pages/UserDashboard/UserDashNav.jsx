@@ -65,7 +65,7 @@ const UserDashNav = () => {
             <img src={Tools} alt="Tools" />
           </div>
           <div className='Nav-bottom'>
-            <NavLink to='/usersettings'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
+            <NavLink to='/usersettings/personal-details'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
               <img src={settings} alt="Settings" />
             </NavLink>
             <img src={logout_icon} alt="logout" onClick={logout} />
