@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./TDEE.css";
+import back from '../../../assets/back.svg'
+import Question from '../../../assets/Question.svg'
 
 const TDEE = () => {
   const [weight, setWeight] = useState("");
@@ -48,41 +50,42 @@ const TDEE = () => {
   };
 
   return (
-    <div className="tdee-container">
-      <h2 className="tdee-title">TDEE Calculator</h2>
-      <form className="tdee-form" onSubmit={handleSubmit}>
-        <div className="tdee-input-container">
-          <label className="tdee-label">
-            Weight:
+    <div className="bmi-main">
+      <div className="bmi-left">
+      <div className="bmi-left-top">
+        <img src={back} alt="" />
+        <h2 className="bmi-title">TDEE Calculator</h2>
+      </div>
+      <div className="bmi-left-bottom">  
+      <form className="bmi-form" onSubmit={handleSubmit}>
+        <div className="bmi-input-container">
+          <label className="bmi-label">
+            <div>Weight: </div>
             <input
-              className="tdee-input"
               type="text"
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
             />
           </label>
-          <label className="tdee-label">
-            Height:
+          <label className="bmi-label">
+            <div>Height: </div>
             <input
-              className="tdee-input"
               type="text"
               value={height}
               onChange={(e) => setHeight(e.target.value)}
             />
           </label>
-          <label className="tdee-label">
-            Age:
+          <label className="bmi-label">
+            <div>Age: </div>
             <input
-              className="tdee-input"
               type="text"
               value={age}
               onChange={(e) => setAge(e.target.value)}
             />
           </label>
-          <label className="tdee-label">
-            Gender:
+          <label className="bmi-label">
+            <div>Gender: </div>
             <select
-              className="tdee-input"
               value={gender}
               onChange={(e) => setGender(e.target.value)}
             >
@@ -91,10 +94,9 @@ const TDEE = () => {
               <option value="female">Female</option>
             </select>
           </label>
-          <label className="tdee-label">
-            Activity Level:
+          <label className="bmi-label">
+            <div>Activity Level: </div>
             <select
-              className="tdee-input"
               value={activityLevel}
               onChange={(e) => setActivityLevel(e.target.value)}
             >
@@ -107,18 +109,31 @@ const TDEE = () => {
             </select>
           </label>
         </div>
-        <button className="tdee-button" type="submit">
+        <button className="bmi-button" type="submit">
           Calculate TDEE
         </button>
       </form>
-      {isLoading && <div className="tdee-message">Loading...</div>}
-      {error && <div className="tdee-message">Error: {error}</div>}
+      {isLoading && <div className="bmi-message">Loading...</div>}
+      {error && <div className="bmi-message">Error: {error}</div>}
       {tdeeData && (
-        <div className="tdee-result">
-          <p className="tdee-info">TDEE: {tdeeData.info.tdee}</p>
+        <div className="bmi-result">
+          <p className="bmi-info">TDEE: {tdeeData.info.tdee}</p>
         </div>
       )}
+      </div>
+
+      </div>
+      <div className="bmi-right">
+        <div className="bmi-que">
+          <img src={Question} alt="" />
+          <h2>What is BMI?</h2>
+        </div>
+        <div className="bmi-ans">
+        Lorem ipsum dolor sit amet. Ea obcaecati inventore aut quis galisum ut placeat voluptatum nam assumenda facere. Qui omnis quibusdam sit galisum quia aut numquam iusto qui sequi harum.
+        </div>
+      </div>
     </div>
+    
   );
 };
 

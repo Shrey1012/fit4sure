@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./BMI.css";
+import Question from '../../../assets/Question.svg'
+import back from '../../../assets/back.svg'
 
 const BMI = () => {
   const [weight, setWeight] = useState("");
@@ -10,7 +12,7 @@ const BMI = () => {
 
   const calculateBmi = async () => {
     setIsLoading(true);
-
+ 
     try {
       const response = await fetch(
         `https://mega-fitness-calculator1.p.rapidapi.com/bmi?weight=${weight}&height=${height}`,
@@ -42,12 +44,18 @@ const BMI = () => {
   };
 
   return (
-    <div className="bmi-container">
-      <h2 className="bmi-title">BMI Calculator</h2>
+    <div className="bmi-main">
+    <div className="bmi-left">
+      <div className="bmi-left-top">
+        <img src={back} alt="" />
+        <h2 className="bmi-title">BMI Calculator</h2>
+      </div>
+      <div className="bmi-left-bottom">  
       <form className="bmi-form" onSubmit={handleSubmit}>
         <div className="bmi-input-container">
+          
           <label className="bmi-label">
-            Weight:
+            <div>Weight: </div>
             <input
               className="bmi-input"
               type="text"
@@ -55,8 +63,9 @@ const BMI = () => {
               onChange={(e) => setWeight(e.target.value)}
             />
           </label>
+          
           <label className="bmi-label">
-            Height:
+            <div>Height: </div>
             <input
               className="bmi-input"
               type="text"
@@ -69,6 +78,7 @@ const BMI = () => {
           Calculate BMI
         </button>
       </form>
+      
       {isLoading && <div className="bmi-message">Loading...</div>}
       {error && <div className="bmi-message">Error: {error}</div>}
       {bmiData && (
@@ -79,7 +89,18 @@ const BMI = () => {
           </p>
         </div>
       )}
+      </div>
     </div>
+    <div className="bmi-right">
+      <div className="bmi-que">
+        <img src={Question} alt="" />
+        <h2>What is BMI?</h2>
+      </div>
+      <div className="bmi-ans">
+      Lorem ipsum dolor sit amet. Ea obcaecati inventore aut quis galisum ut placeat voluptatum nam assumenda facere. Qui omnis quibusdam sit galisum quia aut numquam iusto qui sequi harum.
+      </div>
+    </div>
+  </div>
   );
 };
 

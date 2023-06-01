@@ -26,6 +26,7 @@ import {
   DailyCalorie,
   PostDetails,
 } from "./pages";
+import {UserSettings} from "./pages"
 
 function App() {
   return (
@@ -97,6 +98,14 @@ function App() {
             </PrivateRoute>
           }
         ></Route>
+        <Route
+          path="/usersettings"
+          element={
+            <PrivateRoute>
+              <UserSettings />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="/signin"
           element={

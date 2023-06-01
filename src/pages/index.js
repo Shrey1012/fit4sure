@@ -9,6 +9,7 @@ import AllCoaches2 from "./AllCoaches2";
 import UserHome from "./UserDashboard/UserHome";
 import UserDashNav from "./UserDashboard/UserDashNav";
 import UserCommunity from "./UserDashboard/UserCommunity";
+import UserSettings from "./UserDashboard/UserSettings";
 import Signin from "./Signin";
 import Signup from "./Signup";
 import AllPosts from "./UserDashboard/AllPosts";
@@ -32,6 +33,7 @@ export {
     AllCoaches2,
     UserHome,
     UserCommunity,
+    UserSettings,
     UserDashNav,
     Signin,
     Signup,

@@ -1,5 +1,5 @@
 .user-dash-navbar{
-    width: 6%;
+    width: 80px;
     height: 100vh;
     background-color: #181818;
     position: fixed;
@@ -7,20 +7,36 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border-radius: 0px 15px 15px 0px;
+    /* border-radius: 0px 15px 15px 0px; */
 }
 .user-nav{
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.Nav-mid{
+    height:60%;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 6%;
+    gap: 10%;
+    margin-top: 25%;
+}
+.Nav-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 15%;
+    gap: 30%;
+    
 }
 .nav-logo{
-    width: 70%;
-    margin-top: 20%;
-    margin-bottom: 40%;
+    width: 80%;
 }
 
 /* .active{

@@ -6,6 +6,8 @@ import Community from '../../assets/Community.svg';
 import star_circle from '../../assets/star_circle.svg';
 import Tools from '../../assets/Tools.svg';
 import fflogo_white from '../../assets/fflogo_white.svg';
+import settings from '../../assets/settings.svg';
+import logout_icon from '../../assets/logout_icon.svg';
 import { NavLink,useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import jwtDecode from 'jwt-decode';
@@ -39,9 +41,8 @@ const UserDashNav = () => {
 
   return (
     <div className='user-dash-navbar'>
-        <nav className='user-nav'>
-        <img className='nav-logo' src={fflogo_white} alt="Fit4sure logo" />
-        {user?.result ? (
+      <nav className='user-nav'>
+        {/* {user?.result ? (
           <div className='user-nav-profile'>
             {user?.result?.image ? (
             <img src={user?.result?.image} alt="profile"/> ) : (
@@ -49,20 +50,26 @@ const UserDashNav = () => {
             )}
             <p style={{color:"white"}}>{user?.result?.name}</p>
           </div>
-        ) : (null)}
-        <img src="" alt="" />
-        <NavLink to='/userhome' className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
-            <img src={home_icon} alt="home" />
-        </NavLink>
-        <NavLink to='/usercommunity'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
-          <img src={Community} alt="Community" />
-        </NavLink>
-        {/* <img src={home_icon} alt="home" /> */}
-        
-        <img src={explore} alt="explore" />
-        <img src={Community} alt="Community" />
-        <img src={Tools} alt="Tools" />
-        <img src={explore} alt="logout" onClick={logout} />
+        ) : (null)} */}
+          {/* <img src="" alt="" /> */}
+          <div className='Nav-mid'>
+            <img className='nav-logo' src={fflogo_white} alt="Fit4sure logo" />
+            <NavLink to='/userhome' className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
+              <img src={home_icon} alt="home" />
+            </NavLink>
+            <NavLink to='/usercommunity'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
+              <img src={Community} alt="Community" />
+            </NavLink>
+            <img src={explore} alt="explore" />
+            <img src={star_circle} alt="Plans" /> 
+            <img src={Tools} alt="Tools" />
+          </div>
+          <div className='Nav-bottom'>
+            <NavLink to='/usersettings'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
+              <img src={settings} alt="Settings" />
+            </NavLink>
+            <img src={logout_icon} alt="logout" onClick={logout} />
+          </div>
     </nav>
     </div>
 
