@@ -1,9 +1,21 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import './Stories.css';
-import { Storiesdata } from '../data'
+import axios from 'axios';
 import StoriesCard from './StoriesCard'
 
 const Stories = () => {
+  const [Storiesdata, setStoriesdata] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/admin/web_stories/all')
+    .then((response) => {
+      setStoriesdata(response.data.stories);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }, []);
+
   return (
     <div className='stories-main'>
       <h2>Success stories of Fit4sure users</h2>
@@ -13,13 +25,13 @@ const Stories = () => {
         Storiesdata.map((Storiesdata) => (
 
           <StoriesCard 
-            key={Storiesdata.id}
+            key={Storiesdata._id}
             Image={Storiesdata.image}
-            person_name={Storiesdata.person_name}
-            person_age={Storiesdata.person_age}
-            person_occ={Storiesdata.person_occ}
+            person_name={Storiesdata.name}
+            person_age={Storiesdata.age}
+            person_occ={Storiesdata.occupation}
             weight_loss={Storiesdata.weight_loss}
-            story_loss={Storiesdata.story_loss}
+            story_loss={Storiesdata.description}
           />
         ))
       }
