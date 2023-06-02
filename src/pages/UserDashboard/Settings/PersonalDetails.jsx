@@ -60,7 +60,6 @@ const PersonalDetails = () => {
         image,
       });
 
-      console.log(userData);
     } catch (error) {
       console.log(error);
     }

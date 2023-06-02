@@ -122,7 +122,7 @@ const PostDetails = () => {
         {post?.comments?.map((comment) => (
           <div key={comment._id}>
             <p>{comment.text}</p>
-            <p>By: {comment.user.name}</p>
+            <p>By: {comment?.user?.name}</p>
           </div>
         ))}
       </div>
