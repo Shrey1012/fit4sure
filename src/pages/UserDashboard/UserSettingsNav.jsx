@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const UserSettingsNav = () => {
   return (
-    <div className='Settings-main'>
+
       <div className='Settings-nav'>
         <ul>
           <h3 className='Settings-nav-title'>Settings</h3>
@@ -25,11 +25,7 @@ const UserSettingsNav = () => {
           </NavLink>
         </ul>
       </div>
-      <div className='Settings-body'>
-
-      </div>
-    
-    </div>
+      
   )
 }
 
