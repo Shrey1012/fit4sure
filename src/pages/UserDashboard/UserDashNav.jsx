@@ -11,7 +11,6 @@ import logout_icon from '../../assets/logout_icon.svg';
 import { NavLink,useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import jwtDecode from 'jwt-decode';
-import Avatar from 'react-avatar';
 
 const UserDashNav = () => {
 
@@ -42,16 +41,6 @@ const UserDashNav = () => {
   return (
     <div className='user-dash-navbar'>
       <nav className='user-nav'>
-        {/* {user?.result ? (
-          <div className='user-nav-profile'>
-            {user?.result?.image ? (
-            <img src={user?.result?.image} alt="profile"/> ) : (
-            <Avatar name={user?.result?.name} size="50" round={true} />
-            )}
-            <p style={{color:"white"}}>{user?.result?.name}</p>
-          </div>
-        ) : (null)} */}
-          {/* <img src="" alt="" /> */}
           <div className='Nav-mid'>
             <img className='nav-logo' src={fflogo_white} alt="Fit4sure logo" />
             <NavLink to='/userhome' className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>

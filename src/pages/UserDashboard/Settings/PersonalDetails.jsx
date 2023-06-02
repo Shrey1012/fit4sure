@@ -1,136 +1,233 @@
-import React from 'react';
-import { useState } from 'react';
-import './PersonalDetails.css'
-import profile from '../../../assets/profile.svg'
-import edit from '../../../assets/edit.svg'
-import check from '../../../assets/check.svg'
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import moment from "moment/moment";
+import "./PersonalDetails.css";
+import profile from "../../../assets/profile.svg";
+import edit from "../../../assets/edit.svg";
+import check from "../../../assets/check.svg";
 
 const PersonalDetails = () => {
-
   const [isEditing, setIsEditing] = useState(false);
-  const [textValue, setTextValue] = useState('Initial Text');
+  const [userData, setUserData] = useState({
+    name: "",
+    image: "",
+    email: "",
+    contactNumber: "",
+    dateOfBirth: "",
+    stateOfResidence: "",
+  });
+
+  const [formattedDateOfBirth, setFormattedDateOfBirth] = useState("");
+
+  const user = JSON.parse(localStorage.getItem("profile"));
+
+  const userId = user.result._id;
+
+  const API = axios.create({ baseURL: "http://localhost:3001" });
+
+  API.interceptors.request.use((req) => {
+    if (localStorage.getItem("profile")) {
+      req.headers.authorization = `Bearer ${
+        JSON.parse(localStorage.getItem("profile")).token
+      }`;
+    }
+
+    return req;
+  });
+
+  useEffect(() => {
+    fetchUserDetails();
+  }, []);
+
+  useEffect(() => {
+    if (!userData.dateOfBirth) return;
+    const formattedDate = moment(userData.dateOfBirth).format("DD-MM-YYYY");
+    setFormattedDateOfBirth(formattedDate);
+  }, [userData.dateOfBirth]);
+
+  const fetchUserDetails = async () => {
+    try {
+      const response = await API.get("/app/user/user-profile");
+      const { name, email, contactNumber, dateOfBirth, stateOfResidence, image } =
+        response.data;
+
+      setUserData({
+        name,
+        email,
+        contactNumber,
+        dateOfBirth,
+        stateOfResidence,
+        image,
+      });
+
+      console.log(userData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleEdit = () => {
     setIsEditing(true);
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     setIsEditing(false);
-    // Perform any save logic here, such as making an API request
+    try {
+      const formData = new FormData();
+      formData.append("name", userData.name);
+      formData.append("email", userData.email);
+      formData.append("contactNumber", userData.contactNumber);
+      formData.append("dateOfBirth", userData.dateOfBirth);
+      formData.append("stateOfResidence", userData.stateOfResidence);
+      formData.append("image", userData.image);
+
+      await API.put(`/app/user/edit-profile/${userId}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleInputChange = (event) => {
-    setTextValue(event.target.value);
-  };
+    const { name, value, files } = event.target;
 
-  const [selectedDate, setSelectedDate] = useState(null);
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
+    if (name === "image") {
+      setUserData((prevState) => ({
+        ...prevState,
+        image: files[0],
+      }));
+    } else {
+      setUserData((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    }
   };
 
   return (
-    <div className='Setting-main-view'>
-      <div className='Setting-title-view'>Personal Details</div>
-      <div className='Setting-data-view'>
-        <div className='Profile-photo-view'>
-          <img src={profile} alt="Your image" />
-        </div>
-        <div className='Setting-data-text'>
-          <div className='Setting-data-title'>First name:</div>
-          <div className='Setting-data-value'>
-          {isEditing ? (
+    <div className="Setting-main-view">
+      <div className="Setting-title-view">Personal Details</div>
+      <div className="Setting-data-view">
+        {isEditing ? (
+          <div className="Profile-photo-view">
+            {userData.image && userData.image !== "undefined" ? (
+              <img src={userData.image} alt="profile" />
+            ) :  user.result.image ? (
+              <img src={user.result.image} alt="profile" />
+            ) : (
+              <img src={profile} alt="profile" />
+            )}
             <input
-              type="text"
-              value={textValue}
+              type="file"
+              name="image"
+              accept="image/*"
               onChange={handleInputChange}
             />
-          ) : (
-            <p>{textValue}</p>
-          )}
           </div>
-        </div>
-        <div className='Setting-data-text'>
-          <div className='Setting-data-title'>Last name:</div>
-          <div className='Setting-data-value'>
-            {isEditing ? (
-            <input
-              type="text"
-              value={textValue}
-              onChange={handleInputChange}
-            />
-          ) : (
-            <p>{textValue}</p>
-          )}
+        ) : (
+          <div className="Profile-photo-view">
+            {userData.image && userData.image !== "undefined" ? (
+              <img src={userData.image} alt="profile" />
+            ) :  user.result.image ? (
+              <img src={user.result.image} alt="profile" />
+            ) : (
+              <img src={profile} alt="profile" />
+            )}
           </div>
-        </div>
-        <div className='Setting-data-text'>
-          <div className='Setting-data-title'>Email:</div>
-          <div className='Setting-data-value'>
+        )}
+        <div className="Setting-data-text">
+          <div className="Setting-data-title">Name:</div>
+          <div className="Setting-data-value">
             {isEditing ? (
               <input
                 type="text"
-                value={textValue}
+                name="name"
+                value={userData.name || ""}
                 onChange={handleInputChange}
               />
             ) : (
-              <p>{textValue}</p>
+              <p>{userData.name ? userData.name : ""}</p>
             )}
           </div>
         </div>
-        <div className='Setting-data-text'>
-          <div className='Setting-data-title'>Contact number:</div>
-          <div className='Setting-data-value'>
+        <div className="Setting-data-text">
+          <div className="Setting-data-title">Email:</div>
+          <div className="Setting-data-value">
             {isEditing ? (
               <input
                 type="text"
-                value={textValue}
+                name="email"
+                value={userData.email || ""}
                 onChange={handleInputChange}
               />
             ) : (
-              <p>{textValue}</p>
+              <p>{userData.email ? userData.email : ""}</p>
             )}
           </div>
         </div>
-        <div className='Setting-data-text'>
-          <div className='Setting-data-title'>Date of birth:</div>
-          <div className='Setting-data-value'>
+        <div className="Setting-data-text">
+          <div className="Setting-data-title">Contact number:</div>
+          <div className="Setting-data-value">
             {isEditing ? (
               <input
                 type="text"
-                value={textValue}
+                name="contactNumber"
+                value={userData.contactNumber || ""}
                 onChange={handleInputChange}
               />
             ) : (
-              <p>{textValue}</p>
+              <p>{userData.contactNumber ? userData.contactNumber : ""}</p>
             )}
           </div>
         </div>
-        <div className='Setting-data-text'>
-          <div className='Setting-data-title'>State of residence:</div>
-          <div className='Setting-data-value'>
-          {isEditing ? (
+        <div className="Setting-data-text">
+          <div className="Setting-data-title">Date of birth:</div>
+          <div className="Setting-data-value">
+            {isEditing ? (
               <input
-                type="text"
-                value={textValue}
+                type="date"
+                name="dateOfBirth"
+                value={userData.dateOfBirth || ""}
                 onChange={handleInputChange}
               />
             ) : (
-              <p>{textValue}</p>
+              <p>{formattedDateOfBirth ? formattedDateOfBirth : ""}</p>
+            )}
+          </div>
+        </div>
+        <div className="Setting-data-text">
+          <div className="Setting-data-title">State of residence:</div>
+          <div className="Setting-data-value">
+            {isEditing ? (
+              <input
+                type="text"
+                name="stateOfResidence"
+                value={userData.stateOfResidence || ""}
+                onChange={handleInputChange}
+              />
+            ) : (
+              <p>{userData.stateOfResidence ? userData.stateOfResidence : ""}</p>
             )}
           </div>
         </div>
       </div>
-      
-      {isEditing ? (
-        <button onClick={handleSave} className='save-button'><img src={check} alt="" /><h3>Save</h3></button>
-        ) : (
-        <button onClick={handleEdit} className='edit-button'><img src={edit} alt="edit" /><p>Edit</p></button>
-        )}  
-      
-    </div>
-  )
-}
 
-export default PersonalDetails
+      {isEditing ? (
+        <button onClick={handleSave} className="save-button">
+          <img src={check} alt="" />
+          <h3>Save</h3>
+        </button>
+      ) : (
+        <button onClick={handleEdit} className="edit-button">
+          <img src={edit} alt="edit" />
+          <p>Edit</p>
+        </button>
+      )}
+    </div>
+  );
+};
+
+export default PersonalDetails;
