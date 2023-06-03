@@ -21,6 +21,9 @@ import TDEE from "./UserDashboard/Tools/TDEE";
 import WorkoutPlanner from "./UserDashboard/Tools/WorkoutPlanner";
 import DailyCalorie from "./UserDashboard/Tools/DailyCalorie";
 import PostDetails from "./UserDashboard/PostDetails";
+import ShowPlans from "./UserDashboard/ShowPlans";
+import Coaches from "./UserDashboard/Coaches";
+import Trackers from "./UserDashboard/Trackers";
 
 export {
     Aboutus,
@@ -45,5 +48,8 @@ export {
     TDEE,
     WorkoutPlanner,
     DailyCalorie,
-    PostDetails
+    PostDetails,
+    ShowPlans,
+    Coaches,
+    Trackers,
 }

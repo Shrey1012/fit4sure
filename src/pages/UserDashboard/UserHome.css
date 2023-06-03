@@ -68,6 +68,7 @@
     text-align: left;
     color: #BD3C2A;
     text-decoration: underline solid 1px;
+    cursor: pointer;
 }
 .User-tool-cards{
     height: 86%;

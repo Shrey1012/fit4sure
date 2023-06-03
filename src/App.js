@@ -26,7 +26,12 @@ import {
   DailyCalorie,
   PostDetails,
   UserSettings,
+  ShowPlans,
+  Coaches,
+  Trackers,
 } from "./pages";
+
+const user = JSON.parse(localStorage.getItem("profile"));
 
 function App() {
   return (
@@ -40,13 +45,13 @@ function App() {
             </GuestRoute>
           }
         ></Route>
-        <Route 
-          path="/getcoach" 
+        <Route
+          path="/getcoach"
           element={
             <GuestRoute>
               <GetCoach />
             </GuestRoute>
-        }
+          }
         ></Route>
         <Route
           path="/aboutus"
@@ -79,9 +84,45 @@ function App() {
               <Contactus />
             </GuestRoute>
           }
-        ></Route>
-        <Route path="/allcoaches1" element={<AllCoaches1 />}></Route>
-        <Route path="/allcoaches2" element={<AllCoaches2 />}></Route>
+        />
+        {user ? (
+          <Route
+            path="/allcoaches1"
+            element={
+              <PrivateRoute>
+                <AllCoaches1 />
+              </PrivateRoute>
+            }
+          />
+        ) : (
+          <Route
+            path="/allcoaches1"
+            element={
+              <GuestRoute>
+                <AllCoaches1 />
+              </GuestRoute>
+            }
+          />
+        )}
+        {user ? (
+          <Route
+            path="/allcoaches2"
+            element={
+              <PrivateRoute>
+                <AllCoaches2 />
+              </PrivateRoute>
+            }
+          />
+        ) : (
+          <Route
+            path="/allcoaches2"
+            element={
+              <GuestRoute>
+                <AllCoaches2 />
+              </GuestRoute>
+            }
+          />
+        )}
         <Route
           path="/userhome"
           element={
@@ -97,12 +138,20 @@ function App() {
               <UserCommunity />
             </PrivateRoute>
           }
-        ></Route>
+        />
         <Route
           path="/usersettings/*"
           element={
             <PrivateRoute>
               <UserSettings />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/trackers/*"
+          element={
+            <PrivateRoute>
+              <Trackers />
             </PrivateRoute>
           }
         />
@@ -113,7 +162,7 @@ function App() {
               <Signin />
             </GuestRoute>
           }
-        ></Route>
+        />
         <Route
           path="/signup"
           element={
@@ -121,7 +170,7 @@ function App() {
               <Signup />
             </GuestRoute>
           }
-        ></Route>
+        />
         <Route
           path="/posts/all"
           element={
@@ -129,7 +178,7 @@ function App() {
               <AllPosts />
             </PrivateRoute>
           }
-        ></Route>
+        />
         <Route
           path="/post-details/:postId"
           element={
@@ -137,7 +186,7 @@ function App() {
               <PostDetails />
             </PrivateRoute>
           }
-        ></Route>
+        />
         <Route
           path="/posts/:category"
           element={
@@ -145,7 +194,7 @@ function App() {
               <CategoryPage />
             </PrivateRoute>
           }
-        ></Route>
+        />
         <Route
           path="/bmi"
           element={
@@ -153,7 +202,7 @@ function App() {
               <BMI />
             </PrivateRoute>
           }
-        ></Route>
+        />
         <Route
           path="/bmr"
           element={
@@ -161,7 +210,7 @@ function App() {
               <BMR />
             </PrivateRoute>
           }
-        ></Route>
+        />
         <Route
           path="/bfp"
           element={
@@ -169,7 +218,7 @@ function App() {
               <BFP />
             </PrivateRoute>
           }
-        ></Route>
+        />
         <Route
           path="/tdee"
           element={
@@ -177,7 +226,7 @@ function App() {
               <TDEE />
             </PrivateRoute>
           }
-        ></Route>
+        />
         <Route
           path="/workoutplanner"
           element={
@@ -185,7 +234,7 @@ function App() {
               <WorkoutPlanner />
             </PrivateRoute>
           }
-        ></Route>
+        />
         <Route
           path="/dailycalorie"
           element={
@@ -193,7 +242,23 @@ function App() {
               <DailyCalorie />
             </PrivateRoute>
           }
-        ></Route>
+        />
+        <Route
+          path="/showplans"
+          element={
+            <PrivateRoute>
+              <ShowPlans />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/coaches"
+          element={
+            <PrivateRoute>
+              <Coaches />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </>
   );
@@ -206,7 +271,7 @@ const GuestRoute = ({ children, ...rest }) => {
   ) : (
     <>
       <Navbar />
-    {children}
+      {children}
       <Footer />
     </>
   );
@@ -217,7 +282,7 @@ const PrivateRoute = ({ children, ...rest }) => {
   return authData ? (
     <>
       <UserDashNav />
-    {children}
+      {children}
     </>
   ) : (
     <Navigate to="/signin" state={{ from: rest.location }} />

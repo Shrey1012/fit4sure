@@ -2,10 +2,12 @@ import React from 'react'
 import './UserHome.css'
 import UserDashNav from './UserDashNav';
 import { UserToolsData } from '../../data'
+import {useNavigate} from 'react-router-dom'
 import ToolCard from './ToolCard'
 import thumbnail1 from '../../assets/thumbnail1.svg'
 
 const UserHome = () => {
+  const navigate = useNavigate();
   return (
     <> 
     <div className='User-home-main'>
@@ -16,7 +18,7 @@ const UserHome = () => {
         <div className='User-home-tools'>
           <div className='User-tools-title'>
             <h2>Fitness Trackers</h2>
-            <p>View all</p>
+            <p onClick={()=> navigate('/trackers')}>View all</p>
           </div>
           <div className='User-tool-cards'>
           {
