@@ -24,6 +24,7 @@ import PostDetails from "./UserDashboard/PostDetails";
 import ShowPlans from "./UserDashboard/ShowPlans";
 import Coaches from "./UserDashboard/Coaches";
 import Trackers from "./UserDashboard/Trackers";
+import ShortVideos from "./UserDashboard/ShortVideos";
 
 export {
     Aboutus,
@@ -52,4 +53,5 @@ export {
     ShowPlans,
     Coaches,
     Trackers,
+    ShortVideos
 }

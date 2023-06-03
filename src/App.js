@@ -29,6 +29,7 @@ import {
   ShowPlans,
   Coaches,
   Trackers,
+  ShortVideos,
 } from "./pages";
 
 const user = JSON.parse(localStorage.getItem("profile"));
@@ -155,6 +156,7 @@ function App() {
             </PrivateRoute>
           }
         />
+
         <Route
           path="/signin"
           element={
@@ -169,6 +171,14 @@ function App() {
             <GuestRoute>
               <Signup />
             </GuestRoute>
+          }
+        />
+        <Route
+          path="/shortvideos"
+          element={
+            <PrivateRoute>
+              <ShortVideos />
+            </PrivateRoute>
           }
         />
         <Route

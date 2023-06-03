@@ -1,13 +1,9 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect}  from 'react'
 import axios from 'axios'
-import './UserHome.css'
-import { UserToolsData } from '../../data'
-import {useNavigate} from 'react-router-dom'
-import ToolCard from './ToolCard'
+import './ShortVideos.css'
 
-const UserHome = () => {
+const ShortVideos = () => {
   const [videoData, setVideoData] = useState([]);
-  const navigate = useNavigate();
 
   const userId = JSON.parse(localStorage.getItem("profile")).result._id;
 
@@ -56,38 +52,8 @@ const UserHome = () => {
   };
 
   return (
-    <> 
-    <div className='User-home-main'>
-    <div className='User-home-top'></div>
-    <div className='User-home-bottom'>
-      <div className='User-home-left'>
-        <div className='User-home-plans'></div>
-        <div className='User-home-tools'>
-          <div className='User-tools-title'>
-            <h2>Fitness Trackers</h2>
-            <p onClick={()=> navigate('/trackers')}>View all</p>
-          </div>
-          <div className='User-tool-cards'>
-          {
-          UserToolsData.map((Tools) => (
-
-            <ToolCard 
-              key={Tools.id}
-              Tool_name={Tools.Tool_name}
-              img={Tools.img}
-              link={Tools.link}
-              
-            />
-          ))
-          }
-          </div>
-        </div>
-      </div>
-      <div className='User-home-right'>
-        <div className='User-home-vid'>
-          <button onClick={()=> navigate('/shortvideos')}>View more</button>
-          <div className='vid-card'>
-          {videoData.map((video) => (
+    <div className='short-videos-main'>
+        {videoData.map((video) => (
             <div
               className="short-video"
               key={video._id}
@@ -96,8 +62,8 @@ const UserHome = () => {
               <video
                 src={video.video}
                 controls
-                width="100%"
-                height="100%"
+                width="15%"
+                height="10%"
               ></video>
               <div className="all-video-likes">
                 <p>{video.likes?.length} likes</p>
@@ -123,25 +89,8 @@ const UserHome = () => {
               </div>
           </div>
           ))}
-
-        </div>
-        </div>
-        <div className='User-home-test'>
-          <div className='test-left'>
-            <h3>Few easy steps, and know your body!</h3>
-            <p>Take a test and have detailed analysis</p>
-          </div>
-          <button>Take test</button>
-        </div>
-        <div className='User-home-other'></div>
-        <div></div>
-      </div>
     </div>
-      
-    </div>
-    </>
-    
   )
 }
 
-export default UserHome;
+export default ShortVideos
