@@ -41,7 +41,11 @@ const UserHome = () => {
           </div>
         </div>
         <div className='User-home-test'>
-          
+          <div className='test-left'>
+            <h3>Few easy steps, and know your body!</h3>
+            <p>Take a test and have detailed analysis</p>
+          </div>
+          <button>Take test</button>
         </div>
         <div className='User-home-other'></div>
         <div></div>

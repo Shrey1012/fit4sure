@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./TDEE.css";
 import back from '../../../assets/back.svg'
 import Question from '../../../assets/Question.svg'
+import { useNavigate } from "react-router-dom";
+
 
 const TDEE = () => {
   const [weight, setWeight] = useState("");
@@ -12,7 +14,7 @@ const TDEE = () => {
   const [tdeeData, setTdeeData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
+  const navigate = useNavigate();
   const calculateTdee = async () => {
     setIsLoading(true);
 
@@ -53,7 +55,7 @@ const TDEE = () => {
     <div className="bmi-main">
       <div className="bmi-left">
       <div className="bmi-left-top">
-        <img src={back} alt="" />
+        <img onClick = {() => navigate("/userhome")} src={back} alt="" />
         <h2 className="bmi-title">TDEE Calculator</h2>
       </div>
       <div className="bmi-left-bottom">  

@@ -3,7 +3,7 @@ import axios from "axios";
 import moment from "moment/moment";
 import "./PersonalDetails.css";
 import profile from "../../../assets/profile.svg";
-import edit from "../../../assets/edit.svg";
+import edit_icon from "../../../assets/edit_icon.svg";
 import check from "../../../assets/check.svg";
 
 const PersonalDetails = () => {
@@ -215,16 +215,11 @@ const PersonalDetails = () => {
       </div>
 
       {isEditing ? (
-        <button onClick={handleSave} className="save-button">
-          <img src={check} alt="" />
-          <h3>Save</h3>
-        </button>
-      ) : (
-        <button onClick={handleEdit} className="edit-button">
-          <img src={edit} alt="edit" />
-          <p>Edit</p>
-        </button>
-      )}
+        <button onClick={handleSave} className='save-button'><img src={check} alt="" /><h3>Save</h3></button>
+        ) : (
+        <button onClick={handleEdit} className='edit-button'><img src={edit_icon} alt="edit" /><p>Edit</p></button>
+        )}  
+      
     </div>
   );
 };

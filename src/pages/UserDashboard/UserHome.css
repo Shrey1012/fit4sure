@@ -81,17 +81,17 @@
     
 }
 .User-home-right{
-    width: 53%;
-    height: 95%;
+    width: 51%;
+    height: 89%;
     background-color: white;
 
     box-shadow: 0px 0px 20px 0px #0000001A;
     border-radius: 10px;
+    padding: 24px;
 }
 .User-home-vid{
     width: 90%;
     height: 40%;
-    background-color: cadetblue ;
 }
 .vid-card{
     height: 100%;
@@ -100,5 +100,48 @@
 .vid-card img{
     height: 100%;
     border-radius: 5px;
+}
+.User-home-test{
+    width: 100%;
+    box-shadow: 0px 0px 15px 0px #6B357D1A;
+    height: 20%;
+    background-color: white;
+    margin-top: 4%;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.test-left{
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8%;
+    padding-left: 5%;
+}
+.User-home-test button{
+    background-color: #BD3C2A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 160px;
+    height: 36px;
+    font-family: Nunito;
+    font-size: 16px;
+    font-weight: 600;
+}
+.test-left h3{
+    color: #1F1704;
+    margin: 0;
+    padding: 0;
+}
+.test-left p{
+    color: #433F37;
+    margin: 0;
+    padding: 0;
 }
 
