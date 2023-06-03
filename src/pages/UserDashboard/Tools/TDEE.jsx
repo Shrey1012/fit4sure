@@ -50,7 +50,7 @@ const TDEE = () => {
     setGender("");
     setActivityLevel("");
   };
-
+ 
   return (
     <div className="bmi-main">
       <div className="bmi-left">

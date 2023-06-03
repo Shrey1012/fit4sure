@@ -56,7 +56,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 5%;
+  gap: 5%; 
   padding-top: 10%;
 }
 /* .tryy{
@@ -103,4 +103,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10%;
+}
+.bmi-que{
+  width: 45%;
+  height: 20%;
+  background-color: #F7F5EF;
+  border: 2px dashed #FFFFFF;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1%;
+}
+.bmi-ans{
+  width: 70%;
+  font-family: Nunito;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+
 }
