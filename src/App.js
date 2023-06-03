@@ -32,9 +32,10 @@ import {
   ShortVideos,
 } from "./pages";
 
-const user = JSON.parse(localStorage.getItem("profile"));
-
 function App() {
+
+const { authData } = useSelector((state) => state.auth);
+
   return (
     <>
       <Routes>
@@ -45,7 +46,7 @@ function App() {
               <Home />
             </GuestRoute>
           }
-        ></Route>
+        />
         <Route
           path="/getcoach"
           element={
@@ -53,7 +54,7 @@ function App() {
               <GetCoach />
             </GuestRoute>
           }
-        ></Route>
+        />
         <Route
           path="/aboutus"
           element={
@@ -61,7 +62,7 @@ function App() {
               <Aboutus />
             </GuestRoute>
           }
-        ></Route>
+        />
         <Route
           path="/plans"
           element={
@@ -69,7 +70,7 @@ function App() {
               <Plans />
             </GuestRoute>
           }
-        ></Route>
+        />
         <Route
           path="/career"
           element={
@@ -77,7 +78,7 @@ function App() {
               <Career />
             </GuestRoute>
           }
-        ></Route>
+        />
         <Route
           path="/contactus"
           element={
@@ -86,7 +87,7 @@ function App() {
             </GuestRoute>
           }
         />
-        {user ? (
+        {authData ? (
           <Route
             path="/allcoaches1"
             element={
@@ -105,7 +106,7 @@ function App() {
             }
           />
         )}
-        {user ? (
+        {authData ? (
           <Route
             path="/allcoaches2"
             element={
