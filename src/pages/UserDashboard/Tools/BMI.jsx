@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./BMI.css";
-import Question from '../../../assets/Question.svg'
-import back from '../../../assets/back.svg'
+import Question from "../../../assets/Question.svg";
+import back from "../../../assets/back.svg";
 
 const BMI = () => {
   const [weight, setWeight] = useState("");
@@ -70,59 +70,63 @@ const BMI = () => {
 
   return (
     <div className="bmi-main">
-    <div className="bmi-left">
-      <div className="bmi-left-top">
-        <img src={back} alt="" />
-        <h2 className="bmi-title">BMI Calculator</h2>
-      </div>
-      <div className="bmi-left-bottom">  
-      <form className="bmi-form" onSubmit={handleSubmit}>
-        <div className="bmi-input-container">
-          
-          <label className="bmi-label">
-            <div>Weight: </div>
-            <input
-              className="bmi-input"
-              type="text"
-              value={weight}
-              onChange={(e) => setWeight(e.target.value)}
-            />
-          </label>
-          
-          <label className="bmi-label">
-            <div>Height: </div>
-            <input
-              className="bmi-input"
-              type="text"
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-            />
-          </label>
+      <div className="bmi-left">
+        <div className="bmi-left-top">
+          <img src={back} alt="" />
+          <h2 className="bmi-title">BMI Calculator</h2>
         </div>
-        <button className="bmi-button" type="submit">
-          Calculate BMI
-        </button>
-      </form>
-      
-      {isLoading && <div className="bmi-message">Loading...</div>}
-      {error && <div className="bmi-message">Error: {error}</div>}
-      {bmiData && (
-        <div className="bmi-result">
-          <p className="bmi-info">BMI: {bmiData.info.bmi}</p>
-          <p className="bmi-info">
-            Body Weight Condition: {bmiData.info.health}
-          </p>
+        
+          <form className="bmi-form" onSubmit={handleSubmit}>
+            <div className="bmi-input-container">
+              <label className="bmi-label">
+                <div>Weight: </div>
+                <input
+                  className="bmi-input"
+                  type="text"
+                  value={weight}
+                  onChange={(e) => setWeight(e.target.value)}
+                  ref={weightInputRef}
+                  autoFocus
+                />
+              </label>
+
+              <label className="bmi-label">
+                <div>Height: </div>
+                <input
+                  className="bmi-input"
+                  type="text"
+                  value={height}
+                  onChange={(e) => setHeight(e.target.value)}
+                  ref={heightInputRef}
+                />
+              </label>
+            </div>
+            <button className="bmi-button" type="submit">
+              Calculate BMI
+            </button>
+          </form>
+
+          {isLoading && <div className="bmi-message">Loading...</div>}
+          {error && <div className="bmi-message">Error: {error}</div>}
+          {bmiData && (
+            <div className="bmi-result">
+              <p className="bmi-info">BMI: {bmiData.info.bmi}</p>
+              <p className="bmi-info">
+                Body Weight Condition: {bmiData.info.health}
+              </p>
+            </div>
+          )}
+      </div>
+      <div className="bmi-right">
+        <div className="bmi-que">
+          <img src={Question} alt="" />
+          <h2>What is BMI?</h2>
         </div>
-      )}
-      </div>
-    </div>
-    <div className="bmi-right">
-      <div className="bmi-que">
-        <img src={Question} alt="" />
-        <h2>What is BMI?</h2>
-      </div>
-      <div className="bmi-ans">
-      Lorem ipsum dolor sit amet. Ea obcaecati inventore aut quis galisum ut placeat voluptatum nam assumenda facere. Qui omnis quibusdam sit galisum quia aut numquam iusto qui sequi harum.
+        <div className="bmi-ans">
+          Lorem ipsum dolor sit amet. Ea obcaecati inventore aut quis galisum ut
+          placeat voluptatum nam assumenda facere. Qui omnis quibusdam sit
+          galisum quia aut numquam iusto qui sequi harum.
+        </div>
       </div>
     </div>
   );

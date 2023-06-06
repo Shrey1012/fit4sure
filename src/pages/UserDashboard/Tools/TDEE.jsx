@@ -102,6 +102,8 @@ const TDEE = () => {
               value={weight}
               placeholder="Weight(Kg)"
               onChange={(e) => setWeight(e.target.value)}
+              ref={weightInputRef}
+              autoFocus
             />
           </label>
           <label className="bmi-label">
@@ -111,6 +113,7 @@ const TDEE = () => {
               value={height}
               placeholder="Height"
               onChange={(e) => setHeight(e.target.value)}
+              ref={heightInputRef}
             />
           </label>
           <label className="bmi-label">
@@ -120,6 +123,7 @@ const TDEE = () => {
               value={age}
               placeholder="Age"
               onChange={(e) => setAge(e.target.value)}
+              ref={ageInputRef}
             />
           </label>
           <label className="bmi-label">
@@ -127,6 +131,7 @@ const TDEE = () => {
             <select
               value={gender}
               onChange={(e) => setGender(e.target.value)}
+              ref={genderInputRef}
             >
               <option value="">Select Gender</option>
               <option value="male">Male</option>
@@ -138,6 +143,7 @@ const TDEE = () => {
             <select
               value={activityLevel}
               onChange={(e) => setActivityLevel(e.target.value)}
+              ref={activityLevelInputRef}
             >
               <option value="">Select activity level</option>
               <option value="se">Sedentary</option>

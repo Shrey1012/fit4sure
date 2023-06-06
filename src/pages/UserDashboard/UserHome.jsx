@@ -6,6 +6,18 @@ import {useNavigate} from 'react-router-dom'
 import ToolCard from './ToolCard'
 
 const UserHome = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowPopup(true);
+    document.body.classList.add("no-scroll");
+  };
+
+  const handlePopupClose = () => {
+    setShowPopup(false);
+    document.body.classList.remove("no-scroll")
+  };
+
   const [videoData, setVideoData] = useState([]);
   const navigate = useNavigate();
 
@@ -131,7 +143,7 @@ const UserHome = () => {
             <h3>Few easy steps, and know your body!</h3>
             <p>Take a test and have detailed analysis</p>
           </div>
-          <button>Take test</button>
+          <button onClick={handleButtonClick}>Take test</button>
         </div>
         <div className='User-home-other'></div>
         <div></div>
@@ -139,8 +151,15 @@ const UserHome = () => {
     </div>
       
     </div>
-    </>
+    {showPopup && (
+      <div className="home-popup">
+        <div className='Homme-popup-content'>
+          This is the popup
+        </div>
+      </div>
+      )}
     
+    </>
   )
 }
 
