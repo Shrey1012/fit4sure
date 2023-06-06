@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Signup.css";
-import googleLogo from "../assets/googleLogo.svg";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
@@ -61,9 +60,11 @@ const Signup = () => {
     });
 
     google.accounts.id.renderButton(document.getElementById("g-button"), {
-      theme: "filled_blue",
+      theme: "outine",
       size: "large",
       shape: "rectangular",
+      text: "continue_with",
+      
     });
   }, []);
 

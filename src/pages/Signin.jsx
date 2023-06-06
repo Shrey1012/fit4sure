@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Signin.css";
-import googleLogo from "../assets/googleLogo.svg";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import jwtDecode from "jwt-decode";
@@ -56,9 +55,11 @@ const Signin = () => {
     });
 
     google.accounts.id.renderButton(document.getElementById("g-button"), {
-      theme: "filled_blue",
+      theme: "outline",
       size: "large",
       shape: "rectangular",
+      text: "signin_with",
+      width: "auto",
     });
   }, []);
 
