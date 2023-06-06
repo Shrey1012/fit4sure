@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "./TDEE.css";
 import back from "../../../assets/back.svg";
 import Question from "../../../assets/Question.svg";
+import down_arrow from '../../../assets/doen_arrow.svg'
+import double_next from '../../../assets/double_next.svg'
 import { useNavigate } from "react-router-dom";
 
 const TDEE = () => {
@@ -88,81 +90,83 @@ const TDEE = () => {
   return (
     <div className="bmi-main">
       <div className="bmi-left">
+      <form className="bmi-form" onSubmit={handleSubmit}>
         <div className="bmi-left-top">
-          <img onClick={() => navigate("/userhome")} src={back} alt="" />
           <h2 className="bmi-title">TDEE Calculator</h2>
         </div>
-        <div className="bmi-left-bottom">
-          <form className="bmi-form" onSubmit={handleSubmit}>
-            <div className="bmi-input-container">
-              <label className="bmi-label">
-                <div>Weight: </div>
-                <input
-                  type="text"
-                  value={weight}
-                  onChange={(e) => setWeight(e.target.value)}
-                  ref={weightInputRef}
-                  autoFocus
-                />
-              </label>
-              <label className="bmi-label">
-                <div>Height: </div>
-                <input
-                  type="text"
-                  value={height}
-                  onChange={(e) => setHeight(e.target.value)}
-                  ref={heightInputRef}
-                />
-              </label>
-              <label className="bmi-label">
-                <div>Age: </div>
-                <input
-                  type="text"
-                  value={age}
-                  onChange={(e) => setAge(e.target.value)}
-                  ref={ageInputRef}
-                />
-              </label>
-              <label className="bmi-label">
-                <div>Gender: </div>
-                <select
-                  value={gender}
-                  onChange={(e) => setGender(e.target.value)}
-                  ref={genderInputRef}
-                >
-                  <option value="">Select gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
-              </label>
-              <label className="bmi-label">
-                <div>Activity Level: </div>
-                <select
-                  value={activityLevel}
-                  onChange={(e) => setActivityLevel(e.target.value)}
-                  ref={activityLevelInputRef}
-                >
-                  <option value="">Select activity level</option>
-                  <option value="se">Sedentary</option>
-                  <option value="la">Lightly active</option>
-                  <option value="ma">Moderately active</option>
-                  <option value="va">Very active</option>
-                  <option value="ea">Extremely active</option>
-                </select>
-              </label>
-            </div>
-            <button className="bmi-button" type="submit">
-              Calculate TDEE
-            </button>
-          </form>
-          {isLoading && <div className="bmi-message">Loading...</div>}
-          {error && <div className="bmi-message">Error: {error}</div>}
-          {tdeeData && (
-            <div className="bmi-result">
-              <p className="bmi-info">TDEE: {tdeeData.info.tdee}</p>
-            </div>
-          )}
+        <div className="bmi-input-container">
+          <label className="bmi-label">
+            <div>Weight: </div>
+            <input
+              type="text"
+              value={weight}
+              placeholder="Weight(Kg)"
+              onChange={(e) => setWeight(e.target.value)}
+            />
+          </label>
+          <label className="bmi-label">
+            <div>Height: </div>
+            <input
+              type="text"
+              value={height}
+              placeholder="Height"
+              onChange={(e) => setHeight(e.target.value)}
+            />
+          </label>
+          <label className="bmi-label">
+            <div>Age: </div>
+            <input
+              type="text"
+              value={age}
+              placeholder="Age"
+              onChange={(e) => setAge(e.target.value)}
+            />
+          </label>
+          <label className="bmi-label">
+            <div>Gender: </div>
+            <select
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+            >
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </label>
+          <label className="bmi-label">
+            <div>Activity Level: </div>
+            <select
+              value={activityLevel}
+              onChange={(e) => setActivityLevel(e.target.value)}
+            >
+              <option value="">Select activity level</option>
+              <option value="se">Sedentary</option>
+              <option value="la">Lightly active</option>
+              <option value="ma">Moderately active</option>
+              <option value="va">Very active</option>
+              <option value="ea">Extremely active</option>
+            </select>
+          </label>
         </div>
+        <div className="bmi-buttons">
+          <button className="calculate-btn" type="submit">
+            Calculate BFP
+          </button>
+          <button className="calculate-nxt">
+            Plan workout
+            <img src={double_next} alt="" />
+          </button>
+        </div>
+      </form>
+      <div className="result-area"> <p>Your TDEE is: </p>
+      {isLoading && <div className="bmi-message">Loading...</div>}
+      {error && <div className="bmi-message">Error: {error}</div>}
+      {tdeeData && (
+        <div className="bmi-result">
+          {tdeeData.info.tdee}
+        </div>
+      )}
+      </div>
       </div>
       <div className="bmi-right">
         <div className="bmi-que">

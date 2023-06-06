@@ -6,30 +6,25 @@
   align-items: flex-start;
 }
 .bmi-left {
-  padding-top: 3%;
-  padding-left: 10%;
+  
+  padding-left: 8%;
   width: 50%;
   height: 100%;
   background-color: #FCFBF9;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
-  gap: 5%;
+  gap: 3%;
 }
 .bmi-left-top{
   width: 50%;
-  height: 10%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 7%;
-
-  border-bottom: solid 2px #D2CBB9;
+  /* border-bottom: solid 2px #D2CBB9; */
+  margin-left: 3%
 }
 .bmi-left-top h2{
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
   text-align: left;
 
   color: #1F1704;
@@ -37,38 +32,43 @@
   margin: 0;
   padding: 0;
 } 
-.bmi-left-bottom{
-  width: 70%;
-  height: 70%;
-}
+
 .bmi-form{
-  height: 100%;
-  width: 80%;
+  height: 60%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 7%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 3%;
+  box-shadow: 0px 0px 20px 0px #5858581A;
+
+
 }
 .bmi-input-container{
   width: 90%;
-  height: 65%;
+  height: 67%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 5%; 
-  padding-top: 10%;
 }
 /* .tryy{
   width: 100%;
   display: flex;
 } */
 .bmi-label{
-  width: 90%;
-  height: 10%;
+  width: 78%;
+  height: 15%;
   display: flex;
   justify-content: flex-start;
-  
+  align-items: center; 
+  gap: 8%;
+  margin-left: 3%;
 }
 .bmi-label div{
   width: 80%;
@@ -80,11 +80,28 @@
 }
 .bmi-label input{
   width: 96%;
-  height: 80%;
+  height: 82%;
   padding-left: 3%;
 
   border: solid 2px #DEDEDD;
   border-radius: 5px;
+}
+.bmi-label select{
+  width: 90%;
+  height: 81%;
+  padding-left: 3%;
+  padding-right: 3%;
+
+  border: solid 2px #DEDEDD;
+  border-radius: 5px;
+  color: #a7a7a7; ;
+}
+
+.bmi-label input::placeholder{
+  font-family: Nunito;
+  color: #a7a7a7;
+  font-size: 14px;
+  font-weight: 400;
 }
 .bmi-label select{
   width: 100%;
@@ -95,8 +112,51 @@
   border-radius: 5px;
 }
 
+.bmi-buttons{
+ width: 100%;
+ height: 11%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.calculate-btn{
+  width: 30%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border: none;
+
+  font-family: Nunito;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+.calculate-nxt{
+  width: 30%;
+  height: 100%;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  border: solid 2px black;
+
+  font-family: Nunito;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+
+}
+
+
+
 .bmi-right{
-  width: 40%;
+  width: 42%;
   height: 100%;
   background-color: #F2EEE5;
   display: flex;
@@ -126,3 +186,39 @@
   text-align: center;
 
 }
+.result-area{
+  width: 70%;
+  height: 16%;
+  background-color: white;
+
+  border: solid 2px #cecece;
+  border-radius: 10px;
+  padding: 3%;
+}
+.result-area p{
+  padding: 0;
+  margin: 0;
+  color: #433F37;
+  font-weight: 400;
+  margin-bottom: 5%;
+}
+.bmi-result{
+  font-family: Nunito;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: left;
+  color: #BD3C2A;
+}
+.bmi-result p{
+  font-family: Nunito;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  color: #BD3C2A;
+}
+.bmi-message{
+  font-size: 16px;
+  font-weight: 400;
+  color: #a7a7a7;
+}
+

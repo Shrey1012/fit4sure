@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./BMR.css";
+import Question from '../../../assets/Question.svg'
+import back from '../../../assets/back.svg'
+import double_next from '../../../assets/double_next.svg'
+
 
 const BMR = () => {
   const [weight, setWeight] = useState("");
@@ -77,66 +81,89 @@ const BMR = () => {
   }, []);
 
   return (
-    <div className="bmr-container">
-      <h2 className="bmr-title">BMR Calculator</h2>
-      <form className="bmr-form" onSubmit={handleSubmit}>
-        <div className="bmr-input-container">
-          <label className="bmr-label">
-            Weight:
-            <input
-              className="bmr-input"
+    <div className="bmi-main">
+      <div className="bmi-left">
+      <form className="bmi-form" onSubmit={handleSubmit}>
+      <div className="bmi-left-top">
+        <h2 className="bmi-title">BMR Calculator</h2>
+      </div>
+        <div className="bmi-input-container">
+          <label className="bmi-label">
+            <div>Weight: </div>
+            <input 
+              className="bmi-input"
               type="text"
               value={weight}
+              placeholder="Weight(Kg)"
               onChange={(e) => setWeight(e.target.value)}
               ref={weightInputRef}
               autoFocus
             />
           </label>
-          <label className="bmr-label">
-            Height:
+          <label className="bmi-label">
+            <div>Height: </div>
             <input
-              className="bmr-input"
+              className="bmi-input"
               type="text"
               value={height}
+              placeholder="Height(cm)"
               onChange={(e) => setHeight(e.target.value)}
               ref={heightInputRef}
             />
           </label>
-          <label className="bmr-label">
-            Age:
+          <label className="bmi-label">
+            <div>Age: </div> 
             <input
-              className="bmr-input"
+              className="bmi-input"
               type="text"
               value={age}
+              placeholder="Age"
               onChange={(e) => setAge(e.target.value)}
               ref={ageInputRef}
             />
           </label>
-          <label className="bmr-label">
-            Gender:
+          <label className="bmi-label">
+            <div>Gender: </div>
             <select
-              className="bmr-input"
               value={gender}
               onChange={(e) => setGender(e.target.value)}
               ref={genderInputRef}
             >
-              <option value="">Select gender</option>
+              <option value="">Select Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
           </label>
         </div>
-        <button className="bmr-button" type="submit">
-          Calculate BMR
-        </button>
+        <div className="bmi-buttons">
+          <button className="calculate-btn" type="submit">
+            Calculate BMR
+          </button>
+          <button className="calculate-nxt">
+            Calculate BFP
+            <img src={double_next} alt="" />
+          </button>
+        </div>
       </form>
-      {isLoading && <div className="bmr-message">Loading...</div>}
-      {error && <div className="bmr-message">Error: {error}</div>}
+      <div className="result-area"><p>Your BMR value:</p>
+      {isLoading && <div className="bmi-message">Loading...</div>}
+      {error && <div className="bmi-message">Error: {error}</div>}
       {bmrData && (
-        <div className="bmr-result">
-          <p className="bmr-info">BMR: {bmrData.info.bmr}</p>
+        <div className="bmi-result">
+          {bmrData.info.bmr}
         </div>
       )}
+      </div>
+      </div>
+      <div className="bmi-right">
+        <div className="bmi-que">
+          <img src={Question} alt="" />
+          <h2>What is BMR?</h2>
+        </div>
+        <div className="bmi-ans">
+        Lorem ipsum dolor sit amet. Ea obcaecati inventore aut quis galisum ut placeat voluptatum nam assumenda facere. Qui omnis quibusdam sit galisum quia aut numquam iusto qui sequi harum.
+        </div>
+      </div>
     </div>
   );
 };

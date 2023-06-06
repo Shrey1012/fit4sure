@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./BFP.css";
+import Question from '../../../assets/Question.svg'
+import double_next from '../../../assets/double_next.svg'
+
 
 const BFP = () => {
   const [weight, setWeight] = useState("");
@@ -77,45 +80,51 @@ const BFP = () => {
   }, []);
 
   return (
-    <div className="bfp-container">
-      <h2 className="bfp-title">BFP Calculator</h2>
-      <form className="bfp-form" onSubmit={handleSubmit}>
-        <div className="bfp-input-container">
-          <label className="bfp-label">
-            Weight:
+    <div className="bmi-main">
+      <div className="bmi-left">
+      <form className="bmi-form" onSubmit={handleSubmit}>
+        <div className="bmi-left-top">
+          <h2 className="bmi-title">BFP Calculator</h2>
+        </div>
+        <div className="bmi-input-container">
+          <label className="bmi-label">
+            <div>Weight:</div> 
             <input
-              className="bfp-input"
+              className="bmi-input"
               type="text"
               value={weight}
+              placeholder="Weight(Kg)"
               onChange={(e) => setWeight(e.target.value)}
               ref={weightInputRef}
               autoFocus
             />
           </label>
-          <label className="bfp-label">
-            Height:
+          <label className="bmi-label">
+            <div>Height:</div> 
             <input
-              className="bfp-input"
+              className="bmi-input"
               type="text"
               value={height}
+              placeholder="Height(cm)"
               onChange={(e) => setHeight(e.target.value)}
               ref={heightInputRef}
             />
           </label>
-          <label className="bfp-label">
-            Age:
+          <label className="bmi-label">
+            <div>Age:</div> 
             <input
-              className="bfp-input"
+              className="bmi-input"
               type="text"
               value={age}
+              placeholder="Age"
               onChange={(e) => setAge(e.target.value)}
               ref={ageInputRef}
             />
           </label>
-          <label className="bfp-label">
-            Gender:
+          <label className="bmi-label">
+            <div>Gender:</div>
             <select
-              className="bfp-input"
+              className="bmi-input"
               value={gender}
               onChange={(e) => setGender(e.target.value)}
               ref={genderInputRef}
@@ -126,20 +135,38 @@ const BFP = () => {
             </select>
           </label>
         </div>
-        <button className="bfp-button" type="submit">
-          Calculate BFP
-        </button>
+        <div className="bmi-buttons">
+          <button className="calculate-btn" type="submit">
+            Calculate BFP
+          </button>
+          <button className="calculate-nxt">
+            Calculate TDEE
+            <img src={double_next} alt="" />
+          </button>
+        </div>
+        
       </form>
-      {isLoading && <div className="bfp-message">Loading...</div>}
-      {error && <div className="bfp-message">Error: {error}</div>}
+      <div className="bfp-result-area">
+      {isLoading && <div className="bmi-message">Loading...</div>}
+      {error && <div className="bmi-message">Error: {error}</div>}
       {bfpData && (
         <div className="bfp-result">
-          <p className="bfp-info">BFP: {bfpData.info.bfp}</p>
-          <p className="bfp-info">Fat mass: {bfpData.info.fat_mass}</p>
-          <p className="bfp-info">Lean Mass: {bfpData.info.lean_mass}</p>
-          <p className="bfp-info">Health Status: {bfpData.info.description}</p>
+          <p className="bfp-info">BFP: <span>{bfpData.info.bfp}</span></p>
+          <p className="bfp-info">Fat mass: <span>{bfpData.info.fat_mass}</span>, Lean Mass: <span>{bfpData.info.lean_mass}</span></p>
+          <p className="bfp-info">Health Status: <span>{bfpData.info.description}</span></p>
         </div>
       )}
+      </div>
+      </div>
+      <div className="bmi-right">
+        <div className="bmi-que">
+          <img src={Question} alt="" />
+          <h2>What is BFP?</h2>
+        </div>
+        <div className="bmi-ans">
+        Lorem ipsum dolor sit amet. Ea obcaecati inventore aut quis galisum ut placeat voluptatum nam assumenda facere. Qui omnis quibusdam sit galisum quia aut numquam iusto qui sequi harum.
+        </div>
+      </div>
     </div>
   );
 };
