@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./BFP.css";
 
 const BFP = () => {
@@ -9,6 +9,10 @@ const BFP = () => {
   const [bfpData, setBfpData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const weightInputRef = useRef(null);
+  const heightInputRef = useRef(null);
+  const ageInputRef = useRef(null);
+  const genderInputRef = useRef(null);
 
   const calculateBfp = async () => {
     setIsLoading(true);
@@ -45,6 +49,33 @@ const BFP = () => {
     setGender("");
   };
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+        e.preventDefault();
+        const inputs = [
+          weightInputRef.current,
+          heightInputRef.current,
+          ageInputRef.current,
+          genderInputRef.current,
+        ];
+        const currentIndex = inputs.findIndex(
+          (ref) => ref === document.activeElement
+        );
+        const nextIndex =
+          (currentIndex + (e.key === "ArrowUp" ? -1 : 1)) % inputs.length;
+        const nextInput = inputs[nextIndex];
+        if (nextInput) {
+          nextInput.focus();
+        }
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className="bfp-container">
       <h2 className="bfp-title">BFP Calculator</h2>
@@ -57,6 +88,8 @@ const BFP = () => {
               type="text"
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
+              ref={weightInputRef}
+              autoFocus
             />
           </label>
           <label className="bfp-label">
@@ -66,6 +99,7 @@ const BFP = () => {
               type="text"
               value={height}
               onChange={(e) => setHeight(e.target.value)}
+              ref={heightInputRef}
             />
           </label>
           <label className="bfp-label">
@@ -75,6 +109,7 @@ const BFP = () => {
               type="text"
               value={age}
               onChange={(e) => setAge(e.target.value)}
+              ref={ageInputRef}
             />
           </label>
           <label className="bfp-label">
@@ -83,6 +118,7 @@ const BFP = () => {
               className="bfp-input"
               value={gender}
               onChange={(e) => setGender(e.target.value)}
+              ref={genderInputRef}
             >
               <option value="">Select gender</option>
               <option value="male">Male</option>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./WorkoutPlanner.css";
 
 const WorkoutPlanner = () => {
@@ -9,6 +9,10 @@ const WorkoutPlanner = () => {
   const [workoutData, setWorkoutData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const timeInputRef = useRef(null);
+  const muscleInputRef = useRef(null);
+  const locationInputRef = useRef(null);
+  const equipmentInputRef = useRef(null);
 
   const workoutPlan = async () => {
     setIsLoading(true);
@@ -45,6 +49,34 @@ const WorkoutPlanner = () => {
     setEquipment("");
   };
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+        e.preventDefault();
+        const inputs = [
+          timeInputRef.current,
+          muscleInputRef.current,
+          locationInputRef.current,
+          equipmentInputRef.current,
+        ];
+        const currentIndex = inputs.findIndex(
+          (ref) => ref === document.activeElement
+        );
+        const nextIndex =
+          (currentIndex + (e.key === "ArrowUp" ? -1 : 1)) % inputs.length;
+        const nextInput = inputs[nextIndex];
+        if (nextInput) {
+          nextInput.focus();
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className="workout-container">
       <h2 className="workout-title">Workout Planner</h2>
@@ -57,7 +89,9 @@ const WorkoutPlanner = () => {
               type="text"
               value={time}
               onChange={(e) => setTime(e.target.value)}
-            />
+              ref={timeInputRef}
+              autoFocus
+              />
           </label>
           <label className="workout-label">
             Muscle:
@@ -66,6 +100,7 @@ const WorkoutPlanner = () => {
               type="text"
               value={muscle}
               onChange={(e) => setMuscle(e.target.value)}
+              ref={muscleInputRef}
             />
           </label>
           <label className="workout-label">
@@ -75,6 +110,7 @@ const WorkoutPlanner = () => {
               type="text"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
+              ref={locationInputRef}
             />
           </label>
           <label className="workout-label">
@@ -84,6 +120,7 @@ const WorkoutPlanner = () => {
               type="text"
               value={equipment}
               onChange={(e) => setEquipment(e.target.value)}
+              ref={equipmentInputRef}
             />
           </label>
         </div>
