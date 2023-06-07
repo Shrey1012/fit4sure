@@ -55,30 +55,30 @@ const BMR = () => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+      if (e.key === "Enter") {
         e.preventDefault();
-        const inputs = [
-          weightInputRef.current,
-          heightInputRef.current,
-          ageInputRef.current,
-          genderInputRef.current,
-        ];
+        const inputs = [weightInputRef.current, heightInputRef.current, ageInputRef.current, genderInputRef.current];
         const currentIndex = inputs.findIndex(
           (ref) => ref === document.activeElement
         );
-        const nextIndex =
-          (currentIndex + (e.key === "ArrowUp" ? -1 : 1)) % inputs.length;
-        const nextInput = inputs[nextIndex];
-        if (nextInput) {
-          nextInput.focus();
+  
+        if (currentIndex === inputs.length - 1 && weight && height && age && gender) {
+          calculateBmr();
+          setWeight("");
+          setHeight("");
+          setAge("");
+          setGender("");
+        } else if (currentIndex + 1 < inputs.length) {
+          inputs[currentIndex + 1].focus();
         }
       }
     };
+  
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [weight, height,age,gender]);
 
   return (
     <div className="bmi-main">

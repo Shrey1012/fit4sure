@@ -51,7 +51,7 @@ const WorkoutPlanner = () => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+      if (e.key === "Enter") {
         e.preventDefault();
         const inputs = [
           timeInputRef.current,
@@ -62,11 +62,21 @@ const WorkoutPlanner = () => {
         const currentIndex = inputs.findIndex(
           (ref) => ref === document.activeElement
         );
-        const nextIndex =
-          (currentIndex + (e.key === "ArrowUp" ? -1 : 1)) % inputs.length;
-        const nextInput = inputs[nextIndex];
-        if (nextInput) {
-          nextInput.focus();
+
+        if (
+          currentIndex === inputs.length - 1 &&
+          time &&
+          muscle &&
+          location &&
+          equipment
+        ) {
+          workoutPlan();
+          setTime("");
+          setMuscle("");
+          setLocation("");
+          setEquipment("");
+        } else if (currentIndex + 1 < inputs.length) {
+          inputs[currentIndex + 1].focus();
         }
       }
     };
@@ -75,7 +85,7 @@ const WorkoutPlanner = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [time, muscle, location, equipment]);
 
   return (
     <div className="workout-container">
@@ -91,7 +101,7 @@ const WorkoutPlanner = () => {
               onChange={(e) => setTime(e.target.value)}
               ref={timeInputRef}
               autoFocus
-              />
+            />
           </label>
           <label className="workout-label">
             Muscle:

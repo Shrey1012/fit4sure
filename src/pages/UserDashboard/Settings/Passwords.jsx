@@ -59,34 +59,40 @@ const Passwords = () => {
     {successMessage && <p className="success-message">{successMessage}</p>}
     <form className="passwords-form" onSubmit={handleChangePassword}>
       <div className="passwords-form-group">
-        <label className="passwords-form-label">
+        <label className="passwords-form-label" htmlFor='oldPass'>
           Old Password:
           <input
             className="passwords-form-input"
             type="password"
             value={oldPassword}
+            name='oldPass'
+            id='oldPass'
             onChange={(e) => setOldPassword(e.target.value)}
           />
         </label>
       </div>
       <div className="passwords-form-group">
-        <label className="passwords-form-label">
+        <label className="passwords-form-label" htmlFor='newPass'>
           New Password:
           <input
             className="passwords-form-input"
             type="password"
             value={newPassword}
+            name='newPass'
+            id='newPass'
             onChange={(e) => setNewPassword(e.target.value)}
           />
         </label>
       </div>
       <div className="passwords-form-group">
-        <label className="passwords-form-label">
+        <label className="passwords-form-label" htmlFor='confirmNewPass'>
           Confirm New Password:
           <input
             className="passwords-form-input"
             type="password"
             value={confirmNewPassword}
+            name='confirmNewPass'
+            id='confirmNewPass'
             onChange={(e) => setConfirmNewPassword(e.target.value)}
           />
         </label>

@@ -31,6 +31,9 @@ const BMI = () => {
 
       const data = await response.json();
       setBmiData(data);
+      console.log(data);
+      console.log(weight);
+      console.log(height);
     } catch (error) {
       setError(error.message);
     } finally {
@@ -47,26 +50,28 @@ const BMI = () => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+      if (e.key === "Enter") {
         e.preventDefault();
         const inputs = [weightInputRef.current, heightInputRef.current];
         const currentIndex = inputs.findIndex(
           (ref) => ref === document.activeElement
         );
-        const nextIndex =
-          (currentIndex + (e.key === "ArrowUp" ? -1 : 1)) % inputs.length;
-        const nextInput = inputs[nextIndex];
-        if (nextInput) {
-          nextInput.focus();
+  
+        if (currentIndex === inputs.length - 1 && weight && height) {
+          calculateBmi();
+          setWeight("");
+          setHeight("");
+        } else if (currentIndex + 1 < inputs.length) {
+          inputs[currentIndex + 1].focus();
         }
       }
     };
-
+  
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [weight, height]);
 
   return (
     <div className="bmi-main">
@@ -75,47 +80,47 @@ const BMI = () => {
           <img src={back} alt="" />
           <h2 className="bmi-title">BMI Calculator</h2>
         </div>
-        
-          <form className="bmi-form" onSubmit={handleSubmit}>
-            <div className="bmi-input-container">
-              <label className="bmi-label">
-                <div>Weight: </div>
-                <input
-                  className="bmi-input"
-                  type="text"
-                  value={weight}
-                  onChange={(e) => setWeight(e.target.value)}
-                  ref={weightInputRef}
-                  autoFocus
-                />
-              </label>
 
-              <label className="bmi-label">
-                <div>Height: </div>
-                <input
-                  className="bmi-input"
-                  type="text"
-                  value={height}
-                  onChange={(e) => setHeight(e.target.value)}
-                  ref={heightInputRef}
-                />
-              </label>
-            </div>
-            <button className="bmi-button" type="submit">
-              Calculate BMI
-            </button>
-          </form>
+        <form className="bmi-form" onSubmit={handleSubmit}>
+          <div className="bmi-input-container">
+            <label className="bmi-label">
+              <div>Weight: </div>
+              <input
+                className="bmi-input"
+                type="text"
+                value={weight}
+                onChange={(e) => setWeight(e.target.value)}
+                ref={weightInputRef}
+                autoFocus
+              />
+            </label>
 
-          {isLoading && <div className="bmi-message">Loading...</div>}
-          {error && <div className="bmi-message">Error: {error}</div>}
-          {bmiData && (
-            <div className="bmi-result">
-              <p className="bmi-info">BMI: {bmiData.info.bmi}</p>
-              <p className="bmi-info">
-                Body Weight Condition: {bmiData.info.health}
-              </p>
-            </div>
-          )}
+            <label className="bmi-label">
+              <div>Height: </div>
+              <input
+                className="bmi-input"
+                type="text"
+                value={height}
+                onChange={(e) => setHeight(e.target.value)}
+                ref={heightInputRef}
+              />
+            </label>
+          </div>
+          <button className="bmi-button" type="submit">
+            Calculate BMI
+          </button>
+        </form>
+
+        {isLoading && <div className="bmi-message">Loading...</div>}
+        {error && <div className="bmi-message">Error: {error}</div>}
+        {bmiData && (
+          <div className="bmi-result">
+            <p className="bmi-info">BMI: {bmiData.info.bmi}</p>
+            <p className="bmi-info">
+              Body Weight Condition: {bmiData.info.health}
+            </p>
+          </div>
+        )}
       </div>
       <div className="bmi-right">
         <div className="bmi-que">
