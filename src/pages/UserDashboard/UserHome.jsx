@@ -4,6 +4,7 @@ import './UserHome.css'
 import { UserToolsData } from '../../data'
 import {useNavigate} from 'react-router-dom'
 import ToolCard from './ToolCard'
+import VideoPlayer from '../../components/VideoPlayer'
 
 const UserHome = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -101,16 +102,11 @@ const UserHome = () => {
           <div className='vid-card'>
           {videoData.map((video) => (
             <div
-              className="short-video"
+              className="user-home-short-video"
               key={video._id}
             >
               <h5>{video.title}</h5>
-              <video
-                src={video.video}
-                controls
-                width="100%"
-                height="100%"
-              ></video>
+              <VideoPlayer src={video.video} />
               <div className="all-video-likes">
                 <p>{video.likes?.length} likes</p>
                 {video.likes?.includes(userId) ? (

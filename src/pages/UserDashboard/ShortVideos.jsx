@@ -1,6 +1,7 @@
 import React,{useState,useEffect}  from 'react'
 import axios from 'axios'
 import './ShortVideos.css'
+import VideoPlayer from '../../components/VideoPlayer'
 
 const ShortVideos = () => {
   const [videoData, setVideoData] = useState([]);
@@ -59,12 +60,7 @@ const ShortVideos = () => {
               key={video._id}
             >
               <h5>{video.title}</h5>
-              <video
-                src={video.video}
-                controls
-                width="15%"
-                height="10%"
-              ></video>
+              <VideoPlayer src={video.video} />
               <div className="all-video-likes">
                 <p>{video.likes?.length} likes</p>
                 {video.likes?.includes(userId) ? (

@@ -95,10 +95,12 @@
 .vid-card {
   height: 100%;
   aspect-ratio: 0.5625;
+  display: flex;
 }
-.vid-card img {
-  height: 100%;
-  border-radius: 5px;
+.user-home-short-video{
+  width: 50%;
+  height: 50%;
+  margin-right: 2%;
 }
 .User-home-test {
   width: 100%;

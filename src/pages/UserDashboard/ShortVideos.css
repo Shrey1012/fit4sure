@@ -1,5 +1,9 @@
 .short-videos-main{
   padding-left: 10%;
   display: flex;
- flex-direction: column;
+ flex-direction: row;
+}
+
+.short-video{
+  margin-right: 30px;
 }
