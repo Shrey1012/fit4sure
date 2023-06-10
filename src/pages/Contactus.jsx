@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contactus.css";
 import contact_leftImg from "../assets/contact_leftImg.svg";
 import whatsapp_logo from "../assets/whatsapp_logo.svg";
 import message_logo from "../assets/message_logo.svg";
 import mail_logo from "../assets/mail_logo.svg";
+import axios from "axios";
 
 const Contactus = () => {
   const phoneNumber = "+919313100852"; // Replace with your phone number
@@ -11,6 +12,11 @@ const Contactus = () => {
   const emailAddress = "202051053@iiitvadodara.ac.in"; // Replace with the recipient's email address
   const subject = "Question about your product"; // Replace with your email subject
   const body = "Hello, I have a question about your product..."; // Replace with your email body
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [topic, setTopic] = useState("");
 
   const handleWhatsapp = () => {
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
@@ -30,6 +36,22 @@ const Contactus = () => {
     window.location.href = url;
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios.post("http://localhost:3001/app/usercontactinfo/add", {
+      name,
+      email,
+      mobileNumber,
+      topic,
+    });
+
+    setName("");
+    setEmail("");
+    setMobileNumber("");
+    setTopic("");
+  };
+
   return (
     <div className="contact-main">
       <div className="contact-txt1">Talk to us</div>
@@ -42,19 +64,49 @@ const Contactus = () => {
           <img src={contact_leftImg} alt="Contact us" />
         </div>
         <div className="contact-mid-right">
-          <div>Name</div>
-          <input type="Name" placeholder="Name" />
-          <div>Email</div>
-          <input type="Email" placeholder="Email" />
-          <div>Mobile number</div>
-          <input type="Mobile_number" placeholder="Mobile number" />
-          <div>Topic of discussion</div>
-          <input
-            id="discussion"
-            type="Topic_discussion"
-            placeholder="Write here"
-          />
-          <button className="book-now">Book now</button>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Name"
+              />
+            </div>
+            <div>
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+              />
+            </div>
+            <div>
+              <label htmlFor="mobileNumber">Mobile number</label>
+              <input
+                type="text"
+                id="mobileNumber"
+                value={mobileNumber}
+                onChange={(e) => setMobileNumber(e.target.value)}
+                placeholder="Mobile number"
+              />
+            </div>
+            <div>
+              <label htmlFor="topic">Topic of discussion</label>
+              <input
+                id="topic"
+                type="text"
+                value={topic}
+                onChange={(e) => setTopic(e.target.value)}
+                placeholder="Write here"
+              />
+            </div>
+            <button type="submit" className="book-now">Book now</button>
+          </form>
         </div>
       </div>
       <h2>or</h2>

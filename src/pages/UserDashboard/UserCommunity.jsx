@@ -95,7 +95,6 @@ const PostCategory = ({ category, categoryTitle }) => {
         >
           <h3>{post.text}</h3>
           <img className="community-img" src={post.imageURL} alt={category} />
-          {console.log(post?.user?.name)}
           <h6>By: {post?.user?.name}</h6>
           <div className="all-post-likes">
             <p>{post.likes?.length} likes</p>
