@@ -50,7 +50,11 @@ const AllPosts = () => {
         })
       );
 
-      setPosts(postsWithImageURLs);
+      const sortedPosts = postsWithImageURLs.sort((a, b) => {
+        return new Date(b.datetime) - new Date(a.datetime);
+      });
+
+      setPosts(sortedPosts);
     } catch (error) {
       console.error("Error fetching posts:", error);
     }
@@ -130,28 +134,28 @@ const AllPosts = () => {
                 )}
               </div>
               <div className="all-posts-comments">
-            <h4>Comments:</h4>
-            {post?.comments?.map((comment) => (
-              <div key={comment._id}>
-                <p>{comment.text}</p>
-                <p>By: {comment?.user?.name}</p>
+                <h4>Comments:</h4>
+                {post?.comments?.map((comment) => (
+                  <div key={comment._id}>
+                    <p>{comment.text}</p>
+                    <p>By: {comment?.user?.name}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <form onSubmit={(event) => handleCommentSubmit(event, post._id)}>
-            <input
-              type="text"
-              placeholder="Add a comment"
-              value={commentText}
-              onClick={(event) => event.stopPropagation()}
-              onChange={(event) => {
-                setCommentText(event.target.value);
-              }}
-            />
-            <button onClick={(e) => e.stopPropagation()} type="submit">
-              Submit
-            </button>
-          </form>
+              <form onSubmit={(event) => handleCommentSubmit(event, post._id)}>
+                <input
+                  type="text"
+                  placeholder="Add a comment"
+                  value={commentText}
+                  onClick={(event) => event.stopPropagation()}
+                  onChange={(event) => {
+                    setCommentText(event.target.value);
+                  }}
+                />
+                <button onClick={(e) => e.stopPropagation()} type="submit">
+                  Submit
+                </button>
+              </form>
             </div>
           ))}
         </div>

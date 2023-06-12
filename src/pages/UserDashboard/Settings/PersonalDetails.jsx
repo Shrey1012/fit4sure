@@ -16,6 +16,7 @@ const PersonalDetails = () => {
     dateOfBirth: "",
     stateOfResidence: "",
   });
+  const [previewImage, setPreviewImage] = useState(null);
 
   const [formattedDateOfBirth, setFormattedDateOfBirth] = useState("");
 
@@ -48,8 +49,14 @@ const PersonalDetails = () => {
   const fetchUserDetails = async () => {
     try {
       const response = await API.get("/app/user/user-profile");
-      const { name, email, contactNumber, dateOfBirth, stateOfResidence, image } =
-        response.data;
+      const {
+        name,
+        email,
+        contactNumber,
+        dateOfBirth,
+        stateOfResidence,
+        image,
+      } = response.data;
 
       setUserData({
         name,
@@ -59,7 +66,6 @@ const PersonalDetails = () => {
         stateOfResidence,
         image,
       });
-
     } catch (error) {
       console.log(error);
     }
@@ -85,6 +91,8 @@ const PersonalDetails = () => {
           "Content-Type": "multipart/form-data",
         },
       });
+
+      fetchUserDetails();
     } catch (error) {
       console.log(error);
     }
@@ -94,10 +102,18 @@ const PersonalDetails = () => {
     const { name, value, files } = event.target;
 
     if (name === "image") {
+      const selectedImage = files[0];
       setUserData((prevState) => ({
         ...prevState,
-        image: files[0],
+        image: selectedImage,
       }));
+
+      // Display image preview
+      if (selectedImage) {
+        setPreviewImage(URL.createObjectURL(selectedImage));
+      } else {
+        setPreviewImage(null);
+      }
     } else {
       setUserData((prevState) => ({
         ...prevState,
@@ -106,19 +122,23 @@ const PersonalDetails = () => {
     }
   };
 
+
   return (
     <div className="Setting-main-view">
       <div className="Setting-title-view">Personal Details</div>
       <div className="Setting-data-view">
         {isEditing ? (
           <div className="Profile-photo-view">
-            {userData.image && userData.image !== "undefined" ? (
-              <img src={userData.image} alt="profile" />
-            ) :  user.result.image ? (
-              <img src={user.result.image} alt="profile" />
+            {previewImage ? (
+              <img src={previewImage} alt="profile" /> 
+            ) :
+            (userData.image && userData.image !== "undefined") ||
+            user.result.image ? (
+              <img src={userData.image || user.result.image} alt="profile" />
             ) : (
               <img src={profile} alt="profile" />
             )}
+
             <input
               type="file"
               name="image"
@@ -128,10 +148,9 @@ const PersonalDetails = () => {
           </div>
         ) : (
           <div className="Profile-photo-view">
-            {userData.image && userData.image !== "undefined" ? (
-              <img src={userData.image} alt="profile" />
-            ) :  user.result.image ? (
-              <img src={user.result.image} alt="profile" />
+            {(userData.image && userData.image !== "undefined") ||
+            user.result.image ? (
+              <img src={userData.image || user.result.image} alt="profile" />
             ) : (
               <img src={profile} alt="profile" />
             )}
@@ -208,18 +227,25 @@ const PersonalDetails = () => {
                 onChange={handleInputChange}
               />
             ) : (
-              <p>{userData.stateOfResidence ? userData.stateOfResidence : ""}</p>
+              <p>
+                {userData.stateOfResidence ? userData.stateOfResidence : ""}
+              </p>
             )}
           </div>
         </div>
       </div>
 
       {isEditing ? (
-        <button onClick={handleSave} className='save-button'><img src={check} alt="" /><h3>Save</h3></button>
-        ) : (
-        <button onClick={handleEdit} className='edit-button'><img src={edit_icon} alt="edit" /><p>Edit</p></button>
-        )}  
-      
+        <button onClick={handleSave} className="save-button">
+          <img src={check} alt="" />
+          <h3>Save</h3>
+        </button>
+      ) : (
+        <button onClick={handleEdit} className="edit-button">
+          <img src={edit_icon} alt="edit" />
+          <p>Edit</p>
+        </button>
+      )}
     </div>
   );
 };

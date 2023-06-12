@@ -40,7 +40,11 @@ const PostCategory = ({ category, categoryTitle }) => {
           return { ...post, imageURL };
         })
       );
-      setPosts(postsWithImageURLs);
+      const sortedPosts = postsWithImageURLs.sort((a, b) => {
+        return new Date(b.datetime) - new Date(a.datetime);
+      });
+
+      setPosts(sortedPosts);
     } catch (error) {
       console.error("Error fetching posts:", error);
     }
