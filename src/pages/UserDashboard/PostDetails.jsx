@@ -7,6 +7,10 @@ import { useNavigate } from "react-router-dom";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import "./PostDetails.css";
 import heartOutline from "../../assets/heart_outline.svg";
+import double_next from "../../assets/double_next.svg"
+import like from "../../assets/like.svg"
+import comment from "../../assets/comment.svg"
+import unlike from "../../assets/unlike.svg"
 
 const PostDetails = () => {
   const { postId } = useParams();
@@ -102,21 +106,52 @@ const PostDetails = () => {
 
   return (
     <div className="post-detail-main">
-      <h2>Post Details</h2>
-      <h3>{post.text}</h3>
-      <img src={imageURL} alt="Post" />
-      <h6>By: {post?.user?.name}</h6>
-      {post.user._id === userId && (
-        <button onClick={handleDeletePost}>Delete Post</button>
-      )}
-      <div className="post-detail-likes">
-        <p>{post.likes?.length}</p>
-        {post.likes?.includes(userId) ? (
-          <button onClick={handleUnlike}>Unlike</button>
-        ) : (
-          <button onClick={handleLike}>Like</button>
-        )}
+      <div className="post-navigate">
+        <div>All posts</div>
+        <img src={double_next} alt="" />
+        <div>Post details</div>
       </div>
+      
+      <div className="post-detail-container">
+        <div className="Post-container-left">
+          <h2>10 things to imrove your fitness</h2>
+          <h6>By: <span>{post?.user?.name}</span></h6>
+          <h3>{post.text}</h3>
+          {/* <img src={imageURL} alt="Post" /> */}
+        
+          <div className="blog-likecomment">
+            <div className="all-post-likes">
+              {post.likes?.includes(userId) ? (
+                <button
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    handleUnlike(post._id);
+                  }}
+                >
+                  <img src={unlike} alt="Unlike" />
+                </button>
+              ) : (
+                <button
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    handleLike(post._id);
+                  }}
+                >
+                  <img src={like} alt="Like" />
+                </button>
+              )}
+              <p>{post.likes?.length}</p>
+            </div>
+            <div className="all-post-likes">
+              <button onClick={() => navigate(`/post-details/${post._id}`)}><img src={comment} alt="Comment" /></button>
+              <p>{post.comments?.length}</p>
+            </div>
+            {/* {post.user._id === userId && (
+            <button onClick={handleDeletePost}>Delete Post</button>
+            )} */}
+          </div>
+        </div>
+      <div className="Post-container-right">
       <div className="post-detail-comments">
         <h4>Comments:</h4>
         {post?.comments?.map((comment) => (
@@ -134,7 +169,9 @@ const PostDetails = () => {
           onChange={(event) => setCommentText(event.target.value)}
         />
         <button type="submit">Submit</button>
-      </form>
+      </form> 
+      </div>
+      </div>
     </div>
   );
 };

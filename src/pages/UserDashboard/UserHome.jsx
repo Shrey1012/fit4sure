@@ -5,14 +5,20 @@ import { UserToolsData } from '../../data'
 import {useNavigate} from 'react-router-dom'
 import ToolCard from './ToolCard'
 import VideoPlayer from '../../components/VideoPlayer'
+import fitness_ex from '../../assets/fitness_ex.jpg'
+import close from '../../assets/close.svg'
 
-const UserHome = () => {
+const UserHome = () => { 
   const [showPopup, setShowPopup] = useState(false);
 
   const handleButtonClick = () => {
     setShowPopup(true);
     document.body.classList.add("no-scroll");
   };
+  const onChange = (e) => {
+    const { name } = e.target
+    console.log('clicked', name)
+  }
 
   const handlePopupClose = () => {
     setShowPopup(false);
@@ -74,7 +80,13 @@ const UserHome = () => {
     <div className='User-home-top'></div>
     <div className='User-home-bottom'>
       <div className='User-home-left'>
-        <div className='User-home-plans'></div>
+        <div className='User-home-plans'>
+          <div className='Uhp-left'><img src={fitness_ex} alt="plans" /></div>
+          <div className='Uhp-right'>
+            <p>Explore our personalized plans for indiviuals to meet your fitness goals</p>
+            <button>View plans</button>
+          </div>
+        </div>
         <div className='User-home-tools'>
           <div className='User-tools-title'>
             <h2>Fitness Trackers</h2>
@@ -141,6 +153,13 @@ const UserHome = () => {
           </div>
           <button onClick={handleButtonClick}>Take test</button>
         </div>
+        <div className='User-home-coaches'>
+          <div className='test-left'>
+            <h3>7K users every week are improving their life under proper coaching and guidence of our expert trainers.</h3>
+            <p>We have a huge community of trainers, find your best match now</p>
+          </div>
+          <button onClick={()=>navigate('/coaches')}>Explore trainers</button>
+        </div>
         <div className='User-home-other'></div>
         <div></div>
       </div>
@@ -150,7 +169,25 @@ const UserHome = () => {
     {showPopup && (
       <div className="home-popup">
         <div className='Homme-popup-content'>
-          This is the popup
+          <div className='Que-top'>
+            <p>'How accurately and honestly you will answer, it will be easier for the team to create your personalized planner.'</p>
+            <div><button onClick={handlePopupClose} className='close-btn'><img src={close} alt="" /></button></div>
+          </div>
+          <div className='Que-mid'>
+            <h2 className='Que-type'>
+              General questions
+            </h2>
+            <div className='Test-questions'>
+              
+                <h3>How regular your sleep cycle is?</h3>
+                <input type="text"  placeholder='Type here'/>
+                <h3>How regular your sleep cycle is?</h3>
+                <input type="text"  placeholder='Type here'/>
+                <h3>How regular your sleep cycle is?</h3>
+                <input type="text"  placeholder='Type here'/>                
+                
+            </div>
+          </div>
         </div>
       </div>
       )}

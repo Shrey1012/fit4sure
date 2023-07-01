@@ -40,7 +40,7 @@ const UserDashNav = () => {
 
   return (
     <div className='user-dash-navbar'>
-      <nav className='user-nav'>
+      <nav className='user-nav'> 
           <div className='Nav-mid'>
             <img className='nav-logo' src={fflogo_white} alt="Fit4sure logo" />
             <NavLink to='/userhome' className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>

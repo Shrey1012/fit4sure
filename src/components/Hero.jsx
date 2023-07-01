@@ -5,7 +5,7 @@ import outerstar from '../assets/outerstar.svg';
 import arrownxt from '../assets/arrownxt.svg';
 import axios from "axios";
 
-const Home = () => {
+const Hero = () => {
   const [hero, setHero] = useState([]);
 
   useEffect(() => {
@@ -56,4 +56,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;

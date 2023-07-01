@@ -14,7 +14,7 @@ const CoachCard = ({img, Coach_name, Coach_star, Coach_trained}) => {
     setShowPopup(true);
     document.body.classList.add("no-scroll");
   };
-
+ 
   const handlePopupClose = () => {
     setShowPopup(false);
     document.body.classList.remove("no-scroll")

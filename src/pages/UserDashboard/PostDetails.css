@@ -1,3 +1,121 @@
 .post-detail-main{
-    padding-left: 10%;
+    width: 100%;
+    height: 100vh;
+    background-color: #f7f7f7;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+} 
+.post-navigate{
+    width: 61%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+.post-detail-container{
+    width: 65%;
+    height: 80%;
+    background-color: white;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Post-container-left{
+    width: 46%;
+    height: 96%;
+    padding: 26px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+}
+.Post-container-left h2{
+    padding: 0%;
+    margin: 0%;
+    color: #1F1704;
+    font-family: Nunito;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 2%;
+}
+.Post-container-left h6{
+    padding: 0%;
+    margin: 0%;
+    color: #433F37;
+    font-family: Nunito;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    width: 100%;
+    padding-bottom: 4%;
+    margin-bottom: 4%;
+    border-bottom: solid 1px #a9a9a9;
+}
+.Post-container-left h6 span{
+    
+    color: #BD3C2A;
+    font-family: Nunito;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+}
+.Post-container-left h3{
+    padding: 0%;
+    margin: 0%;
+    color: #433F37;
+    font-family: Nunito;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+    height: 70%;
+    width: 90%;
+    line-height: 23px;
+}
+.blog-likecomment {
+    
+    
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8%;
+
+    border-top: solid 1px #a9a9a9;
+  }
+.all-post-likes{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+  }
+.all-post-likes p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #a7a7a7;
+  }
+  
+.all-post-likes button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.Post-container-right{
+    width: 50%;
+    height: 100%;
 }

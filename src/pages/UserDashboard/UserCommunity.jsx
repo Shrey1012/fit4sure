@@ -6,6 +6,10 @@ import { initializeApp } from "firebase/app";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import like from "../../assets/like.svg"
+import unlike from "../../assets/unlike.svg"
+import comment from "../../assets/comment.svg"
+import double_next from "../../assets/double_next.svg"
 
 const PostCategory = ({ category, categoryTitle }) => {
   const [posts, setPosts] = useState([]);
@@ -91,17 +95,20 @@ const PostCategory = ({ category, categoryTitle }) => {
   return (
     <div className={`com-${category}`}>
       <h2>{categoryTitle}</h2>
+      <div className={`all-${category}`}>
       {posts.map((post) => (
         <div
           onClick={() => navigate(`/post-details/${post._id}`)}
           key={post._id}
           className={`post-card ${category}-card`}
-        >
-          <h3>{post.text}</h3>
-          <img className="community-img" src={post.imageURL} alt={category} />
-          <h6>By: {post?.user?.name}</h6>
+        > 
+          <h2>10 things to imrove your fitness</h2>
+          <div className="blog-by">By: {post?.user?.name}</div>
+          {/* <img className="community-img" src={post.imageURL} alt={category} /> */}
+          <div className="blog-text"><h6>{post.text}</h6></div>
+          
+          <div className="blog-likecomment">
           <div className="all-post-likes">
-            <p>{post.likes?.length} likes</p>
             {post.likes?.includes(userId) ? (
               <button
                 onClick={(event) => {
@@ -109,7 +116,7 @@ const PostCategory = ({ category, categoryTitle }) => {
                   handleUnlike(post._id);
                 }}
               >
-                Unlike
+                <img src={unlike} alt="Unlike" />
               </button>
             ) : (
               <button
@@ -118,11 +125,20 @@ const PostCategory = ({ category, categoryTitle }) => {
                   handleLike(post._id);
                 }}
               >
-                Like
+                <img src={like} alt="Like" />
               </button>
             )}
+            <p>{post.likes?.length}</p>
           </div>
-          <div className="all-posts-comments">
+          <div className="all-post-likes">
+            <button onClick={() => navigate(`/post-details/${post._id}`)}><img src={comment} alt="Comment" /></button>
+            <p>{post.comments?.length}</p>
+          </div>
+          <button className="view-button" onClick={() => navigate(`/post-details/${post._id}`)} >
+            View <img src={double_next} alt="" />
+          </button>
+          
+          {/* <div className="all-posts-comments">
             <h4>Comments:</h4>
             {post?.comments?.map((comment) => (
               <div key={comment._id}>
@@ -130,8 +146,8 @@ const PostCategory = ({ category, categoryTitle }) => {
                 <p>By: {comment?.user?.name}</p>
               </div>
             ))}
-          </div>
-          <form onSubmit={(event) => handleCommentSubmit(event, post._id)}>
+          </div> */}
+          {/* <form onSubmit={(event) => handleCommentSubmit(event, post._id)}>
             <input
               type="text"
               placeholder="Add a comment"
@@ -144,9 +160,11 @@ const PostCategory = ({ category, categoryTitle }) => {
             <button onClick={(e) => e.stopPropagation()} type="submit">
               Submit
             </button>
-          </form>
+          </form> */}
+          </div>
         </div>
       ))}
+      </div>
     </div>
   );
 };
