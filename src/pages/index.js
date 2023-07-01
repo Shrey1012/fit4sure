@@ -25,6 +25,8 @@ import ShowPlans from "./UserDashboard/ShowPlans";
 import Coaches from "./UserDashboard/Coaches";
 import Trackers from "./UserDashboard/Trackers";
 import ShortVideos from "./UserDashboard/ShortVideos";
+import Notifications from "./UserDashboard/Notifications";
+import Schedule from "./UserDashboard/Schedule";
 
 export {
     Aboutus,
@@ -53,5 +55,7 @@ export {
     ShowPlans,
     Coaches,
     Trackers,
-    ShortVideos
+    ShortVideos,
+    Notifications,
+    Schedule
 }
