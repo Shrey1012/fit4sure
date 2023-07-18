@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import { useDispatch } from "react-redux";
 import { signup } from "../actions/auth";
+import signin_left from "../assets/signin_left.svg";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -84,7 +85,9 @@ const Signup = () => {
 
   return (
     <div className="Signup-main">
-      <div className="Signup-left"></div>
+      <div className="Signup-left">
+        <img src={signin_left} alt="" />
+      </div>
       <div className="Signup-right">
         <h2>Create an account</h2>
         <div className="Input-part">
@@ -123,7 +126,7 @@ const Signup = () => {
             }}
           />
         </div>
-        <div className="Input-part">
+        <div className="Input-part1">
           <label htmlFor="password">Password</label>
           <div className="Password-input">
             <input

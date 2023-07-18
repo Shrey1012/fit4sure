@@ -26,6 +26,9 @@ const Aboutus = () => {
         </div>
       </div>
       <Milestone/>
+      <div className='About2'>
+        <p>Access your custom plan, talk to your dedicated coach, and explore exclusive content across nutrition and fitness on your Fitelo app Access your custom plan, talk to your dedicated coach, and explore exclusive content across nutrition and fitness on your Fitelo app.</p>
+      </div>
     </div>
   )
 }

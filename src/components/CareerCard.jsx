@@ -6,7 +6,7 @@ const CareerCard = ({Job_title, Qualification, Experience, Location, Type, Descr
     <div className='Career-card'>
         <div className='card-title'>
             {Job_title} 
-        </div>
+        </div> 
         <div className='career-card-mid'>
         <div className='card-field'>
           <div className='field-title'>Qualification</div>

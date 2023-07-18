@@ -50,11 +50,11 @@ const PostButtons = () => {
   };
 
   return (
-    <div>
+    <div className="Post-buttons">
       <div className="add-btn">
         <button className="add-post" onClick={() => setShowAddPostModal(true)}>
           {" "}
-          <img src={plus} alt="" /> Add Post
+          <img src={plus} alt="" /> Add Post 
         </button>
       </div>
       <div className="com-filters">

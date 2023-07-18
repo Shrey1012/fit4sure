@@ -113,7 +113,7 @@ const PostCategory = ({ category, categoryTitle }) => {
               <button
                 onClick={(event) => {
                   event.stopPropagation();
-                  handleUnlike(post._id);
+                  handleUnlike(post._id); 
                 }}
               >
                 <img src={unlike} alt="Unlike" />

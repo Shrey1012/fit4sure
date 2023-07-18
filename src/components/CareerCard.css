@@ -10,18 +10,18 @@
     align-items: flex-start;
 }
 .card-title{
-    background-color: #F3EDD0;
+    border-bottom: solid 1px #c2c2c2;
     height: 7%;
     width: 96%;
-    padding-top: 2%;
+    padding-top: 3%;
     padding-left: 4%;
     margin-bottom: 2%;
     border-radius: 10px;
  
     color: #1F1704;
     font-family: Nunito;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     letter-spacing: 0em;
     text-align: left;
 }
@@ -69,6 +69,14 @@
 .career-card-mid{
     /* margin-bottom: 2%; */
     height: 40%;
+    width: 80%;
+}
+.card-field{
+    width: 100%;
+    padding-left: 6%;
+}
+.field-title{
+    width: 40%;
 }
 .Career-card p{
     padding-left: 3%;

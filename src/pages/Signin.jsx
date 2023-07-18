@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import jwtDecode from "jwt-decode";
 import { useDispatch } from "react-redux";
 import { signin } from "../actions/auth";
+import signin_left from "../assets/signin_left.svg";
 
 const Signin = () => {
   const navigate = useNavigate();
@@ -71,7 +72,9 @@ const Signin = () => {
 
   return (
     <div className="Signin-main">
-      <div className="Signin-left"></div>
+      <div className="Signin-left">
+        <img src={signin_left} alt="Sign in" />
+      </div>
       <div className="Signin-right">
         <h2>Welcome back!</h2>
         <h3>Sign in to continue.</h3>
@@ -87,7 +90,7 @@ const Signin = () => {
             }}
           />
         </div>
-        <div className="Input-part">
+        <div className="Input-part1">
           <label htmlFor="password">Password</label>
           <div className="Password-input">
             <input

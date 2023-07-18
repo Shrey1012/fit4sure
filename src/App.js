@@ -161,17 +161,17 @@ const { authData } = useSelector((state) => state.auth);
         <Route
           path="/signin"
           element={
-            <GuestRoute>
+            
               <Signin />
-            </GuestRoute>
+            
           }
         />
         <Route
           path="/signup"
           element={
-            <GuestRoute>
+            
               <Signup />
-            </GuestRoute>
+            
           }
         />
         <Route

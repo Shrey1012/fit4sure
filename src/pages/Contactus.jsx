@@ -77,7 +77,7 @@ const Contactus = () => {
             </div>
             <div>
               <label htmlFor="email">Email</label>
-              <input
+              <input 
                 type="email"
                 id="email"
                 value={email}

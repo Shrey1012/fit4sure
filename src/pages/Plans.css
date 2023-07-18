@@ -75,9 +75,48 @@
 }
 .plans-bottom{
     width: 54%;
-    height: 60%;
+    height: 55%;
     background-color: #FCFBF9;
     border-radius: 5px;
 
     margin-top: 1%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.plans-bottom h2{
+    margin-left: 3%;
+}
+.plans-bottom ul{
+    list-style-type: square;
+    margin: 0;
+    margin-left: 5.5%;
+    margin-bottom: 2%;
+    padding: 0%;
+    width: 88%;
+    height: 60%;
+}
+.plans-bottom ul li{
+    color: #433F37;
+    padding-bottom: 1%;
+}
+.plans-bottom button{
+    margin-left: 3%;
+    display: inline-flex;
+    padding: 12px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 5px;
+    background: #BD3C2A;
+    border: none;
+
+    color: #FFF;
+    font-size: 16px;
+    font-family: Nunito;
+    font-weight: 600;
+    line-height: normal;
 }

@@ -9,6 +9,13 @@
     width: 40%;
     height: 100%;
     background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Signup-left img{
+    width: 85%;
   }
   
   .Signup-right {
@@ -95,7 +102,164 @@
   
   .Signup-switch {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 600;.Signin-main{
+      width: 100%;
+      height: 100vh;
+      background-color: #F2EEE5;
+  
+      display: flex;
+  }
+  .Signin-left{
+      width: 40%;
+      height: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .Signin-left img{
+      width: 85%;
+      border: none;
+  }
+  .Signin-right{
+      width: 60%;
+      height: 100%;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .Signin-right h2{
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0em;
+      text-align: center;
+      color: #1F1704;
+      margin-bottom: 0.6%;
+  }
+  .Signin-right h3{
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0em;
+      text-align: center;
+      color: #BD3C2A;
+      margin-bottom: 6%;
+  }
+  .Input-part{
+      width: 300px;
+      height: 11%;
+      margin-bottom: 0.5%;
+  }
+  .Signin-right p{
+      margin-top: 1%;
+      margin-bottom: 1%;
+  }
+  .Input-part input{
+      width: 250px;
+      height: 30px;
+      padding-left: 6px;
+  
+      border: solid 2px #DEDEDD;
+      border-radius: 5px;
+  
+  }
+  .Input-part1 input{
+      width: 300px;
+      height: 30px;
+      padding-left: 6px;
+  
+      border: solid 2px #DEDEDD;
+      border-radius: 5px;
+  
+  }
+  .Input-part label{
+      margin: 0;
+      padding: 0;
+  
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0em;
+      text-align: start;
+      color: #433F37;
+  
+      padding-bottom: 3% ;
+  }
+  
+  .Input-part1 label{
+      margin: 0;
+      padding: 0;
+  
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0em;
+      text-align: start;
+      color: #433F37;
+  
+      padding-bottom: 3% ;
+  }
+  .S-button{
+      width: 34%;
+      height: 6%;
+  
+      background-color: black;
+      color: white;
+      font-family: Nunito;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 5px;
+      border: none;
+  
+      margin-top: 2%;
+  
+  }
+  /* .G-button{
+      width: 34%;
+      height: 6%;
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3%;
+  
+      background-color: white;
+      color: #1F1704;
+      border: solid 2px #adadad;
+      font-family: Nunito;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 5px;
+  } */
+  
+  #g-button{
+      border: none;
+  }
+  
+  #g-button:hover{
+      box-shadow: none;
+  }
+  
+  .G-button img{
+      height: 70%;
+  }
+  .Signin-switch{
+     
+      font-size: 16px;
+      font-weight: 600;
+      text-align: start;
+      color: #433F37;
+      margin-top: 1%;
+  
+      display: flex;
+      justify-content: center;
+  }
+  .Signin-switch span{
+      color: #BD3C2A;
+      font-weight: 700;
+      cursor:pointer;
+  }
     text-align: start;
     color: #433F37;
     margin-top: 1%;

@@ -1,3 +1,47 @@
+.Post-buttons{
+  height: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10%;
+}
+.add-post{
+  display: flex;
+  width: 152px;
+  height: 44px;
+  padding: 8px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  border-radius: 8px;
+  border: solid 2px #C2C2C2;
+
+  font-family: Nunito;
+  color: #433F37;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.com-filters{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.com-filters button{
+  display: flex;
+  height: 38px;
+  padding: 8px 22px;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  border-radius: 10px;
+  border: none;
+  border-bottom: 2px solid #C2c2c2;
+  background: #FFF;
+}
 .modal-overlay {
     position: fixed;
     top: 0;

@@ -9,6 +9,13 @@
     width: 40%;
     height: 100%;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Signin-left img{
+    width: 85%;
+    border: none;
 }
 .Signin-right{
     width: 60%;
@@ -38,7 +45,7 @@
     margin-bottom: 6%;
 }
 .Input-part{
-    width: 34%;
+    width: 300px;
     height: 11%;
     margin-bottom: 0.5%;
 }
@@ -47,15 +54,37 @@
     margin-bottom: 1%;
 }
 .Input-part input{
-    width: 98%;
-    height: 35%;
-    padding-left: 3%;
+    width: 250px;
+    height: 30px;
+    padding-left: 6px;
+
+    border: solid 2px #DEDEDD;
+    border-radius: 5px;
+
+}
+.Input-part1 input{
+    width: 300px;
+    height: 30px;
+    padding-left: 6px;
 
     border: solid 2px #DEDEDD;
     border-radius: 5px;
 
 }
 .Input-part label{
+    margin: 0;
+    padding: 0;
+
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    text-align: start;
+    color: #433F37;
+
+    padding-bottom: 3% ;
+}
+
+.Input-part1 label{
     margin: 0;
     padding: 0;
 
@@ -125,5 +154,5 @@
 .Signin-switch span{
     color: #BD3C2A;
     font-weight: 700;
-    cursor: pointer;
+    cursor:pointer;
 }

@@ -22,7 +22,7 @@ const Career = () => {
       <div className='All-Careers'>
       {
         Careersdata.map((Career_options) => (
-
+ 
           <CareerCard 
             key={Career_options._id}
             Job_title={Career_options.title}
