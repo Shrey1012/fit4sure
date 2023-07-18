@@ -30,6 +30,8 @@ import {
   Coaches,
   Trackers,
   ShortVideos,
+  Schedule,
+  Notifications,
 } from "./pages";
 
 function App() {
@@ -267,6 +269,22 @@ const { authData } = useSelector((state) => state.auth);
           element={
             <PrivateRoute>
               <Coaches />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/schedule"
+          element={
+            <PrivateRoute>
+              <Schedule />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/notifications"
+          element={
+            <PrivateRoute>
+              <Notifications />
             </PrivateRoute>
           }
         />
