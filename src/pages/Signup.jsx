@@ -62,7 +62,8 @@ const Signup = () => {
 
     google.accounts.id.renderButton(document.getElementById("g-button"), {
       theme: "outine",
-      size: "large",
+      width: "310px",
+      height: "50px",
       shape: "rectangular",
       text: "continue_with",
       

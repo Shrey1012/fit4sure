@@ -71,6 +71,7 @@
     padding-left: 4%;
     padding-bottom: 5%;
     border-left: solid 4px #FCFBF9;
+    cursor: pointer;
 }
 .About1-right{
     height: 95%;

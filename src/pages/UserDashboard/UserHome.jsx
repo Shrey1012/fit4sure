@@ -119,28 +119,7 @@ const UserHome = () => {
             >
               <h5>{video.title}</h5>
               <VideoPlayer src={video.video} />
-              <div className="all-video-likes">
-                <p>{video.likes?.length} likes</p>
-                {video.likes?.includes(userId) ? (
-                  <button
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      handleUnlike(video._id);
-                    }}
-                  >
-                    Unlike
-                  </button>
-                ) : (
-                  <button
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      handleLike(video._id);
-                    }}
-                  >
-                    Like
-                  </button>
-                )}
-              </div>
+              
           </div>
           ))}
 

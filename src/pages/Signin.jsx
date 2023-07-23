@@ -57,10 +57,10 @@ const Signin = () => {
 
     google.accounts.id.renderButton(document.getElementById("g-button"), {
       theme: "outline",
-      size: "large",
+      width: "310px",
+      height: "50px",
       shape: "rectangular",
       text: "signin_with",
-      width: "auto",
     });
   }, []);
 

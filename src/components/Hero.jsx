@@ -4,6 +4,7 @@ import landingRightImg from "../assets/landing right img.svg";
 import outerstar from '../assets/outerstar.svg';
 import arrownxt from '../assets/arrownxt.svg';
 import axios from "axios";
+import { scroller } from "react-scroll";
 
 const Hero = () => {
   const [hero, setHero] = useState([]);
@@ -37,20 +38,26 @@ const Hero = () => {
     return null;
   };
 
+  const handleScrollToHero = () => {
+    scroller.scrollTo("hero", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
+
   return (
     
-    <div className="hero-container">
+    <div className="hero-container" id="hero">
       <div className="hero_left">
         <div className="hero-text1">{renderTitle()}.. </div>
         <div className="hero-text2"> {hero.description} </div>
       <div className="hero-line"/>
-      <button className="hero-button"> Get Started<img src={arrownxt} alt=" " /></button>
+      <button className="hero-button" onClick={handleScrollToHero}> Get Started<img src={arrownxt} alt=" " /></button>
       </div>
       <div className="hero-right">
         <img className="hero-image" src={landingRightImg} alt="img" />
         </div>
-      
-      {/* <div className="highlight1"></div> */}
       <img className="star-img" src={outerstar} alt="starr" />
     </div>
   );

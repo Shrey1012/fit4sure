@@ -63,6 +63,7 @@
 }
 .footer-social img{
     height: 50%;
+    cursor: pointer;
 }
 .footer-para{
     width: 85%;

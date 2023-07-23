@@ -1,24 +1,59 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import './Aboutus.css';
 import youtube_dark from '../assets/youtube_dark.svg';
 import instagram_dark from '../assets/instagram_dark.svg';
 import twitter_dark from '../assets/twitter_dark.svg';
 import facebook_dark from '../assets/facebook_dark.svg';
 import aboutimg from '../assets/aboutimg.png';
+import axios from "axios";
 
 import { Milestone } from '../components';
 const Aboutus = () => {
+  const [aboutUs, setAboutUs] = useState([]);
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/admin/setting_footer/all")
+      .then((res) => {
+        const links = res.data.footer;
+        setLinks(links);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/admin/web_aboutus/all")
+      .then((res) => {
+        const aboutUs = res.data.aboutus[0];
+        setAboutUs(aboutUs);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const separateDescription = (description) => {
+    if (!description) return [];
+    return description.split('.').map((sentence, index) => (
+      <p key={index}>{sentence.trim()}</p>
+    ));
+  };
+
   return (
     <div className='Aboutus-main'>
       <div className='About1'>
         <div className='About1-left'>
           <div className='About1-lt'>Who we are?</div>
-          <div className='About1-lm'>Lorem ipsum dolor sit amet. Sit quia velit non molestiae beatae ut nihil excepturi aut quae blanditiis qui autem voluptatem At inventore voluptas est minima debitis. Aut ipsum corrupti sed nihil impedit id enim cumque aut dolor cumque eos quia quasi in nostrum eveniet eum excepturi autem. Qui aliquid consequatur vel aliquid quia ea amet architecto. Et ipsa perspiciatis eum quae sapiente ad voluptatem natus 33 dolorem enim est voluptas possimus est rerum ducimus a itaque amet  : )</div>
+          <div className='About1-lm'>{aboutUs.who_we_are}</div>
           <div className='About1-lb'>
-            <img src={youtube_dark} alt="youtube" />
-            <img src={instagram_dark} alt="instagram" />
-            <img src={twitter_dark} alt="twitter" />
-            <img src={facebook_dark} alt="youtube" />
+            <img onClick={() => window.location.href = links.youtube_link} src={youtube_dark} alt="youtube" />
+            <img onClick={() => window.location.href = links.instagram_link} src={instagram_dark} alt="instagram" />
+            <img onClick={() => window.location.href = links.twitter_link} src={twitter_dark} alt="twitter" />
+            <img onClick={() => window.location.href = links.facebook_link} src={facebook_dark} alt="youtube" />
           </div>
         </div>
         <div className='About1-right'>
@@ -27,7 +62,7 @@ const Aboutus = () => {
       </div>
       <Milestone/>
       <div className='About2'>
-        <p>Access your custom plan, talk to your dedicated coach, and explore exclusive content across nutrition and fitness on your Fitelo app Access your custom plan, talk to your dedicated coach, and explore exclusive content across nutrition and fitness on your Fitelo app.</p>
+        <p>{separateDescription(aboutUs.description)}</p>
       </div>
     </div>
   )
