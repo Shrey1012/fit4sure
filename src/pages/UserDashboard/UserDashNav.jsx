@@ -43,27 +43,27 @@ const UserDashNav = () => {
       <nav className='user-nav'> 
           <div className='Nav-mid'>
             <img className='nav-logo' src={fflogo_white} alt="Fit4sure logo" />
-            <NavLink to='/userhome' className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
+            <NavLink to='/userhome' title='Home' className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
               <img src={home_icon} alt="home" />
             </NavLink>
-            <NavLink to='/usercommunity'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
+            <NavLink to='/usercommunity' title='Community'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
               <img src={Community} alt="Community" />
             </NavLink>
-            <NavLink to='/coaches'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
+            <NavLink to='/coaches' title='Explore Coaches'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
             <img src={explore} alt="explore" />
             </NavLink>
-            <NavLink to='/showplans'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
+            <NavLink to='/showplans' title='Plans'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
             <img src={star_circle} alt="Plans" /> 
             </NavLink>
-            <NavLink to='/trackers'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
+            <NavLink to='/trackers/bmi' title='Trackers'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
             <img src={Tools} alt="Tools" />
             </NavLink>
           </div>
           <div className='Nav-bottom'>
-            <NavLink to='/usersettings/personal-details'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
+            <NavLink to='/usersettings/personal-details' title='Settings'  className={`Userdash-nav-link ${({isActive}) => (isActive ? 'active' : '')}`}>
               <img src={settings} alt="Settings" />
             </NavLink>
-            <img src={logout_icon} alt="logout" onClick={logout} />
+            <img className='logout-icon' title='Logout' src={logout_icon} alt="logout" onClick={logout} />
           </div>
     </nav>
     </div>

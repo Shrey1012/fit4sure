@@ -4,14 +4,15 @@ import back from "../../../assets/back.svg";
 import Question from "../../../assets/Question.svg";
 import down_arrow from '../../../assets/doen_arrow.svg'
 import double_next from '../../../assets/double_next.svg'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const TDEE = () => {
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
-  const [age, setAge] = useState("");
-  const [gender, setGender] = useState("");
-  const [activityLevel, setActivityLevel] = useState("");
+  const [weight, setWeight] = useState(() => Cookies.get("weight") || "");
+  const [height, setHeight] = useState(() => Cookies.get("height") || "");
+  const [age, setAge] = useState(() => Cookies.get("age") || "");
+  const [gender, setGender] = useState(() => Cookies.get("gender") || "");
+  const [activityLevel, setActivityLevel] = useState(() => Cookies.get("activityLevelTDEE") || "");
   const [tdeeData, setTdeeData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -22,6 +23,7 @@ const TDEE = () => {
   const activityLevelInputRef = useRef(null);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const calculateTdee = async () => {
     setIsLoading(true);
@@ -60,6 +62,15 @@ const TDEE = () => {
   };
 
   useEffect(() => {
+    Cookies.set("weight", weight, { expires: 365 });
+    Cookies.set("height", height, { expires: 365 });
+    Cookies.set("age", age, { expires: 365 });
+    Cookies.set("gender", gender, { expires: 365 });
+    Cookies.set("activityLevelTDEE", activityLevel, { expires: 365 });
+
+  }, [weight, height, age, gender, activityLevel]);
+
+  useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
@@ -86,6 +97,13 @@ const TDEE = () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [weight, height,age,gender,activityLevel]);
+
+  const handleCalculate = () => {
+    const Link = location.pathname.includes("/trackers")
+      ? "/trackers/workoutplanner"
+      : "/workoutplanner";
+    navigate(Link);
+  };
 
   return (
     <div className="bmi-main">
@@ -157,9 +175,9 @@ const TDEE = () => {
         </div>
         <div className="bmi-buttons">
           <button className="calculate-btn" type="submit">
-            Calculate BFP
+            Calculate TDEE
           </button>
-          <button className="calculate-nxt">
+          <button onClick={handleCalculate} className="calculate-nxt">
             Plan workout
             <img src={double_next} alt="" />
           </button>

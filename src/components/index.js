@@ -12,6 +12,7 @@ import Faq from './Faq';
 import Milestone from './Milestone';
 import CoachCard from './CoachCard';
 import CareerCard from './CareerCard';
+import Blogs from './Blogs';
 
 export {
     Navbar,
@@ -27,5 +28,6 @@ export {
     Faq,
     Milestone,
     CoachCard,
-    CareerCard
+    CareerCard,
+    Blogs
 };

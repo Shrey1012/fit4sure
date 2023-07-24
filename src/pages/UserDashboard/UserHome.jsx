@@ -84,13 +84,13 @@ const UserHome = () => {
           <div className='Uhp-left'><img src={fitness_ex} alt="plans" /></div>
           <div className='Uhp-right'>
             <p>Explore our personalized plans for indiviuals to meet your fitness goals</p>
-            <button>View plans</button>
+            <button onClick={()=> navigate('/showplans')}>View plans</button>
           </div>
         </div>
         <div className='User-home-tools'>
           <div className='User-tools-title'>
             <h2>Fitness Trackers</h2>
-            <p onClick={()=> navigate('/trackers')}>View all</p>
+            <p onClick={()=> navigate('/trackers/bmi')}>View all</p>
           </div>
           <div className='User-tool-cards'>
           {

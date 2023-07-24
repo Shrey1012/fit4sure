@@ -39,6 +39,10 @@
     width: 80%;
 }
 
+.logout-icon{
+    cursor: pointer;
+}
+
 /* .active{
     background-color: #d1e11f;
   } */

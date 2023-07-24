@@ -1,0 +1,24 @@
+.blogs-main {
+    background-color: #F2EEE5;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+    .blogs-top {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+  .all-blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3%;
+    width: 80%;
+    margin-top: 2%;
+  }

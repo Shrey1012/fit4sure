@@ -3,13 +3,14 @@ import "./BMR.css";
 import Question from '../../../assets/Question.svg'
 import back from '../../../assets/back.svg'
 import double_next from '../../../assets/double_next.svg'
-
+import { useNavigate, useLocation } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 const BMR = () => {
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
-  const [age, setAge] = useState("");
-  const [gender, setGender] = useState("");
+  const [weight, setWeight] = useState(() => Cookies.get("weight") || "");
+  const [height, setHeight] = useState(() => Cookies.get("height") || "");
+  const [age, setAge] = useState(() => Cookies.get("age") || "");
+  const [gender, setGender] = useState(() => Cookies.get("gender") || "");
   const [bmrData, setBmrData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -17,6 +18,9 @@ const BMR = () => {
   const heightInputRef = useRef(null);
   const ageInputRef = useRef(null);
   const genderInputRef = useRef(null);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const calculateBmr = async () => {
     setIsLoading(true);
@@ -54,6 +58,15 @@ const BMR = () => {
   };
 
   useEffect(() => {
+    Cookies.set("weight", weight, { expires: 365 });
+    Cookies.set("height", height, { expires: 365 });
+    Cookies.set("age", age, { expires: 365 });
+    Cookies.set("gender", gender, { expires: 365 });
+
+  }, [weight, height, age, gender]);
+
+
+  useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
@@ -79,6 +92,13 @@ const BMR = () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [weight, height,age,gender]);
+
+  const handleCalculate = () => {
+    const Link = location.pathname.includes("/trackers")
+      ? "/trackers/bfp"
+      : "/bfp";
+    navigate(Link);
+  };
 
   return (
     <div className="bmi-main">
@@ -139,7 +159,7 @@ const BMR = () => {
           <button className="calculate-btn" type="submit">
             Calculate BMR
           </button>
-          <button className="calculate-nxt">
+          <button onClick={handleCalculate} className="calculate-nxt">
             Calculate BFP
             <img src={double_next} alt="" />
           </button>

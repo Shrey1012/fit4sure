@@ -33,6 +33,7 @@
     width: 54%;
     height: 16%;
     gap: 2%;
+    cursor: pointer;
 }
 .plans-mid div{
     width: 22%;

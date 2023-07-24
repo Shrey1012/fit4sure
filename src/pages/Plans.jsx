@@ -1,18 +1,24 @@
-import React, {useState, useEffect} from 'react';
-import './Plans.css'
-import arrownxt from '../assets/arrownxt.svg';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import "./Plans.css";
+import arrownxt from "../assets/arrownxt.svg";
+import axios from "axios";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Plans = () => {
   const [plans, setPlans] = useState([]);
   const [selectedPlan, setSelectedPlan] = useState(null);
 
+  const navigate = useNavigate();
+
+  const { authData } = useSelector((state) => state.auth);
+
   useEffect(() => {
     const fetchPlans = async () => {
-      const res = await axios.get('http://localhost:3001/admin/plan/all');
+      const res = await axios.get("http://localhost:3001/admin/plan/all");
       setPlans(res.data.plan);
-      setSelectedPlan(res.data.plan.find(plan => plan.duration === '1 Year'));
-    }
+      setSelectedPlan(res.data.plan.find((plan) => plan.duration === "1 Year"));
+    };
     fetchPlans();
   }, []);
 
@@ -21,37 +27,50 @@ const Plans = () => {
   };
 
   const splitDescription = (description) => {
-    const sentences = description.split('. ');
+    const sentences = description.split(". ");
     return sentences.map((sentence, index) => <li key={index}>{sentence}</li>);
   };
 
+  const handleButtonClick = () => {
+    if (authData) {
+    } else {
+      navigate("/signin");
+    }
+  };
+
   return (
-    <div className='Plans-main'>
-      <div className='plans-txt1'>Select a plan</div>
-      <div className='plans-txt2'>We make you fit in a sustainable manner by using the science of fitness and providing constant support. Our certified and top-rated professional experts provide long-lasting support, making personalized schedules at times convenient for you.</div>
-      <div className='plans-mid'>
-    {plans.map((plan) => (
-        <div key={plan._id} onClick={() => handlePlanClick(plan)}>
-          <h2>{plan.duration}</h2>
-          <p>INR {plan.price} <span>/month</span></p>
-        </div>
-     ))} 
+    <div className="Plans-main">
+      <div className="plans-txt1">Select a plan</div>
+      <div className="plans-txt2">
+        We make you fit in a sustainable manner by using the science of fitness
+        and providing constant support. Our certified and top-rated professional
+        experts provide long-lasting support, making personalized schedules at
+        times convenient for you.
       </div>
-      <div className='plans-bottom'>
-        {selectedPlan ? (
+      <div className="plans-mid">
+        {plans.map((plan) => (
+          <div key={plan._id} onClick={() => handlePlanClick(plan)}>
+            <h2>{plan.duration}</h2>
+            <p>
+              INR {plan.price} <span>/month</span>
+            </p>
+          </div>
+        ))}
+      </div>
+      <div className="plans-bottom">
+        {selectedPlan && (
           <>
-        <h2>{selectedPlan.title}</h2>
-        <ul>{splitDescription(selectedPlan.description)}</ul>
-        <button>Go with this plans
-          <img src={arrownxt} alt="" />
-        </button>
-        </>
-        ) : (
-          <h2>Select a plan to continue</h2>
+            <h2>{selectedPlan.title}</h2>
+            <ul>{splitDescription(selectedPlan.description)}</ul>
+            <button onClick={handleButtonClick}>
+              Purchase this plan
+              <img src={arrownxt} alt="" />
+            </button>
+          </>
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Plans
+export default Plans;

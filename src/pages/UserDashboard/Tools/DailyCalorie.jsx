@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./DailyCalorie.css";
+import double_next from '../../../assets/double_next.svg'
+import { useNavigate, useLocation } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 const DailyCalorie = () => {
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
-  const [age, setAge] = useState("");
-  const [gender, setGender] = useState("");
-  const [activityLevel, setActivityLevel] = useState("");
+  const [weight, setWeight] = useState(() => Cookies.get("weight") || "");
+  const [height, setHeight] = useState(() => Cookies.get("height") || "");
+  const [age, setAge] = useState(() => Cookies.get("age") || "");
+  const [gender, setGender] = useState(() => Cookies.get("gender") || "");
+  const [activityLevel, setActivityLevel] = useState(() => Cookies.get("activityLevelDailyCalorie") || "");
   const [calorieData, setCalorieData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -15,6 +18,9 @@ const DailyCalorie = () => {
   const ageInputRef = useRef(null);
   const genderInputRef = useRef(null);
   const activityLevelInputRef = useRef(null);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const calculateCalorie = async () => {
     setIsLoading(true);
@@ -53,6 +59,14 @@ const DailyCalorie = () => {
   };
 
   useEffect(() => {
+    Cookies.set("weight", weight, { expires: 365 });
+    Cookies.set("height", height, { expires: 365 });
+    Cookies.set("age", age, { expires: 365 });
+    Cookies.set("gender", gender, { expires: 365 });
+    Cookies.set("activityLevelDailyCalorie", activityLevel, { expires: 365 });
+  }, [weight, height, age, gender, activityLevel]);
+
+  useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
@@ -79,6 +93,13 @@ const DailyCalorie = () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [weight, height,age,gender,activityLevel]);
+
+  const handleCalculate = () => {
+    const Link = location.pathname.includes("/trackers")
+      ? "/trackers/bmi"
+      : "/bmi";
+    navigate(Link);
+  };
 
   return (
     <div className="calorie-container">
@@ -151,9 +172,15 @@ const DailyCalorie = () => {
             </select>
           </label>
         </div>
-        <button className="calorie-button" type="submit">
+        <div className="bmi-buttons">
+          <button className="calculate-btn" type="submit">
           Get Daily Calorie Intake
-        </button>
+          </button>
+          <button onClick={handleCalculate} className="calculate-nxt">
+            Calculate BMI
+            <img src={double_next} alt="" />
+          </button>
+        </div>
       </form>
       {isLoading && <div className="calorie-message">Loading...</div>}
       {error && <div className="calorie-message">Error: {error}</div>}

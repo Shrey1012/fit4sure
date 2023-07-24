@@ -2,13 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import "./BFP.css";
 import Question from '../../../assets/Question.svg'
 import double_next from '../../../assets/double_next.svg'
+import { useNavigate, useLocation } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 
 const BFP = () => {
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
-  const [age, setAge] = useState("");
-  const [gender, setGender] = useState("");
+  const [weight, setWeight] = useState(() => Cookies.get("weight") || "");
+  const [height, setHeight] = useState(() => Cookies.get("height") || "");
+  const [age, setAge] = useState(() => Cookies.get("age") || "");
+  const [gender, setGender] = useState(() => Cookies.get("gender") || "");
   const [bfpData, setBfpData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -16,6 +18,9 @@ const BFP = () => {
   const heightInputRef = useRef(null);
   const ageInputRef = useRef(null);
   const genderInputRef = useRef(null);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const calculateBfp = async () => {
     setIsLoading(true);
@@ -53,6 +58,14 @@ const BFP = () => {
   };
 
   useEffect(() => {
+    Cookies.set("weight", weight, { expires: 365 });
+    Cookies.set("height", height, { expires: 365 });
+    Cookies.set("age", age, { expires: 365 });
+    Cookies.set("gender", gender, { expires: 365 });
+
+  }, [weight, height, age, gender]);
+
+  useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
@@ -78,6 +91,13 @@ const BFP = () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [weight, height,age,gender]);
+
+  const handleCalculate = () => {
+    const Link = location.pathname.includes("/trackers")
+      ? "/trackers/tdee"
+      : "/tdee";
+    navigate(Link);
+  };
 
   return (
     <div className="bmi-main">
@@ -139,7 +159,7 @@ const BFP = () => {
           <button className="calculate-btn" type="submit">
             Calculate BFP
           </button>
-          <button className="calculate-nxt" type="button">
+          <button onClick={handleCalculate} className="calculate-nxt" type="button">
             Calculate TDEE
             <img src={double_next} alt="" />
           </button>

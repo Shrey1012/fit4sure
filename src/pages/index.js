@@ -4,8 +4,7 @@ import Contactus from "./Contactus";
 import Plans from "./Plans";
 import Home from "./Home";
 import GetCoach from "./GetCoach";
-import AllCoaches1 from "./AllCoaches1";
-import AllCoaches2 from "./AllCoaches2";
+import AllCoaches from "./AllCoaches";
 import UserHome from "./UserDashboard/UserHome";
 import UserDashNav from "./UserDashboard/UserDashNav";
 import UserCommunity from "./UserDashboard/UserCommunity";
@@ -35,8 +34,7 @@ export {
     Plans,
     Home,
     GetCoach,
-    AllCoaches1,
-    AllCoaches2,
+    AllCoaches,
     UserHome,
     UserCommunity,
     UserSettings,

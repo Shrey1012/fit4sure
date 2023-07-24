@@ -9,8 +9,7 @@ import {
   Plans,
   Home,
   GetCoach,
-  AllCoaches1,
-  AllCoaches2,
+  AllCoaches,
   UserHome,
   UserCommunity,
   UserDashNav,
@@ -91,38 +90,19 @@ const { authData } = useSelector((state) => state.auth);
         />
         {authData ? (
           <Route
-            path="/allcoaches1"
+            path="/allcoaches/:categoryId"
             element={
               <PrivateRoute>
-                <AllCoaches1 />
+                <AllCoaches />
               </PrivateRoute>
             }
           />
         ) : (
           <Route
-            path="/allcoaches1"
+            path="/allcoaches/:categoryId"
             element={
               <GuestRoute>
-                <AllCoaches1 />
-              </GuestRoute>
-            }
-          />
-        )}
-        {authData ? (
-          <Route
-            path="/allcoaches2"
-            element={
-              <PrivateRoute>
-                <AllCoaches2 />
-              </PrivateRoute>
-            }
-          />
-        ) : (
-          <Route
-            path="/allcoaches2"
-            element={
-              <GuestRoute>
-                <AllCoaches2 />
+                <AllCoaches />
               </GuestRoute>
             }
           />

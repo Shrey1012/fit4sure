@@ -2,15 +2,21 @@ import React, { useState, useEffect, useRef } from "react";
 import "./BMI.css";
 import Question from "../../../assets/Question.svg";
 import back from "../../../assets/back.svg";
+import double_next from '../../../assets/double_next.svg'
+import { useNavigate, useLocation } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 const BMI = () => {
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState(() => Cookies.get("weight") || "");
+  const [height, setHeight] = useState(() => Cookies.get("height") || "");
   const [bmiData, setBmiData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const weightInputRef = useRef(null);
   const heightInputRef = useRef(null);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const calculateBmi = async () => {
     setIsLoading(true);
@@ -49,6 +55,12 @@ const BMI = () => {
   };
 
   useEffect(() => {
+    Cookies.set("weight", weight, { expires: 365 });
+    Cookies.set("height", height, { expires: 365 });
+
+  }, [weight, height]);
+
+  useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
@@ -72,6 +84,13 @@ const BMI = () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [weight, height]);
+
+  const handleCalculate = () => {
+    const Link = location.pathname.includes("/trackers")
+      ? "/trackers/bmr"
+      : "/bmr";
+    navigate(Link);
+  };
 
   return (
     <div className="bmi-main">
@@ -106,9 +125,15 @@ const BMI = () => {
               />
             </label>
           </div>
-          <button className="bmi-button" type="submit">
+          <div className="bmi-buttons">
+          <button className="calculate-btn" type="submit">
             Calculate BMI
           </button>
+          <button onClick={handleCalculate} className="calculate-nxt">
+            Calculate BMR
+            <img src={double_next} alt="" />
+          </button>
+        </div>
         </form>
 
         {isLoading && <div className="bmi-message">Loading...</div>}

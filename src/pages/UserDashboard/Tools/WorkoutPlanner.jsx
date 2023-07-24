@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./WorkoutPlanner.css";
+import double_next from '../../../assets/double_next.svg'
+import { useNavigate, useLocation } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 const WorkoutPlanner = () => {
-  const [time, setTime] = useState("");
-  const [muscle, setMuscle] = useState("");
-  const [location, setLocation] = useState("");
-  const [equipment, setEquipment] = useState("");
+  const [time, setTime] = useState(() => Cookies.get("time") || "");
+  const [muscle, setMuscle] = useState(() => Cookies.get("muscle") || "");
+  const [location, setLocation] = useState(() => Cookies.get("locationWorkout") || "");
+  const [equipment, setEquipment] = useState(() => Cookies.get("equipment") || "");
   const [workoutData, setWorkoutData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -13,6 +16,9 @@ const WorkoutPlanner = () => {
   const muscleInputRef = useRef(null);
   const locationInputRef = useRef(null);
   const equipmentInputRef = useRef(null);
+
+  const navigate = useNavigate();
+  const locationHook = useLocation();
 
   const workoutPlan = async () => {
     setIsLoading(true);
@@ -48,6 +54,13 @@ const WorkoutPlanner = () => {
     setLocation("");
     setEquipment("");
   };
+
+  useEffect(() => {
+    Cookies.set("time", time, { expires: 365 });
+    Cookies.set("muscle", muscle, { expires: 365 });
+    Cookies.set("locationWorkout", location, { expires: 365 });
+    Cookies.set("equipment", equipment, { expires: 365 });
+  }, [time, muscle, location, equipment]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -86,6 +99,13 @@ const WorkoutPlanner = () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [time, muscle, location, equipment]);
+
+  const handleCalculate = () => {
+    const Link = locationHook.pathname.includes("/trackers")
+      ? "/trackers/dailycalorie"
+      : "/dailycalorie";
+    navigate(Link);
+  };
 
   return (
     <div className="workout-container">
@@ -134,9 +154,15 @@ const WorkoutPlanner = () => {
             />
           </label>
         </div>
-        <button className="workout-button" type="submit">
-          Plan Workout
-        </button>
+        <div className="bmi-buttons">
+          <button className="calculate-btn" type="submit">
+            Plan Workout
+          </button>
+          <button onClick={handleCalculate} className="calculate-nxt">
+            Calorie Intake
+            <img src={double_next} alt="" />
+          </button>
+        </div>
       </form>
       {isLoading && <div className="workout-message">Loading...</div>}
       {error && <div className="workout-message">Error: {error}</div>}
