@@ -34,8 +34,7 @@ import {
 } from "./pages";
 
 function App() {
-
-const { authData } = useSelector((state) => state.auth);
+  const { authData } = useSelector((state) => state.auth);
 
   return (
     <>
@@ -140,22 +139,8 @@ const { authData } = useSelector((state) => state.auth);
           }
         />
 
-        <Route
-          path="/signin"
-          element={
-            
-              <Signin />
-            
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-            
-              <Signup />
-            
-          }
-        />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} />
         <Route
           path="/shortvideos"
           element={

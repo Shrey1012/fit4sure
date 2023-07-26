@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import './AllCoaches.css';
-import { AllCoach1Data } from '../data'
 import { CoachCard } from '../components'
 import axios from 'axios';
 import { useParams } from 'react-router-dom';

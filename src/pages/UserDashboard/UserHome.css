@@ -277,30 +277,3 @@
   padding: 0%;
   color: #1f1704;
 }
-.Test-questions{
-  width: 70%;
-  height: 80%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5%;
-}
-.Test-questions h3{
-  margin: 0;
-  padding: 0;
-  color: #433f37;
-  margin-top: 2%;
-}
-.Test-questions input{
-  border: solid 2px #c9c9c9;
-  border-radius: 5px;
-  height: 32px;
-  width: 40%;
-  padding-left: 10px;
-}
-.Test-questions input::placeholder{
-  font-family: Nunito;
-  color: #393733;
-}

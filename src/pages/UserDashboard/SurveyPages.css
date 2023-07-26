@@ -1,0 +1,23 @@
+/* .Test-questions{
+    width: 500px;
+    height: 400px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5%;
+  } */
+
+
+  .submit-button{
+    width: 100px;
+    height: 40px;
+    background-color: #4abd2a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: Nunito;
+    font-size: 16px;
+    font-weight: 600;
+  }
