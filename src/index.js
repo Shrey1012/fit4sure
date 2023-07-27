@@ -7,6 +7,8 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import thunk from 'redux-thunk';
 import {reducers} from './reducers';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const store = configureStore({ reducer: reducers, middleware: [thunk] });
 
@@ -16,6 +18,7 @@ root.render(
     <Provider store={store}>
     <Router>
       <App />
+      <ToastContainer />
     </Router>
     </Provider>
   </React.StrictMode>

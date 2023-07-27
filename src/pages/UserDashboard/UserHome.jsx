@@ -53,6 +53,10 @@ const UserHome = () => {
     }
   };
 
+  const handleSurveySubmit = () => {
+    handlePopupClose();
+  };
+
   return (
     <>
       <div className="User-home-main">
@@ -145,7 +149,7 @@ const UserHome = () => {
               </div>
             </div>
             <div className="Que-mid">
-              <SurveyPages />
+              <SurveyPages  handleSurveySubmit={handleSurveySubmit}/>
             </div>
           </div>
         </div>
