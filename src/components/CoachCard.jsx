@@ -79,7 +79,7 @@ const CoachCard = ({
                 </div>
               </div>
               <div>
-                <button onClick={handlePopupClose} className="close-btn">
+                <button onClick={handlePopupClose} className="close-btn" style={{"boxShadow": "none"}}>
                   <img src={close} alt="" />
                 </button>
               </div>

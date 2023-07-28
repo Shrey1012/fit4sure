@@ -47,7 +47,14 @@
     justify-content: center;
     align-items: center;
     gap: 8%;
+    transition: box-shadow 0.3s ease;
 }
+
+.plans-mid div.highlighted {
+    box-shadow: 0 0 10px rgba(189, 60, 42, 0.8);
+    background-color: rgba(255, 33, 4, 0.1);
+  }
+
 .plans-mid div h2{
     font-size: 18px;
     font-weight: 700;

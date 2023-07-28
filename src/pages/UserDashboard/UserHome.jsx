@@ -143,7 +143,7 @@ const UserHome = () => {
                 for the team to create your personalized planner.'
               </p>
               <div>
-                <button onClick={handlePopupClose} className="close-btn">
+                <button onClick={handlePopupClose} className="close-btn" style={{"boxShadow": "none"}}>
                   <img src={close} alt="" />
                 </button>
               </div>

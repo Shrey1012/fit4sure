@@ -41,11 +41,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={
-            <GuestRoute>
-              <Home />
-            </GuestRoute>
-          }
+          element={authData ? <Navigate to="/userhome" /> : <Home />}
         />
         <Route
           path="/getcoach"
