@@ -51,11 +51,6 @@ const DailyCalorie = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     calculateCalorie();
-    setWeight("");
-    setHeight("");
-    setAge("");
-    setGender("");
-    setActivityLevel("");
   };
 
   useEffect(() => {
@@ -77,11 +72,6 @@ const DailyCalorie = () => {
   
         if (currentIndex === inputs.length - 1 && weight && height && age && gender && activityLevel) {
           calculateCalorie();
-          setWeight("");
-          setHeight("");
-          setAge("");
-          setGender("");
-          setActivityLevel("");
         } else if (currentIndex + 1 < inputs.length) {
           inputs[currentIndex + 1].focus();
         }

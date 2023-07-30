@@ -51,10 +51,6 @@ const BMR = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     calculateBmr();
-    setWeight("");
-    setHeight("");
-    setAge("");
-    setGender("");
   };
 
   useEffect(() => {
@@ -77,10 +73,6 @@ const BMR = () => {
   
         if (currentIndex === inputs.length - 1 && weight && height && age && gender) {
           calculateBmr();
-          setWeight("");
-          setHeight("");
-          setAge("");
-          setGender("");
         } else if (currentIndex + 1 < inputs.length) {
           inputs[currentIndex + 1].focus();
         }

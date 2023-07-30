@@ -54,11 +54,6 @@ const TDEE = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     calculateTdee();
-    setWeight("");
-    setHeight("");
-    setAge("");
-    setGender("");
-    setActivityLevel("");
   };
 
   useEffect(() => {
@@ -81,11 +76,6 @@ const TDEE = () => {
   
         if (currentIndex === inputs.length - 1 && weight && height && age && gender && activityLevel) {
           calculateTdee();
-          setWeight("");
-          setHeight("");
-          setAge("");
-          setGender("");
-          setActivityLevel("");
         } else if (currentIndex + 1 < inputs.length) {
           inputs[currentIndex + 1].focus();
         }

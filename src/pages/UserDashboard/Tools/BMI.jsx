@@ -50,8 +50,6 @@ const BMI = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     calculateBmi();
-    setWeight("");
-    setHeight("");
   };
 
   useEffect(() => {
@@ -71,8 +69,6 @@ const BMI = () => {
   
         if (currentIndex === inputs.length - 1 && weight && height) {
           calculateBmi();
-          setWeight("");
-          setHeight("");
         } else if (currentIndex + 1 < inputs.length) {
           inputs[currentIndex + 1].focus();
         }

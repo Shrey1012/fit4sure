@@ -51,10 +51,6 @@ const BFP = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     calculateBfp();
-    setWeight("");
-    setHeight("");
-    setAge("");
-    setGender("");
   };
 
   useEffect(() => {
@@ -76,10 +72,6 @@ const BFP = () => {
   
         if (currentIndex === inputs.length - 1 && weight && height && age && gender) {
           calculateBfp();
-          setWeight("");
-          setHeight("");
-          setAge("");
-          setGender("");
         } else if (currentIndex + 1 < inputs.length) {
           inputs[currentIndex + 1].focus();
         }

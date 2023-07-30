@@ -49,10 +49,6 @@ const WorkoutPlanner = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     workoutPlan();
-    setTime("");
-    setMuscle("");
-    setLocation("");
-    setEquipment("");
   };
 
   useEffect(() => {
@@ -84,10 +80,6 @@ const WorkoutPlanner = () => {
           equipment
         ) {
           workoutPlan();
-          setTime("");
-          setMuscle("");
-          setLocation("");
-          setEquipment("");
         } else if (currentIndex + 1 < inputs.length) {
           inputs[currentIndex + 1].focus();
         }
