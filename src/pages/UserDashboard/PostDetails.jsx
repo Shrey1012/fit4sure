@@ -107,7 +107,7 @@ const PostDetails = () => {
   return (
     <div className="post-detail-main">
       <div className="post-navigate">
-        <div>All posts</div>
+        <div onClick={()=> navigate('/usercommunity')} style={{"cursor": "pointer"}}>All posts</div>
         <img src={double_next} alt="" />
         <div>Post details</div>
       </div>
@@ -146,9 +146,9 @@ const PostDetails = () => {
               <button onClick={() => navigate(`/post-details/${post._id}`)}><img src={comment} alt="Comment" /></button>
               <p>{post.comments?.length}</p>
             </div>
-            {/* {post.user._id === userId && (
+             {post.user._id === userId && (
             <button onClick={handleDeletePost}>Delete Post</button>
-            )} */}
+            )} 
           </div>
         </div>
       <div className="Post-container-right">
