@@ -46,10 +46,24 @@ const Footer = () => {
             <img onClick={() => window.location.href = footer.facebook_link} src={facebook} alt="facebook" />
           </div>
           <div className='footer-para'>
-            {footer.description}
+            {footer?.description}
           </div>
         </div>
-        <div className='footer-right'></div>
+        <div className='footer-right'>
+          <div className='flinks'>
+            <div className='flinks-title'>Quick links</div>
+            <div className='flinks-all'>Plans</div>
+            <div className='flinks-all'>Get a coach</div>
+            <div className='flinks-all'>Contact us</div>
+          </div>
+          <div className='flinks'>
+            <div className='flinks-title'>Company</div>
+            <div className='flinks-all'>About us</div>
+            <div className='flinks-all'>Careers</div>
+            <div className='flinks-all'>Terms & conditions</div>
+            <div className='flinks-all'>Privacy policy</div>
+          </div>
+        </div>
       </div>
       <div className='footer-bottom'>
       Copyright fit4sure © 2022 All Rights Reserved

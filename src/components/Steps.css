@@ -5,6 +5,11 @@
     justify-content: center;
     align-items: center;
 }
+@media (max-width: 480px) {
+    .steps-main{
+        display: none;
+    }
+}
 .steps-content{
     height: 75%;
     display: flex;

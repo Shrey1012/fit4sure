@@ -14,7 +14,7 @@ const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
+ 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
@@ -57,8 +57,8 @@ const Signin = () => {
 
     google.accounts.id.renderButton(document.getElementById("g-button"), {
       theme: "outline",
-      width: "310px",
-      height: "50px",
+      width: "350px",
+      height: "48px",
       shape: "rectangular",
       text: "signin_with",
     });
@@ -78,41 +78,44 @@ const Signin = () => {
       <div className="Signin-right">
         <h2>Welcome back!</h2>
         <h3>Sign in to continue.</h3>
-        <div className="Input-part">
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-        </div>
-        <div className="Input-part1">
-          <label htmlFor="password">Password</label>
-          <div className="Password-input">
-            <input
-              id="password"
-              type={showPassword ? "text" : "password"}
-              placeholder="Password"
-              value={password}
+        <div className="Signin-right-mid">
+          <div className="Input-part">
+            <label htmlFor="email">Email</label>
+            <input className="email-input"
+              id="email"
+              type="text"
+              placeholder="Email"
+              value={email}
               onChange={(e) => {
-                setPassword(e.target.value);
+                setEmail(e.target.value);
               }}
             />
-            {showPassword ? (
-              <FaEyeSlash
-                className="Password-toggle"
-                onClick={handleTogglePassword}
+          </div>
+        
+          <div className="Input-part">
+            <label htmlFor="password">Password</label>
+            <div className="Password-input">
+              <input className="email-input"
+                id="password"
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
-            ) : (
-              <FaEye
-                className="Password-toggle"
-                onClick={handleTogglePassword}
-              />
-            )}
+              {showPassword ? (
+                <FaEyeSlash
+                  className="Password-toggle"
+                  onClick={handleTogglePassword}
+                />
+              ) : (
+                <FaEye
+                  className="Password-toggle"
+                  onClick={handleTogglePassword}
+                />
+              )}
+            </div>
           </div>
         </div>
         <button className="S-button" onClick={handleSignIn}>

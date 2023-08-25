@@ -6,6 +6,12 @@
     justify-content: center;
     align-items: center;
 }
+@media (max-width: 480px) {
+    .download-main{
+     flex-direction: column-reverse;
+     gap: 3%;
+    }
+}
 .download-left{
     height: 62%;
     width: 35%;
@@ -76,4 +82,30 @@
     height: 62%;
     width: 35%;
     background-color: #F8F6F2;
+}
+@media (max-width: 480px) {
+    .download-right{
+     width: 85%;
+     height: 35%;
+     aspect-ratio: 1;
+    }
+    .download-left{
+     width: 85%;
+     height: 48%;
+     padding: 0;
+    }
+    .download-text1{
+        font-size: 20px;
+        width: 100%;
+    }
+    .download-text2{
+        font-size: 16px;
+        width: 100%;
+    }
+    .down-play{
+        width: 48%;
+    }
+    .down-apple{
+        width: 48%;
+    }
 }

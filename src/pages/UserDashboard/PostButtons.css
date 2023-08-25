@@ -56,10 +56,13 @@
   }
   
   .add-post-modal {
-    background-color: #fff;
-    border-radius: 4px; 
+    width: 480px;
+    height: 500px;
+    background-color: #fff; 
     padding: 20px;
-    max-width: 500px;
+    padding-top: 0px;
+    border-radius: 10px;
+    
   }
   
   .add-post-modal h2 {
@@ -69,6 +72,7 @@
   .add-post-modal form {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
   }
   
   .add-post-modal .form-group {

@@ -5,7 +5,7 @@ import AppStore from '../assets/AppStore.svg';
 
 const Download = () => {
   return (
-    <div className='download-main'>
+    <div className='download-main'> 
       <div className='download-left'>
         <div className='download-left-text'>
           <div className='download-text1'>Join Fit4sure and stay rest assured; within <strong>16 weeks</strong>, your healthy, mindful,<span className='high-text'> guilt-free fitness</span> is ensured.</div>

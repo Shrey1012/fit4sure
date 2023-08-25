@@ -63,8 +63,8 @@ const Features = () => {
           )}
         </div>
         <div className="fet-arrows">
-          <img src={arrow_left} alt="Prev" onClick={handlePrevClick} />
-          <img src={arrow_right} alt="Next" onClick={handleNextClick} />
+          <img className="arrow-back" src={arrow_left} alt="Prev" onClick={handlePrevClick} />
+          <img className="arrow-next" src={arrow_right} alt="Next" onClick={handleNextClick} />
         </div>
       </div>
     </div>

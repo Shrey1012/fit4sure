@@ -14,7 +14,7 @@
     align-items: center;
 }
 .Signin-left img{
-    width: 85%;
+    width: 85%; 
     border: none;
 }
 .Signin-right{
@@ -44,61 +44,62 @@
     color: #BD3C2A;
     margin-bottom: 6%;
 }
-.Input-part{
-    width: 300px;
-    height: 11%;
-    margin-bottom: 0.5%;
-}
 .Signin-right p{
     margin-top: 1%;
     margin-bottom: 1%;
 }
-.Input-part input{
-    width: 250px;
-    height: 30px;
-    padding-left: 6px;
+.Signin-right-mid{
+    width: 350;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.Input-part{
+    width: 350px;
+    height: 108px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+}
 
+.email-input{
+    width: 336px;
+    height: 40px;
+    padding-left: 8px;
     border: solid 2px #DEDEDD;
     border-radius: 5px;
 
 }
-.Input-part1 input{
-    width: 300px;
-    height: 30px;
-    padding-left: 6px;
 
-    border: solid 2px #DEDEDD;
-    border-radius: 5px;
-
-}
 .Input-part label{
     margin: 0;
     padding: 0;
 
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     letter-spacing: 0em;
     text-align: start;
     color: #433F37;
 
-    padding-bottom: 3% ;
+    padding-bottom: 1% ;
+}
+.email-input ::placeholder{
+    font-family: Nunito;
+
+}
+.Password-toggle{
+    position: absolute;
+    padding-right: 120px;
+    z-index: 1;
 }
 
-.Input-part1 label{
-    margin: 0;
-    padding: 0;
-
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0em;
-    text-align: start;
-    color: #433F37;
-
-    padding-bottom: 3% ;
-}
 .S-button{
-    width: 34%;
-    height: 6%;
+    width: 350px;
+    height: 48px;
 
     background-color: black;
     color: white;
@@ -131,6 +132,7 @@
 
 #g-button{
     border: none;
+   
 }
 
 #g-button:hover{
@@ -155,4 +157,36 @@
     color: #BD3C2A;
     font-weight: 700;
     cursor:pointer;
+}
+@media (max-width: 580px) {
+    .Signin-main{
+        height: 100vh;
+    }
+    .Signin-left{
+        display: none;
+    }
+    .Signin-right{
+        width: 100%;
+        height: 100%;
+        justify-content: flex-start;
+        margin-top: 140px;
+        padding: 0;
+    }
+}
+@media (max-width: 400px) {
+    .Signin-right-mid{
+        width: 320px;
+    }
+    .Input-part{
+        width: 320px;
+    }
+    .email-input{
+        width: 306px;
+    }
+    .S-button{
+        width: 320px;
+    }
+    .G-width{
+        width: 320px;
+    }
 }
