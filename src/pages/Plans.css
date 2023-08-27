@@ -128,3 +128,38 @@
     font-weight: 600;
     line-height: normal;
 }
+
+@media screen and (max-width:767px) {
+
+.plans-txt2{
+    width: 100%;
+    padding: 30px 0;
+}
+
+.Plans-main{
+    height: 100%;
+    padding-bottom: 50px;
+}
+
+.plans-bottom ul li{
+    list-style: none;
+}
+
+.plans-mid{
+    width: 95%;
+}
+
+.plans-mid div p{
+    font-size: 14px;
+}
+
+.plans-mid div h2{
+    font-size: 15px;
+}
+
+.plans-bottom{
+    width: 95%;
+    padding-bottom: 40px;
+}
+
+}

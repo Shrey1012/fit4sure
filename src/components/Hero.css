@@ -95,7 +95,7 @@
         height: 60%;
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     .hero_left{
         width: 90%;
         margin-top: 35%;
@@ -111,10 +111,10 @@
     .hero-right{
         display: none;
     }
-    .hero-line{
+    /* .hero-line{
         margin-bottom: 15%;
         margin-top: 15%;
-    }
+    } */
     .hero-button{
         width: 65%;
         height: 12%;
