@@ -92,3 +92,29 @@
     background-color: #BD3C2A;
     color: white;
 }
+
+@media screen and (max-width:767px) {
+
+.Coach-left, .Coach-right{
+    width: 100%;
+    height: 100%;
+    margin: 3%;
+    padding: 0 0 40px;
+}
+
+.Coach-main{
+    height: 100%;
+    padding-top: 100px;
+}
+
+.Coach-top {
+    width: 90%;
+    padding-bottom: 40px;
+}
+
+.Coach-bottom {
+    flex-wrap: wrap;
+    height: 100%;
+}
+    
+}

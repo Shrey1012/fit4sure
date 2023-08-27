@@ -1,65 +1,69 @@
- .Milestone-main{
-    height: 30vh;
-    width: 100%;
-    background: #F2EEE5;
-    display: flex;
-    justify-content: center;
- }
- @media (max-width: 480px) {
-   .Milestone-main{
-      height: 100vh;
-      align-items: center;
-   }  
- }
- .Milestone-box{
-    width: 80%;
-    height: 100%;
-    background-color: white;
-    border-top: solid 4px #DAC55A;
-    border-radius: 6px;
+.Milestone-main{
+   height: 30vh;
+   width: 100%;
+   background: #F2EEE5;
+   display: flex;
+   justify-content: center;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8%;
- }
- .Milestone-box div{
-    display: flex;
-    height: 45%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1%;
- }
- .ms-toptxt{
-    font-size: 36px;
-    color: #BD3C2A;
-    font-weight: 800;
-    text-align: center;
- }
- .ms-bottomtxt{
-    font-size: 20px;
-    color: #433F37;
-    font-weight: 700;
-    text-align: center;
- }
- @media (max-width: 480px) {
-   .Milestone-box{
-      flex-direction: column;
-      height: 90%;
-      width: 70%;
-      gap: 5%;
-   } 
-   .Milestone-box div{
-      gap: 0;
-   } 
-   .ms-toptxt{
-      font-size: 32px;
-      padding: 0;
-   }
-   .ms-bottomtxt{
-      font-size: 20px;
-      padding: 0;
-      line-height: 30px;
-   }
- }
+.Milestone-box{
+   width: 80%;
+   height: 100%;
+   background-color: white;
+   border-top: solid 4px #DAC55A;
+   border-radius: 6px;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 8%;
+}
+.Milestone-box div{
+   display: flex;
+   height: 45%;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1%;
+}
+.ms-toptxt{
+   font-size: 36px;
+   color: #BD3C2A;
+   font-weight: 800;
+   text-align: center;
+}
+.ms-bottomtxt{
+   font-size: 20px;
+   color: #433F37;
+   font-weight: 700;
+   text-align: center;
+}
+
+@media (max-width: 480px) {
+.Milestone-main{
+   height: 100vh;
+   align-items: baseline;
+}  
+}
+ 
+ @media (max-width: 576px) {
+.Milestone-box{
+   flex-direction: column;
+   height: 90%;
+   width: 70%;
+   gap: 5%;
+} 
+.Milestone-box div{
+   gap: 0;
+} 
+.ms-toptxt{
+   font-size: 32px;
+   padding: 0;
+}
+.ms-bottomtxt{
+   font-size: 20px;
+   padding: 0;
+   line-height: 30px;
+}
+
+}
