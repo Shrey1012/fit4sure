@@ -44,9 +44,10 @@ const PostDetails = () => {
       const response = await API.get(`/app/post/${postId}`);
       const postData = response.data;
       setPost(postData);
-
+      if(postData.image){
       const imageURL = await getDownloadURL(ref(storage, postData.image));
       setImageURL(imageURL);
+      }
     } catch (error) {
       console.error("Error fetching post details:", error);
     }
@@ -117,7 +118,7 @@ const PostDetails = () => {
           <h2>10 things to imrove your fitness</h2>
           <h6>By: <span>{post?.user?.name}</span></h6>
           <h3>{post.text}</h3>
-          {/* <img src={imageURL} alt="Post" /> */}
+          {/* {imageURL && <img src={imageURL} alt="Post" /> } */}
         
           <div className="blog-likecomment">
             <div className="all-post-likes">

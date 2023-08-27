@@ -44,13 +44,14 @@ const CategoryPage = () => {
       // Retrieve the image URLs from Firebase Storage for each post
       const postsWithImageURLs = await Promise.all(
         postsData.map(async (post) => {
+          if (!post.image) return post;
           const imageURL = await getDownloadURL(ref(storage, post.image));
           return { ...post, imageURL };
         })
       );
 
       const sortedPosts = postsWithImageURLs.sort((a, b) => {
-        return new Date(b.datetime) - new Date(a.datetime);
+        return new Date(b.date) - new Date(a.date);
       });
 
       setPosts(sortedPosts);
@@ -109,7 +110,7 @@ const CategoryPage = () => {
             key={post._id}
           >
             <h3>{post.text}</h3>
-            <img src={post.imageURL} alt="post" />
+            {post.imageURL && <img src={post.imageURL} alt="post" /> }
             <h6>By: {post?.user?.name}</h6>
             <div className="all-post-likes">
               <p>{post.likes?.length} likes</p>

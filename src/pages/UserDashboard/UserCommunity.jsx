@@ -40,12 +40,13 @@ const PostCategory = ({ category, categoryTitle }) => {
       const categoryPosts = response.data;
       const postsWithImageURLs = await Promise.all(
         categoryPosts.map(async (post) => {
+          if(!post.image) return post;
           const imageURL = await getDownloadURL(ref(storage, post.image));
           return { ...post, imageURL };
         })
       );
       const sortedPosts = postsWithImageURLs.sort((a, b) => {
-        return new Date(b.datetime) - new Date(a.datetime);
+        return new Date(b.date) - new Date(a.date);
       });
 
       setPosts(sortedPosts);
@@ -104,7 +105,7 @@ const PostCategory = ({ category, categoryTitle }) => {
         > 
           <h2>10 things to imrove your fitness</h2>
           <div className="blog-by">By: {post?.user?.name}</div>
-          {/* <img className="community-img" src={post.imageURL} alt={category} /> */}
+          {/* {post.imageURL && <img className="community-img" src={post.imageURL} alt={category} /> } */}
           <div className="blog-text"><h6>{post.text}</h6></div>
           
           <div className="blog-likecomment">
