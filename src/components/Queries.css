@@ -13,6 +13,16 @@
     display: flex;
     justify-content: flex-start;
 }
+@media (max-width: 480px){
+    .queries-box{
+        flex-direction: column;
+        width: 85%;
+        height: 75%;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
 .qbox-left{
     width: 40%;
     height: 100%;
@@ -85,5 +95,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+@media (max-width: 480px){
+    .qbox-left{
+        width: 100%;
+        height: 65%;
+    }
+    .qbox-right{
+        width: 90%;
+    }
+    .queries-txt1{
+        font-size: 20px;
+
+    }
+    .queries-txt2{
+        font-size: 16px;
+    }
+    .queries-txt3{
+        font-size: 14px;
+    }
+    .qbox-right-bottom{
+        height: 16%;
+    }
+    .qbox-right-bottom button{
+        width:50%;
+        height: 72%;
+    }
+    
 }
 

@@ -12,7 +12,7 @@ const Contactus = () => {
   const emailAddress = "202051053@iiitvadodara.ac.in"; // Replace with the recipient's email address
   const subject = "Question about your product"; // Replace with your email subject
   const body = "Hello, I have a question about your product..."; // Replace with your email body
-
+ 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");

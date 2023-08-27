@@ -7,7 +7,7 @@
     justify-content: flex-start;
     align-items: center;
     padding-top: 8%;
-}
+} 
 .contact-top{
     padding: 0;
     margin: 0;
@@ -73,6 +73,9 @@
     align-items: center;
     padding-bottom: 3%;
 }
+.contact-mid-right div label{
+    width: 40%;
+}
 .contact-mid-right input{
     width: 57%;
     height: 80%;
@@ -133,4 +136,76 @@
     font-size: 18px;
     font-weight: 600;
     color: #1F1704;
+}
+@media (max-width: 580px) {
+    .contact-main{
+        height: 130vh;
+        padding-top: 80px;
+    }
+    .contact-top{
+        width: 80%;
+    }
+    .contact-txt1{
+        font-size: 24px;
+    }
+    
+    .contact-txt2{
+        font-size: 18px;
+        width: 80%;
+    }
+    .contact-mid{
+        padding-top: 32px;
+        width: 85%;
+        height: 60%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .contact-mid-left{
+        width: 90%;
+        height: 40%;
+    }
+    .contact-mid-left img{
+        width: 100%;
+    }
+    .contact-mid-right{
+        width: 90%;
+        height: 60%;
+        padding-left: 0%;
+    }
+    .contact-mid-right form{
+        width: 100%;
+    }
+    .contact-mid-right div{
+        height: 40px;
+        width: 100%;
+        font-size: 16px;
+        justify-content: center;
+    }
+    .contact-mid-right div label{
+        display: none;
+    }
+    .contact-mid-right input{
+        width: 100%;
+        height: 100%;
+    }
+    .book-now{
+        width: 100%;
+    }
+}
+@media (max-width: 480px){
+    .contact-social{
+        width: 100%;
+    } 
+    .contact-social div{
+        width: 26%;
+    } 
+    .contact-social div img{
+        width: 26%;
+        margin-top: 12px;
+    } 
+    .contact-social p{
+        font-size: 16px;
+    } 
+
 }

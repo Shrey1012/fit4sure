@@ -27,6 +27,17 @@
     text-align: center;
 
 }
+@media (max-width: 480px) {
+    .stories-main h2{
+        font-size: 23px;
+        padding-bottom: 3%;
+    }
+    .stories-main p{
+        font-size: 16px;
+        width: 80%;
+    }
+
+}
 .all-stories{
     display: flex;
     justify-content: center;

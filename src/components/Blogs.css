@@ -17,8 +17,21 @@
 
   .all-blogs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3%;
-    width: 80%;
+    grid-template-columns: repeat(3, minmax(360px, 1fr));
+    gap: 24px;
+    width: 1128px;
+    height: 500px;
     margin-top: 2%;
+  }
+  @media (max-width: 1175px){
+    .all-blogs {
+    width: 744px;
+    overflow:hidden;
+   }
+  }
+  @media (max-width: 800px){
+    .all-blogs {
+    width: 360px;
+    overflow:hidden;
+   }
   }

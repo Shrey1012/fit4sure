@@ -9,19 +9,19 @@
 
 .features-top {
   background-color: #FCFBF9;
-    height: 184px;
+    height: 20%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .top-text {
   width: 50%;
   color: #1f1704;
   font-family: Nunito;
   font-size: 22px;
   font-weight: 700;
-  line-height: 38px;
   letter-spacing: 0em;
   text-align: center;
 }
@@ -58,16 +58,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3%;
+  gap: 24px;
 }
 
 .fet-arrows{
   position: absolute;
-  margin-top: 18%;
+  margin-top: 320px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 72%;
   cursor: pointer;
+  gap: 1060px;
+}
+
+@media (max-width: 480px){
+  .top-text{
+      width: 80%;
+      font-size: 18px;
+  }
 }

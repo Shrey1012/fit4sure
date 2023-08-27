@@ -26,19 +26,19 @@ const Milestone = () => {
     <div className="Milestone-main">
       <div className="Milestone-box">
         <div>
-          <div className="ms-toptxt">{milestones.coaches}+</div>
+          <div className="ms-toptxt">{milestones?.coaches}+</div>
           <div className="ms-bottomtxt">Coaches</div>
         </div>
         <div>
-          <div className="ms-toptxt">{milestones.success_rate}%</div>
+          <div className="ms-toptxt">{milestones?.success_rate}%</div>
           <div className="ms-bottomtxt">Success rate</div>
         </div>
-        <div>
-          <div className="ms-toptxt">{milestones.lives_impacted}+</div>
+        <div> 
+          <div className="ms-toptxt">{milestones?.lives_impacted}+</div>
           <div className="ms-bottomtxt">Lives impacted</div>
         </div>
         <div>
-          <div className="ms-toptxt">{milestones.users_in_india}+</div>
+          <div className="ms-toptxt">{milestones?.users_in_india}+</div>
           <div className="ms-bottomtxt">users in India</div>
         </div>
       </div>

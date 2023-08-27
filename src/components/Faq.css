@@ -24,6 +24,14 @@
     align-items: center;
     gap: 2%;
 }
+@media (max-width: 480px) {
+    .Faq-top{
+        font-size: 24px;
+    }    
+    .all-faq{
+        width: 90%;
+    }
+}
 .faq-more{
     font-family: Nunito;
     font-size: 20px;

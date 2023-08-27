@@ -19,7 +19,9 @@ const AllCoaches = () => {
         console.log(err);
       });
   }, []);
-
+  if (coaches.length === 0) {
+    return <div>Loading coaches...</div>; // You can show a loading spinner or message here
+  }
   return (
     <div className='all-coaches'>
       

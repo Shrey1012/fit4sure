@@ -5,6 +5,12 @@
     display: flex;
     justify-content: center;
  }
+ @media (max-width: 480px) {
+   .Milestone-main{
+      height: 100vh;
+      align-items: center;
+   }  
+ }
  .Milestone-box{
     width: 80%;
     height: 100%;
@@ -36,4 +42,24 @@
     color: #433F37;
     font-weight: 700;
     text-align: center;
+ }
+ @media (max-width: 480px) {
+   .Milestone-box{
+      flex-direction: column;
+      height: 90%;
+      width: 70%;
+      gap: 5%;
+   } 
+   .Milestone-box div{
+      gap: 0;
+   } 
+   .ms-toptxt{
+      font-size: 32px;
+      padding: 0;
+   }
+   .ms-bottomtxt{
+      font-size: 20px;
+      padding: 0;
+      line-height: 30px;
+   }
  }
