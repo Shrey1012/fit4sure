@@ -68,7 +68,7 @@ const BFP = () => {
         const inputs = [weightInputRef.current, heightInputRef.current, ageInputRef.current, genderInputRef.current];
         const currentIndex = inputs.findIndex(
           (ref) => ref === document.activeElement
-        );
+        ); 
   
         if (currentIndex === inputs.length - 1 && weight && height && age && gender) {
           calculateBfp();
@@ -158,7 +158,7 @@ const BFP = () => {
         </div>
         
       </form>
-      <div className="bfp-result-area">
+      <div className="bfp-result-area"> 
       {isLoading && <div className="bmi-message">Loading...</div>}
       {error && <div className="bmi-message">Error: {error}</div>}
       {bfpData && (
