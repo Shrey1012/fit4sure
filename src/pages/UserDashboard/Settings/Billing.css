@@ -1,0 +1,164 @@
+.settings-option{
+    background-color: #f2eee5;
+    height: 100vh;
+    padding: 30px 0 0 40px;
+}
+
+.settings-option h5{
+    font-size: 24px;
+    margin: 0 0 0;
+    padding: 0 0 40px;
+    font-weight: 600;
+}
+
+.settings-option ul li a{
+    font-size: 18px;
+    color: #181818;
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.body-header {
+    height: 100%;
+    padding: 30px 0 0 30px;
+}
+
+.body-header h4{
+    font-size: 28px;
+    color: #181818;
+    margin: 0;
+}
+
+.body-header .top-icons .navbar-light .navbar-nav .nav-link.user_img span {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #f8f8f8;
+}
+
+.body-header .top-icons .navbar-light .navbar-nav .nav-item.dropdown .dropdown-menu{
+    right: 0;
+    left: auto;
+}
+
+.body-header .top-icons .navbar-light .navbar-nav .nav-link.dropdown-toggle::after{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -10px;
+}
+
+.user_table .table tbody tr:nth-child(odd){
+    background-color: #f8f8f8;
+}
+
+.user_table .table tbody tr{
+    border-radius: 10px;
+}
+
+.user_table .table tr td, .user_table .table tr th{
+    border: 0;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 10px;
+    font-family: 'Nunito', sans-serif
+}
+
+.user_table .table tr td a{
+    color: #BD3C2A;
+    text-decoration: none;
+}
+
+.user_table .table tr th{
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.user_table .table>:not(:first-child){
+    border: 0;
+}
+
+.two-grid-column{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.top-icons ul{
+    display: flex;
+    align-items: center;
+}
+
+.top-icons ul li{
+    list-style: none;
+}
+
+.top-icons ul li:not(:first-child){
+    margin-left: 10px;
+}
+
+.top-icons ul li a .admin-img{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background: #eee;
+    display: inline-block;
+}
+
+.user_table .table-responsive .table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user_table .table-responsive .table tr th{
+    text-align: left;
+}
+
+@media screen and (max-width:767px) {
+
+.user-settings-container{
+    flex-direction: column;
+}
+ 
+.Settings-nav{
+    width: 98%;
+    margin: 0 auto;
+}
+
+.body-header{
+    width: 98%;
+    margin: 0 auto;
+    padding-left: 0;
+}
+
+.two-grid-column{
+    width: 98%;
+    margin: 0 auto;
+    padding-right: 0;
+}
+
+.user_table {
+    width: 98%;
+    margin: 0 auto;
+}
+
+.body-header h4 {
+    font-size: 16px;
+}
+
+.user_table .table tr td, .user_table .table tr th {
+    font-size: 10px;
+    padding: 10px 5px;
+}
+
+.top-icons ul{
+    padding: 0;
+    margin: 0;
+}
+
+}

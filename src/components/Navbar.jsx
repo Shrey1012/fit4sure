@@ -10,6 +10,8 @@ const Navbar = () => {
   return (
     <div className='navbar'>
     <nav className='nav'>
+        
+        <div className='left_nav'><a href='/'><img src={fflogo} alt="Fit4sure logo" /></a></div>
         <div className="menu-icon">
           <NavLink>
             <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +19,6 @@ const Navbar = () => {
             </svg>
           </NavLink>
         </div>
-        <div className='left_nav'><a href='/'><img src={fflogo} alt="Fit4sure logo" /></a></div>
         <ul>
           <li>
             <NavLink

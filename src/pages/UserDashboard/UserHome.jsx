@@ -99,13 +99,50 @@ const UserHome = () => {
               <button onClick={() => navigate("/shortvideos")}>
                 View more
               </button>
-              <div className="vid-card">
-                {videoData.map((video) => (
-                  <div className="user-home-short-video" key={video._id}>
-                    <h5>{video.title}</h5>
-                    <VideoPlayer src={video.video} />
+              <div className="grid-column">
+                <div className="vid-card">
+                  {videoData.map((video) => (
+                    <div className="user-home-short-video" key={video._id}>
+                      <h5>{video.title}</h5>
+                      <VideoPlayer src={video.video} />
+                    </div>
+                  ))}
+                  <div className="card-dost">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                   </div>
-                ))}
+                  <div className="bottomccard-text">
+                    <div>
+                      <p>Exercise latest video</p>
+                      <span>3.5 K views</span>
+                    </div>
+
+                    <div className="heart-icon">
+                      <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.99967 12.2338L6.03301 11.3538C2.59967 8.24049 0.333008 6.18049 0.333008 3.66716C0.333008 1.60716 1.94634 0.000488281 3.99967 0.000488281C5.15967 0.000488281 6.27301 0.540488 6.99967 1.38715C7.72634 0.540488 8.83967 0.000488281 9.99967 0.000488281C12.053 0.000488281 13.6663 1.60716 13.6663 3.66716C13.6663 6.18049 11.3997 8.24049 7.96634 11.3538L6.99967 12.2338Z" fill="#E21414"/></svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="vid-card">
+                  <div className="card-dost">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div className="bottomccard-text">
+                    <div>
+                      <p>Exercise latest video</p>
+                      <span>3.5 K views</span>
+                    </div>
+
+                    <div className="heart-icon">
+                      <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.99967 12.2338L6.03301 11.3538C2.59967 8.24049 0.333008 6.18049 0.333008 3.66716C0.333008 1.60716 1.94634 0.000488281 3.99967 0.000488281C5.15967 0.000488281 6.27301 0.540488 6.99967 1.38715C7.72634 0.540488 8.83967 0.000488281 9.99967 0.000488281C12.053 0.000488281 13.6663 1.60716 13.6663 3.66716C13.6663 6.18049 11.3997 8.24049 7.96634 11.3538L6.99967 12.2338Z" fill="#E21414"/></svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="User-home-test">

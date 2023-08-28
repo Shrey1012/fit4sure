@@ -16,7 +16,9 @@
     align-items: center;
 }
 .Coach-card img{
-    height: 50%;
+    height: 100px;
+    object-fit: cover;
+    width: 100px;
     border-radius: 50%;
     margin-bottom: 7%;
 }
@@ -36,7 +38,8 @@
     margin-bottom: 5%;
 }
 .coach-star img{
-    height: 60%;
+    height: auto;
+    width: auto;
 }
 .coach-star div{
     font-size: 16px;
@@ -125,10 +128,12 @@
     gap: 5%;
   }
   .Popup-top-left{
-    width: max-content;
+    width: 100%;
     height: 100%;
+    overflow: hidden;
   }
   .Popup-top-left img{
+    width: 100%;
     height: 100%;
     border-radius: 10px;
   }
@@ -223,7 +228,24 @@
 }
 
 
-  
+@media screen and (max-width:767px) {
 
-  
-  
+.Coach-card img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.Popup-top-left img {
+    height: 80px;
+    width: 80px;
+    margin: auto;
+}
+
+.Popup-top{
+    width: auto;
+    height: auto;
+    flex-wrap: wrap;
+}
+    
+}

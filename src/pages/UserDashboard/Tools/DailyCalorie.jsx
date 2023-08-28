@@ -97,7 +97,7 @@ const DailyCalorie = () => {
       <form className="calorie-form" onSubmit={handleSubmit}>
         <div className="calorie-input-container">
           <label className="calorie-label">
-            Weight:
+            <span>Weight:</span>
             <input
               className="calorie-input"
               type="text"
@@ -108,7 +108,7 @@ const DailyCalorie = () => {
             />
           </label>
           <label className="calorie-label">
-            Height:
+            <span>Height:</span>
             <input
               className="calorie-input"
               type="text"
@@ -118,7 +118,7 @@ const DailyCalorie = () => {
             />
           </label>
           <label className="calorie-label">
-            Age:
+            <span>Age:</span>
             <input
               className="calorie-input"
               type="text"
@@ -128,7 +128,7 @@ const DailyCalorie = () => {
             />
           </label>
           <label className="calorie-label">
-            Gender:
+            <span>Gender:</span>
             <select
               className="calorie-input"
               value={gender}
@@ -141,7 +141,7 @@ const DailyCalorie = () => {
             </select>
           </label>
           <label className="calorie-label">
-            Activity Level:
+            <span>Activity Level:</span>
             <select
               className="calorie-input"
               value={activityLevel}
