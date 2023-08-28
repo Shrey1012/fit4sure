@@ -173,12 +173,14 @@ const TDEE = () => {
           </button>
         </div>
       </form>
-      <div className="result-area"> <p>Your TDEE is: </p>
+      <div className="bfp-result-area"> 
       {isLoading && <div className="bmi-message">Loading...</div>}
       {error && <div className="bmi-message">Error: {error}</div>}
       {tdeeData && (
         <div className="bmi-result">
-          {tdeeData.info.tdee}
+          <p className="bfp-info">Your TDEE value: 
+          <span> {tdeeData.info.tdee}</span>
+          </p>
         </div>
       )}
       </div>
