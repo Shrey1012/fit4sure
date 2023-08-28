@@ -5,6 +5,8 @@ import "./PersonalDetails.css";
 import profile from "../../../assets/profile.svg";
 import edit_icon from "../../../assets/edit_icon.svg";
 import check from "../../../assets/check.svg";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const PersonalDetails = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -76,6 +78,23 @@ const PersonalDetails = () => {
   };
 
   const handleSave = async () => {
+    if (
+      !userData.name ||
+      !userData.email ||
+      !userData.contactNumber ||
+      !userData.dateOfBirth ||
+      !userData.stateOfResidence
+    ) {
+      // Show a toast notification for the error
+      toast.error("Please fill in all fields.", {
+        position: "top-center",
+        autoClose: 3000, // Close after 3 seconds
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+      return;
+    }
     setIsEditing(false);
     try {
       const formData = new FormData();

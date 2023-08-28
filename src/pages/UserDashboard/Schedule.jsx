@@ -1,9 +1,10 @@
 import React from 'react'
 import './Schedule.css'
+import GenerateInvoice from './GenerateInvoice'
 
 const Schedule = () => {
   return (
-    <div>Schedule</div>
+    <div><GenerateInvoice/></div>
   )
 }
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import jsPDF from 'jspdf';
 import "./Plans.css";
 import arrownxt from "../assets/arrownxt.svg";
 import axios from "axios";
@@ -6,6 +7,8 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import GenerateInvoice from "./UserDashboard/GenerateInvoice";
+const ReactDOMServer = require("react-dom/server");
 
 const Plans = () => {
   const [plans, setPlans] = useState([]);
@@ -49,10 +52,11 @@ const Plans = () => {
     if (authData) {
       try {
         // Make an API call to your backend to initiate the order with Razorpay
-        const response = await API.post("/app/payment/order-with-rozorpay", {
+        const response = await API.post("/app/payment/order-with-razorpay", {
           amount: selectedPlan.price * 100,
           subscription_plan_id: selectedPlan._id,
           duration: selectedPlan.duration,
+          plan_details : selectedPlan.short_description,
           user_id: authData.result._id,
         });
 
@@ -99,7 +103,7 @@ const Plans = () => {
   const completePayment = async (response) => {
     try {
       // Make an API call to your backend to confirm the payment and update the order status
-      await API.post("/app/payment/checkout-with-rozorpay", {
+      await API.post("/app/payment/checkout-with-razorpay", {
         order_id: response.razorpay_order_id,
         payment_data: response,
       });
@@ -108,6 +112,12 @@ const Plans = () => {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 2000, // Time in milliseconds for the toast to be visible (e.g., 2000 = 2 seconds)
       });
+
+      // Fetch the order details
+    const orderResponse = await API.get(`/app/payment/get-order/${response.razorpay_order_id}`);
+    const order = orderResponse.data.order;
+
+    uploadInvoice(order);
 
     } catch (error) {
       console.error("Error confirming payment:", error);
@@ -118,6 +128,55 @@ const Plans = () => {
       });
     }
   };
+
+  const generateInvoicePdf = async (order) => {
+    try {
+      const invoiceHtml = (
+        <GenerateInvoice order={order} />
+      );
+
+      const doc = new jsPDF({
+        format: 'a2',
+        unit: 'px',
+      });
+
+      return new Promise((resolve) => {
+        doc.html(ReactDOMServer.renderToString(invoiceHtml), {
+          callback: () => {
+            const pdfBuffer = doc.output('arraybuffer');
+            resolve(pdfBuffer);
+          },
+        });
+      });
+
+
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+      throw error;
+    }
+  };
+
+  const uploadInvoice = async (order) => {
+    try {
+
+      const pdf = await generateInvoicePdf(order);
+
+      const formData = new FormData();
+      formData.append("order", JSON.stringify(order));
+      formData.append("file", new Blob([pdf], { type: "application/pdf" }), "invoice.pdf");
+
+      console.log(new Blob([pdf], { type: "application/pdf" }));
+      
+      await API.post("/app/payment/upload-invoice",formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+    } catch (error) {
+      console.error("Error uploading invoice:", error);
+    }
+  }
 
   return (
     <div className="Plans-main">
@@ -135,7 +194,7 @@ const Plans = () => {
           }`}>
             <h2>{plan.duration}</h2>
             <p>
-              INR {plan.price} <span>/month</span>
+              INR {plan.per_month_price} <span>/month</span>
             </p>
           </div>
         ))}
