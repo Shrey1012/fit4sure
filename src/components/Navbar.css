@@ -82,13 +82,28 @@
 }
 @media (max-width: 767px){
 .nav ul{
-  display: none;
+  display: flex;
+  flex-direction: column;
 }
 .navbar{
-  height: 64px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px;
+  border-bottom: solid 1px #B5B5B5;
+}
+.nav{
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  
 }
 .line{
-  top: 56px;
+  display: none;
 }
 
 .btn{
@@ -99,6 +114,8 @@
 
 .menu-icon{
   display: block;
+  position: absolute;
+  right: 64px;
 }
 
 }
