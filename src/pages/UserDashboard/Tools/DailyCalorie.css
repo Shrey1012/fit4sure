@@ -83,4 +83,19 @@
     margin: 0;
   }
   
+  @media screen and (max-width:767px) {
   
+.calorie-label{
+  font-size: 14px;
+}
+
+.calorie-label span {
+  width: 120px;
+}
+
+.calorie-input{
+  width: 200px;
+  margin: 0;
+}
+    
+  }

@@ -60,7 +60,7 @@ const Passwords = () => {
     <form className="passwords-form" onSubmit={handleChangePassword}>
       <div className="passwords-form-group">
         <label className="passwords-form-label" htmlFor='oldPass'>
-          Old Password:
+          <span>Old Password:</span>
           <input
             className="passwords-form-input"
             type="password"
@@ -73,7 +73,7 @@ const Passwords = () => {
       </div>
       <div className="passwords-form-group">
         <label className="passwords-form-label" htmlFor='newPass'>
-          New Password:
+          <span>New Password:</span>
           <input
             className="passwords-form-input"
             type="password"
@@ -86,7 +86,7 @@ const Passwords = () => {
       </div>
       <div className="passwords-form-group">
         <label className="passwords-form-label" htmlFor='confirmNewPass'>
-          Confirm New Password:
+          <span>Confirm New Password:</span>
           <input
             className="passwords-form-input"
             type="password"

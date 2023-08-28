@@ -222,3 +222,56 @@
   color: #a7a7a7;
 }
 
+@media screen and (max-width:767px) {
+
+.bmi-main{
+  flex-direction: column;
+}
+
+.bmi-right, .bmi-left {
+  width: 98%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.bmi-left-top{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.calculate-nxt{
+  width: 150px;
+}
+
+.calculate-btn {
+  width: 150px;
+  font-size: 12px;
+  height: 32px;
+}
+
+.bmi-form{
+  width: 90%;
+  margin: 20px auto 0;
+}
+
+.result-area{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.bmi-label div{
+  font-size: 14px;
+}
+
+.bmi-left-top h2{
+  text-align: center;
+  padding-left: 20px;
+}
+
+.bmi-ans{
+  width: 90%;
+}
+  
+}

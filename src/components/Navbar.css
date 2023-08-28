@@ -94,6 +94,7 @@
 .btn{
   width: 92px;
   padding: 0;
+  display: none;
 }
 
 .menu-icon{

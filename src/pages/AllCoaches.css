@@ -6,3 +6,30 @@
     justify-content: center;
     gap: 2%;
 }
+
+@media screen and (max-width:767px) {
+
+.all-coaches{
+    height: 100%;
+    flex-wrap: wrap;
+    padding: 100px 0 40px;
+}
+
+.Coach-card{
+    width: 98%;
+    margin: 0 auto 20px;
+    height: auto;
+}
+
+.message-btn img, .coach-star img{
+    width: auto;
+    height: auto;
+}
+
+.message-btn{
+    padding: 4px;
+    width: 40px;
+    height: 33px;
+}
+
+}

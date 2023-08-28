@@ -150,16 +150,20 @@
 }
 
 .plans-mid div p{
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .plans-mid div h2{
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .plans-bottom{
     width: 95%;
     padding-bottom: 40px;
+}
+
+.plans-mid div p span{
+    font-size: 12px;
 }
 
 }

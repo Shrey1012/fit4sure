@@ -116,3 +116,30 @@
     font-weight: 400;
 }
 
+@media screen and (max-width:767px) {
+
+.Setting-data-text{
+    width: 98%;
+    margin: 0 auto;
+    height: auto;
+}
+
+.Setting-data-view{
+    width: 98%;
+    height: auto;
+    margin: 0 auto 20px; 
+}
+
+.Settings-nav-title{
+    margin-bottom: 30px;
+}
+
+.Settings-nav ul{
+    padding-left: 20px;
+}
+
+.Settings-nav ul li{
+    padding-bottom: 30px;
+}
+    
+}
