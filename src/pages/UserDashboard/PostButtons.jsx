@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import plus from "../../assets/plus.svg";
 import axios from "axios";
 import "./PostButtons.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const PostButtons = () => {
   const [showAddPostModal, setShowAddPostModal] = useState(false);
@@ -11,17 +13,24 @@ const PostButtons = () => {
   const [image, setImage] = useState(null);
   const navigate = useNavigate();
 
-  const userId = JSON.parse(localStorage.getItem("profile")).result._id;
-
-  const handleAddPost = async () => {
+  const handleAddPost = async (e) => {
     try {
+      e.preventDefault();
+
+      console.log(image);
+
       const formData = new FormData();
-      formData.append("category", category);
       formData.append("text", text);
-      formData.append("userId", userId);
-      if (image) {
-        formData.append("image", image);
-      }
+      formData.append("category", category);
+      for(let pair of formData.entries()){
+        console.log(pair[0]+ ', '+ pair[1]);
+      };
+      formData.append("image", image);
+      for(let pair of formData.entries()){
+        console.log(pair[0]+ ', '+ pair[1]);
+      };
+
+
 
       const API = axios.create({ baseURL: "http://localhost:3001" });
 
@@ -34,7 +43,17 @@ const PostButtons = () => {
 
         return req;
       });
-      await API.post("/app/post/add", formData);
+      await API.post("/app/post/add", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      toast.success("Post added successfully!",{
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
+
 
       setCategory("discussion");
       setText("");
@@ -42,6 +61,10 @@ const PostButtons = () => {
       setShowAddPostModal(false);
     } catch (error) {
       console.error("Error adding post:", error);
+      toast.error("Error adding post!, Please try again",{
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 2000,
+      });
     }
   };
 
@@ -84,10 +107,12 @@ const PostButtons = () => {
         <div className="modal-overlay">
           <div className="add-post-modal">
             <h2>Add Post</h2>
-            <form>
+            <form onSubmit={handleAddPost} encType="multipart/form-data">
               <div className="form-group">
                 <label htmlFor="category">Category:</label>
-                <select className="form-control"
+                <select
+                  name="category"
+                  className="form-control"
                   id="category"
                   value={category}
                   onChange={(e) => {
@@ -102,7 +127,10 @@ const PostButtons = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="text">Text:</label>
-                <textarea className="form-control"
+
+                <textarea
+                  name="text"
+                  className="form-control"
                   id="text"
                   value={text}
                   onChange={(e) => {
@@ -112,7 +140,10 @@ const PostButtons = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="image">Image:</label>
-                <input className="form-control"
+
+                <input
+                  name="image"
+                  className="form-control"
                   type="file"
                   id="image"
                   onChange={(e) => {
@@ -121,7 +152,7 @@ const PostButtons = () => {
                   accept="image/*"
                 />
               </div>
-              <button type="button" onClick={handleAddPost}>
+              <button type="submit">
                 Add Post
               </button>
               <button className="close-btn" type="button" onClick={() => setShowAddPostModal(false)}>

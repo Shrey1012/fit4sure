@@ -100,97 +100,104 @@ const WorkoutPlanner = () => {
   };
 
   return (
-    <div className="workout-container">
-      <h2 className="workout-title">Workout Planner</h2>
-      <form className="workout-form" onSubmit={handleSubmit}>
-        <div className="workout-input-container">
-          <label className="workout-label">
-            <span>Time:</span>
-            <input
-              className="workout-input"
-              type="text"
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-              ref={timeInputRef}
-              autoFocus
-            />
-          </label>
-          <label className="workout-label">
-            <span>Muscle:</span>
-            <input
-              className="workout-input"
-              type="text"
-              value={muscle}
-              onChange={(e) => setMuscle(e.target.value)}
-              ref={muscleInputRef}
-            />
-          </label>
-          <label className="workout-label">
-            <span>Location:</span>
-            <input
-              className="workout-input"
-              type="text"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              ref={locationInputRef}
-            />
-          </label>
-          <label className="workout-label">
-            <span>Equipment:</span>
-            <input
-              className="workout-input"
-              type="text"
-              value={equipment}
-              onChange={(e) => setEquipment(e.target.value)}
-              ref={equipmentInputRef}
-            />
-          </label>
-        </div>
-        <div className="bmi-buttons">
-          <button className="calculate-btn" type="submit">
-            Plan Workout
-          </button>
-          <button onClick={handleCalculate} className="calculate-nxt">
-            Calorie Intake
-            <img src={double_next} alt="" />
-          </button>
-        </div>
-      </form>
-      {isLoading && <div className="workout-message">Loading...</div>}
-      {error && <div className="workout-message">Error: {error}</div>}
-      {workoutData && (
-        <div className="workout-result">
-          <p className="workout-info">Your Workout Plan</p>
-          <div className="workout-section">
-            <h3>Warm Up</h3>
-            {workoutData["Warm Up"].map((exercise, index) => (
-              <div key={index}>
-                <p>Exercise: {exercise.Exercise}</p>
-                <p>Time: {exercise.Time}</p>
-              </div>
-            ))}
+    <div className="workout-main">
+      <div className="workout-left">
+        <form className="workout-form" onSubmit={handleSubmit}>
+          <div className="bmi-left-top">
+              {/* <img src={back} alt="" /> */}
+              <h2 className="bmi-title">Workout Planner</h2>
           </div>
-          <div className="workout-section">
-            <h3>Exercises</h3>
-            {workoutData.Exercises.map((exercise, index) => (
-              <div key={index}>
-                <p>Exercise: {exercise.Exercise}</p>
-                <p>Sets: {exercise.Sets}</p>
-                <p>Reps: {exercise.Reps}</p>
-              </div>
-            ))}
+          <div className="bmi-input-container">
+            <label className="bmi-label">
+              Time:
+              <input
+                className="bmi-input"
+                type="text"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+                ref={timeInputRef}
+                autoFocus
+              />
+            </label>
+            <label className="bmi-label">
+              Muscle:
+              <input
+                className="bmi-input"
+                type="text"
+                value={muscle}
+                onChange={(e) => setMuscle(e.target.value)}
+                ref={muscleInputRef}
+              />
+            </label>
+            <label className="bmi-label">
+              Location:
+              <input
+                className="bmi-input"
+                type="text"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                ref={locationInputRef}
+              />
+            </label>
+            <label className="bmi-label">
+              Equipment:
+              <input
+                className="bmi-input"
+                type="text"
+                value={equipment}
+                onChange={(e) => setEquipment(e.target.value)}
+                ref={equipmentInputRef}
+              />
+            </label>
           </div>
-          <div className="workout-section">
-            <h3>Cool Down</h3>
-            {workoutData["Cool Down"].map((exercise, index) => (
-              <div key={index}>
-                <p>Exercise: {exercise.Exercise}</p>
-                <p>Time: {exercise.Time}</p>
-              </div>
-            ))}
+          <div className="bmi-buttons">
+            <button className="calculate-btn" type="submit">
+              Plan Workout
+            </button>
+            <button onClick={handleCalculate} className="calculate-nxt">
+              Calorie Intake
+              <img src={double_next} alt="" />
+            </button>
           </div>
-        </div>
-      )}
+        </form>
+      </div>
+      <div className="Workout-result-area">
+        {isLoading && <div className="bmi-message">Loading...</div>}
+        {error && <div className="bmi-message">Error: {error}</div>}
+        {workoutData && (
+          <div className="workout-result">
+            <p className="workout-info">Your Workout Plan</p>
+            <div className="workout-section">
+              <h3>Warm Up</h3>
+              {workoutData["Warm Up"].map((exercise, index) => (
+                <div key={index}>
+                  <h6>Exercise: {exercise.Exercise}</h6>
+                  <p>Time: {exercise.Time}</p>
+                </div>
+              ))}
+            </div>
+            <div className="workout-section">
+              <h3>Exercises</h3>
+              {workoutData.Exercises.map((exercise, index) => (
+                <div key={index}>
+                  <h6>Exercise: {exercise.Exercise}</h6>
+                  <p>Sets: {exercise.Sets}</p>
+                  <p>Reps: {exercise.Reps}</p>
+                </div>
+              ))}
+            </div>
+            <div className="workout-section">
+              <h3>Cool Down</h3>
+              {workoutData["Cool Down"].map((exercise, index) => (
+                <div key={index}>
+                  <h6>Exercise: {exercise.Exercise}</h6>
+                  <p>Time: {exercise.Time}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

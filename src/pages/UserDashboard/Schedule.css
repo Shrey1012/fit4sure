@@ -1,0 +1,17 @@
+.Schedule-main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.user_table{
+    width: 91%;
+    margin-left: 7%;
+    padding-top: 1%;
+}
+.Schedule-title{
+    margin-left: 7%;
+    padding-top: 1%;
+}

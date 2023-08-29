@@ -91,12 +91,11 @@ const BMI = () => {
   return (
     <div className="bmi-main">
       <div className="bmi-left">
-        <div className="bmi-left-top">
-          <img src={back} alt="" />
-          <h2 className="bmi-title">BMI Calculator</h2>
-        </div>
-
         <form className="bmi-form" onSubmit={handleSubmit}>
+          <div className="bmi-left-top">
+            {/* <img src={back} alt="" /> */}
+            <h2 className="bmi-title">BMI Calculator</h2>
+          </div>
           <div className="bmi-input-container">
             <label className="bmi-label">
               <div>Weight: </div>
@@ -131,17 +130,18 @@ const BMI = () => {
           </button>
         </div>
         </form>
-
+        <div className="bfp-result-area"> 
         {isLoading && <div className="bmi-message">Loading...</div>}
         {error && <div className="bmi-message">Error: {error}</div>}
         {bmiData && (
-          <div className="bmi-result">
-            <p className="bmi-info">BMI: {bmiData.info.bmi}</p>
-            <p className="bmi-info">
-              Body Weight Condition: {bmiData.info.health}
+          <div className="bfp-result">
+            <p className="bfp-info">BMI: <span>{bmiData.info.bmi}</span></p>
+            <p className="bfp-info">
+              Body Weight Condition: <span>{bmiData.info.health}</span>
             </p>
           </div>
         )}
+        </div>
       </div>
       <div className="bmi-right">
         <div className="bmi-que">

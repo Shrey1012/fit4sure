@@ -157,12 +157,13 @@ const BMR = () => {
           </button>
         </div>
       </form>
-      <div className="result-area"><p>Your BMR value:</p>
+      <div className="bfp-result-area">
       {isLoading && <div className="bmi-message">Loading...</div>}
       {error && <div className="bmi-message">Error: {error}</div>}
       {bmrData && (
-        <div className="bmi-result">
-          {bmrData.info.bmr}
+        <div className="bfp-result">
+          <p className="bfp-info">Your BMR value: <span>{bmrData.info.bmr}</span></p>
+          
         </div>
       )}
       </div>

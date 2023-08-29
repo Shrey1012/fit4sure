@@ -92,94 +92,99 @@ const DailyCalorie = () => {
   };
 
   return (
-    <div className="calorie-container">
-      <h2 className="calorie-title">Daily Calorie Requirements Calculator</h2>
-      <form className="calorie-form" onSubmit={handleSubmit}>
-        <div className="calorie-input-container">
-          <label className="calorie-label">
-            <span>Weight:</span>
-            <input
-              className="calorie-input"
-              type="text"
-              value={weight}
-              onChange={(e) => setWeight(e.target.value)}
-              ref={weightInputRef}
-              autoFocus
-            />
-          </label>
-          <label className="calorie-label">
-            <span>Height:</span>
-            <input
-              className="calorie-input"
-              type="text"
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-              ref={heightInputRef}
-            />
-          </label>
-          <label className="calorie-label">
-            <span>Age:</span>
-            <input
-              className="calorie-input"
-              type="text"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-              ref={ageInputRef}
-            />
-          </label>
-          <label className="calorie-label">
-            <span>Gender:</span>
-            <select
-              className="calorie-input"
-              value={gender}
-              onChange={(e) => setGender(e.target.value)}
-              ref={genderInputRef}
-            >
-              <option value="">Select gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </label>
-          <label className="calorie-label">
-            <span>Activity Level:</span>
-            <select
-              className="calorie-input"
-              value={activityLevel}
-              onChange={(e) => setActivityLevel(e.target.value)}
-              ref={activityLevelInputRef}
-            >
-              <option value="">Select activity level</option>
-              <option value="level_1">Little or no exercise</option>
-              <option value="level_2">Exercise 1-3 times/week</option>
-              <option value="level_3">Exercise 4-5 times/week</option>
-              <option value="level_4">
-                Daily exercise or intense exercise 3-4 times/week
-              </option>
-              <option value="level_5">Intense exercise 6-7 times/week</option>
-              <option value="level_6">
-                Very intense exercise daily, or physical job
-              </option>
-            </select>
-          </label>
-        </div>
-        <div className="bmi-buttons">
-          <button className="calculate-btn" type="submit">
-          Get Daily Calorie Intake
-          </button>
-          <button onClick={handleCalculate} className="calculate-nxt">
-            Calculate BMI
-            <img src={double_next} alt="" />
-          </button>
-        </div>
-      </form>
+    <div className="workout-main">
+      <div className="workout-left">
+        <form className="workout-form" onSubmit={handleSubmit}>
+          <div className="bmi-left-top">
+              <h2 className="bmi-title">Calorie requirements</h2>
+          </div>
+          <div className="bmi-input-container">
+            <label className="bmi-label">
+              <span>Weight:</span>
+              <input
+                className="bmi-input"
+                type="text"
+                value={weight}
+                onChange={(e) => setWeight(e.target.value)}
+                ref={weightInputRef}
+                autoFocus
+              />
+            </label>
+            <label className="bmi-label">
+              <span>Height:</span>
+              <input
+                className="bmi-input"
+                type="text"
+                value={height}
+                onChange={(e) => setHeight(e.target.value)}
+                ref={heightInputRef}
+              />
+            </label>
+            <label className="bmi-label">
+              <span>Age:</span>
+              <input
+                className="bmi-input"
+                type="text"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                ref={ageInputRef}
+              />
+            </label>
+            <label className="bmi-label">
+              <span>Gender:</span>
+              <select
+                className="bmi-input"
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+                ref={genderInputRef}
+              >
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </label>
+            <label className="bmi-label">
+              <span>Activity Level:</span>
+              <select
+                className="bmi-input"
+                value={activityLevel}
+                onChange={(e) => setActivityLevel(e.target.value)}
+                ref={activityLevelInputRef}
+              >
+                <option value="">Select activity level</option>
+                <option value="level_1">Little or no exercise</option>
+                <option value="level_2">Exercise 1-3 times/week</option>
+                <option value="level_3">Exercise 4-5 times/week</option>
+                <option value="level_4">
+                  Daily exercise or intense exercise 3-4 times/week
+                </option>
+                <option value="level_5">Intense exercise 6-7 times/week</option>
+                <option value="level_6">
+                  Very intense exercise daily, or physical job
+                </option>
+              </select>
+            </label>
+          </div>
+          <div className="bmi-buttons">
+            <button className="calculate-btn" type="submit">
+            Get Daily Calorie Intake
+            </button>
+            <button onClick={handleCalculate} className="calculate-nxt">
+              Calculate BMI
+              <img src={double_next} alt="" />
+            </button>
+          </div>
+        </form>
+      </div>
+      <div className="Workout-result-area">
       {isLoading && <div className="calorie-message">Loading...</div>}
       {error && <div className="calorie-message">Error: {error}</div>}
       {calorieData && (
-        <div className="calorie-result">
-          <p className="calorie-info">
+        <div className="workout-result">
+          <p className="workout-info">
             Calorie requirement according to your goal
           </p>
-          <ul className="calorie-list">
+          <ul className="workout-list">
             {Object.entries(calorieData.data.goals).map(([goal, data]) => (
               <li key={goal}>
                 <p>{goal}</p>
@@ -199,6 +204,8 @@ const DailyCalorie = () => {
           </ul>
         </div>
       )}
+      </div>
+    
     </div>
   );
 };
