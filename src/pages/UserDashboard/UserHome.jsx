@@ -103,15 +103,15 @@ const UserHome = () => {
                 <div className="vid-card">
                   {videoData.map((video) => (
                     <div className="user-home-short-video" key={video._id}>
-                      <h5>{video.title}</h5>
+                      {/* <h5>{video.title}</h5> */}
                       <VideoPlayer src={video.video} />
                     </div>
                   ))}
-                  <div className="card-dost">
+                  {/* <div className="card-dost">
                     <span></span>
                     <span></span>
                     <span></span>
-                  </div>
+                  </div> */}
                   <div className="bottomccard-text">
                     <div>
                       <p>Exercise latest video</p>
@@ -126,11 +126,11 @@ const UserHome = () => {
                 </div>
 
                 <div className="vid-card">
-                  <div className="card-dost">
+                  {/* <div className="card-dost">
                     <span></span>
                     <span></span>
                     <span></span>
-                  </div>
+                  </div> */}
                   <div className="bottomccard-text">
                     <div>
                       <p>Exercise latest video</p>

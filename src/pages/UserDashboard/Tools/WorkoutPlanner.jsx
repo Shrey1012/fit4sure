@@ -105,7 +105,7 @@ const WorkoutPlanner = () => {
       <form className="workout-form" onSubmit={handleSubmit}>
         <div className="workout-input-container">
           <label className="workout-label">
-            Time:
+            <span>Time:</span>
             <input
               className="workout-input"
               type="text"
@@ -116,7 +116,7 @@ const WorkoutPlanner = () => {
             />
           </label>
           <label className="workout-label">
-            Muscle:
+            <span>Muscle:</span>
             <input
               className="workout-input"
               type="text"
@@ -126,7 +126,7 @@ const WorkoutPlanner = () => {
             />
           </label>
           <label className="workout-label">
-            Location:
+            <span>Location:</span>
             <input
               className="workout-input"
               type="text"
@@ -136,7 +136,7 @@ const WorkoutPlanner = () => {
             />
           </label>
           <label className="workout-label">
-            Equipment:
+            <span>Equipment:</span>
             <input
               className="workout-input"
               type="text"

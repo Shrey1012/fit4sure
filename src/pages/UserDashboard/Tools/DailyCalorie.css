@@ -1,14 +1,20 @@
 .calorie-container {
-    max-width: 400px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
+    height: 95vh;
     background-color: #f4f4f4;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   .calorie-title {
     margin-bottom: 20px;
+    margin-top: 0;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
@@ -18,7 +24,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 60%;
   }
+
+.calorie-label span {
+    width: 140px;
+}
   
   .calorie-input-container {
     margin-bottom: 10px;
@@ -83,7 +94,7 @@
     margin: 0;
   }
   
-  @media screen and (max-width:767px) {
+@media screen and (max-width:767px) {
   
 .calorie-label{
   font-size: 14px;
@@ -97,5 +108,17 @@
   width: 200px;
   margin: 0;
 }
+
+.calorie-container{
+  height: 55vh;
+}
+
+.calorie-title{
+  font-size: 18px;
+}
+
+.calorie-form{
+  width: 100%;
+}
     
-  }
+}
