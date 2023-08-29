@@ -2,13 +2,18 @@
   display: flex;
   align-items: flex-start;
   position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .video-player video {
-  height: 200px;
+  height: 100%;
   border-radius: 5px;
   outline: none;
   border: none;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .video-player video:focus {
@@ -29,6 +34,7 @@
   transform: translate(-50%, -50%);
   border: none;
   cursor: pointer;
-  top: 6.5rem;
-  left: 11rem;
+  top: 50%;
+  left: 50%;
 }
+

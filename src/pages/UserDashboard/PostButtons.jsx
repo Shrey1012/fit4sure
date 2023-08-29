@@ -112,6 +112,7 @@ const PostButtons = () => {
                 <label htmlFor="category">Category:</label>
                 <select
                   name="category"
+                  className="form-control"
                   id="category"
                   value={category}
                   onChange={(e) => {
@@ -126,8 +127,10 @@ const PostButtons = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="text">Text:</label>
+
                 <textarea
                   name="text"
+                  className="form-control"
                   id="text"
                   value={text}
                   onChange={(e) => {
@@ -137,8 +140,10 @@ const PostButtons = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="image">Image:</label>
+
                 <input
                   name="image"
+                  className="form-control"
                   type="file"
                   id="image"
                   onChange={(e) => {
@@ -150,8 +155,8 @@ const PostButtons = () => {
               <button type="submit">
                 Add Post
               </button>
-              <button type="button" onClick={() => setShowAddPostModal(false)}>
-                Close
+              <button className="close-btn" type="button" onClick={() => setShowAddPostModal(false)}>
+                X
               </button>
             </form>
           </div>

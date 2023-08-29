@@ -172,11 +172,13 @@
   margin: 0;
   font-size: 12px;
   width: 100%;
+  color: #fff;
   line-height: 12px;
 }
 
 .bottomccard-text span{
   font-size: 12px;
+  color: #fff;
 }
 
 .card-dost {
@@ -200,12 +202,12 @@
 }
 
 .user-home-short-video{
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   margin-right: 2%;
 }
 .User-home-test {
-  width: 50%;
+  width: 100%;
   box-shadow: 0px 0px 15px 0px #6b357d1a;
   height: 20%;
   background-color: white;
