@@ -101,6 +101,7 @@
   justify-content: center;
 }
 .navbar.open{
+  height: 100vh;
   margin: 0;
   padding: 0;
   height: 452px;
