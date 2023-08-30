@@ -6,6 +6,7 @@
 }
 .com-blog{
   width: 98%;
+  margin: 0 auto;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -157,3 +158,30 @@
     margin-bottom: 5px;
   }
   
+@media screen and (max-width:767px) {
+
+.all-blog{
+  flex-direction: column;
+}
+
+.community-main{
+  padding: 30px 0 0;
+  width: 100%;
+}
+
+.post-card.blog-card{
+  width: 90%;
+  margin-bottom: 15px;
+}
+
+.Post-buttons{
+  width: 98%;
+  margin: 0 auto;
+}
+
+.com-discussion, .com-transformation, .com-recipe{
+  width: 98%;
+  margin: 0 auto;
+}
+  
+}
