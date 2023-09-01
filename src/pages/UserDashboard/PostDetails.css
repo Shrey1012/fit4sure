@@ -119,3 +119,41 @@
     width: 50%;
     height: 100%;
 }
+
+@media screen and (max-width:767px){
+
+.post-detail-container {
+    width: 95%;
+    height: 100%;
+    flex-wrap: wrap;
+    padding: 0 0 40px;
+}
+
+.Post-container-left{
+    width: auto;
+    height: auto;
+}
+
+.Post-container-left h3{
+    width: auto;
+    height: auto;
+    padding: 15px 0;
+}
+
+.blog-likecomment{
+    width: 100%;
+    height: auto;
+    padding: 15px 0;
+}
+
+.Post-container-right {
+    width: 90%;
+    height: 100%;
+}
+
+.post-detail-main{
+    height: 100%;
+    padding: 30px 0 60px
+}
+    
+}

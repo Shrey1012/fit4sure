@@ -18,7 +18,7 @@ const Navbar = () => {
       <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
         <div className="left_nav">
           <a href="/">
-            <img src={fflogo} alt="Fit4sure logo" />
+            <img className="flogo" src={fflogo} alt="Fit4sure logo" />
           </a>
         </div>
         <div className="menu-icon" onClick={toggleMenu}>
@@ -40,6 +40,15 @@ const Navbar = () => {
             )}
         </div>
         <ul>
+          <li>
+            <NavLink id="home-link"
+              to="/"
+              className={`nav-link ${({ isActive }) =>
+                isActive ? "active" : ""}`}
+            >
+              Home
+            </NavLink>
+          </li>
           <li>
             <NavLink
               to="/getcoach"

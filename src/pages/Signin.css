@@ -93,8 +93,10 @@
 }
 .Password-toggle{
     position: absolute;
-    padding-right: 120px;
     z-index: 1;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .S-button{
@@ -158,6 +160,11 @@
     font-weight: 700;
     cursor:pointer;
 }
+
+.Password-input{
+    position: relative;
+}
+
 @media (max-width: 580px) {
     .Signin-main{
         height: 100vh;
