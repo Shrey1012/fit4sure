@@ -119,14 +119,14 @@ const UserDashNav = () => {
             </li>
             <li>
               <NavLink
-                to="/trackers/bmi"
-                title="Trackers"
+                to="/schedule"
+                title="Schedules"
                 className={`Userdash-nav-link ${({ isActive }) =>
                   isActive ? "active" : ""}`}
               >
                 <img src={Tools} alt="Tools" />
                 <p className={`nav-text ${isMenuOpen ? "open" : ""}`}>
-                  Trackers
+                  Schedules
                 </p>
               </NavLink>
             </li>
