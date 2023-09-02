@@ -108,13 +108,18 @@
 }
 
 .Coach-top {
-    width: 90%;
+    width: 85%;
     padding-bottom: 40px;
+    font-size: 16px;
 }
 
 .Coach-bottom {
     flex-wrap: wrap;
     height: 100%;
+}
+
+.coach-button {
+    height: 44px;
 }
     
 }

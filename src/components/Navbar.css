@@ -89,9 +89,15 @@
   .nav ul {
     display: none;
   }
+  .flogo{
+  position: absolute;
+  left: 28px;  
+  top: 28px;
 
+  }
   .navbar.open {
     height: 360px;
+    width: 88%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -102,11 +108,11 @@
     backdrop-filter: blur(6px);
   }
   .nav.open {
-    width: 87%;
+    width: 100%;
     height: max-content;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
   }
   .line {
@@ -118,9 +124,9 @@
   }
 
   .btn.open {
+    display: block;
     width: 120px;
     margin-top: 14px;
-    margin-left: 34%;
     font-family: Nunito;
     font-size: 14px;
   }
@@ -128,7 +134,8 @@
   .menu-icon {
     display: block;
     position: absolute;
-    right: 64px;
+    right: 28px;
+    top: 28px;
   }
 
   @keyframes rotateIn {

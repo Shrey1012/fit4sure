@@ -1,4 +1,5 @@
 .bmi-main{
+  padding-top: 64px;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -230,30 +231,37 @@
 @media screen and (max-width:767px) {
 
 .bmi-main{
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .bmi-right, .bmi-left {
   width: 98%;
   padding: 0;
   margin: 0 auto;
+  align-items: center;
 }
-
+.bmi-right{
+  height: 60%;
+}
 .bmi-left-top{
   width: 90%;
   margin: 0 auto;
   display: flex;
   align-items: center;
 }
-
+.bmi-input-container {
+  padding-left: 6px;
+  gap: 5%;
+}
 .calculate-nxt{
-  width: 150px;
+  width: 140px;
+  height: 36px;
 }
 
 .calculate-btn {
-  width: 150px;
+  width: 140px;
   font-size: 12px;
-  height: 32px;
+  height: 36px;
 }
 
 .bmi-form{
@@ -262,7 +270,7 @@
 }
 
 .result-area{
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -271,12 +279,21 @@
 }
 
 .bmi-left-top h2{
-  text-align: center;
-  padding-left: 20px;
+  text-align: left;
+  
 }
-
+.bmi-form{
+  margin-top: 0;
+}
 .bmi-ans{
   width: 90%;
+  font-size: 16px;
+}
+.bmi-que h2{
+  font-size: 20px;
+}
+.bmi-que img{
+  display: none;
 }
   
 }

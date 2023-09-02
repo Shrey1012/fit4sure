@@ -13,7 +13,7 @@
   .submit-button{
     width: 100px;
     height: 40px;
-    background-color: #4abd2a;
+    background-color: #105f47;
     color: white;
     border: none;
     border-radius: 5px;
@@ -21,3 +21,6 @@
     font-size: 16px;
     font-weight: 600;
   }
+  /* .next-button{
+    background-color: black;
+  } */

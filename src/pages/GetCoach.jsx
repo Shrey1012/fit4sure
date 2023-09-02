@@ -20,7 +20,7 @@ const GetCoach = () => {
         setCategoryId2(categoryId2);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err); 
       });
   }, []);
 

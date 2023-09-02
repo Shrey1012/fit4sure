@@ -9,7 +9,7 @@
     justify-content: center;
   }
   .blog-card:nth-child(n+4){
-    display: none;
+    display: none; 
   }
   @media (max-width: 1175px) {
     .blog-card:nth-child(n+3){

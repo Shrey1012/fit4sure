@@ -32,7 +32,7 @@ const Blogs = () => {
         ))
       }
       </div>
-    </div>
+    </div> 
   )
 }
 

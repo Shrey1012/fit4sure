@@ -10,7 +10,7 @@ const Stories = () => {
     axios.get('http://localhost:3001/admin/web_stories/all')
     .then((response) => {
       setStoriesdata(response.data.stories);
-    })
+    }) 
     .catch((error) => {
       console.log(error);
     })

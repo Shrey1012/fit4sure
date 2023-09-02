@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
 }
-.stories-main h2{
+.stories-main h2{ 
     margin: 0;
     padding-bottom: 1%;
     font-size: 28px;
@@ -27,6 +27,14 @@
     text-align: center;
 
 }
+.all-stories {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(360px, 1fr));
+    gap: 24px;
+    width: 1128px;
+    height: 500px;
+    margin-top: 2%;
+  }
 @media (max-width: 480px) {
     .stories-main h2{
         font-size: 23px;
@@ -38,11 +46,23 @@
     }
 
 }
-.all-stories{
+/* .all-stories{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80%;
     height: 65%;
     gap: 3%;
-}
+} */
+@media (max-width: 1175px){
+    .all-stories {
+    width: 744px;
+    overflow:hidden;
+   }
+  }
+  @media (max-width: 800px){
+    .all-stories {
+    width: 360px;
+    overflow:hidden;
+   }
+  }

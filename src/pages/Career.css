@@ -36,6 +36,9 @@
     width: 95%;
     flex-wrap: wrap;
 }
+.Career-card p{
+    font-size: 14px;
+}
 
 .Career-card{
     width: 98%;

@@ -188,7 +188,7 @@ const TDEE = () => {
       <div className="bmi-right">
         <div className="bmi-que">
           <img src={Question} alt="" />
-          <h2>What is BMI?</h2>
+          <h2>What is TDEE?</h2>
         </div>
         <div className="bmi-ans">
           Lorem ipsum dolor sit amet. Ea obcaecati inventore aut quis galisum ut

@@ -30,7 +30,7 @@ const AllCoaches = () => {
 
           <CoachCard 
             key={coach._id}
-            image={coach.image}
+            image={coach.image} 
             name={coach.name}
             rating={coach.rating}
             people_trained={coach.people_trained}
