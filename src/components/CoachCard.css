@@ -1,6 +1,6 @@
 .Coach-card{
     width: 17%;
-    height: 32%;
+    height: 34%;
     background-color: #F8F6F2;
     margin-top: 10%;
 
@@ -30,24 +30,12 @@
     color: #1F1704;
 }
 .coach-star{
-    height: 10%;
-    width: 20%;
+    height: 20px;
+    width: 200px;
     display: flex;
     align-items: center;
     justify-content: center ;
     margin-bottom: 5%;
-}
-.coach-star img{
-    height: auto;
-    width: auto;
-}
-.coach-star div{
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: 0em;
-    text-align: center;
-    color: #433F37;
 }
 .coches-trained{
     font-size: 14px;
@@ -155,15 +143,6 @@
     justify-content: flex-start ;
     
 }
-.P-coach-star img{
-    height: 100%;
-}
-.P-coach-star div{
-    font-size: 16px;
-    font-weight: 400;
-    text-align: start;
-    color: #433F37;
-}
 .P-coach-name{
     font-size: 22px;
     font-weight: 600;
@@ -262,8 +241,8 @@
 .Popup-top-right{
     width: 90%;
 }
-.P-coach-star div{
-    font-size: 14px;
+.P-coach-star {
+    width: 200px;
 }
 .P-coach-name{
     font-size: 18px;

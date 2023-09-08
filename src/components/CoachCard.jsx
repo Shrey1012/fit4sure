@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./CoachCard.css";
-import star_rating from "../assets/star_rating.svg";
-import call_icon from "../assets/call_icon.svg";
 import message_icon from "../assets/message_icon.svg";
 import plus from "../assets/plus.svg";
 import close from "../assets/close.svg";
+import Rating from "react-rating-stars-component";
 
 const CoachCard = ({
   image,
@@ -37,8 +36,16 @@ const CoachCard = ({
         <div className="coach-name">{name}</div>
         <div className="coches-trained">{people_trained} People trained</div>
         <div className="coach-star">
-          <div>{rating}</div>
-          <img src={star_rating} alt="star" />
+          <Rating
+            count={5} // Number of stars
+            value={rating} // The rating value received from the backend (e.g., 3.5)
+            edit={false} // Disable user interaction if needed
+            size={24} // Size of the stars
+            color="#8a8984" // Color of the active stars
+            activeColor="#ecd910" // Color of the hovered stars (optional)
+            isHalf={true} // Enable half-star ratings
+            half={true}
+          />
         </div>
         <div className="coach-buttons">
           <button className="message-btn">
@@ -63,8 +70,16 @@ const CoachCard = ({
                   {people_trained} People trained
                 </div>
                 <div className="P-coach-star">
-                  <div>{rating}</div>
-                  <img src={star_rating} alt="star" />
+                  <Rating
+                    count={5} // Number of stars
+                    value={rating} // The rating value received from the backend
+                    edit={false} // Disable user interaction if needed
+                    size={24} // Size of the stars
+                    color="#8a8984" // Color of the unfilled stars
+                    activeColor="#ecd910" // Color of the filled stars
+                    isHalf={true} // Enable half-star ratings
+                    half={true}
+                  />
                 </div>
                 <div className="Skills">
                   {expertiseArray.slice(0, 4).map((expertise, index) => (
@@ -79,7 +94,11 @@ const CoachCard = ({
                 </div>
               </div>
               <div>
-                <button onClick={handlePopupClose} className="close-btn" style={{"boxShadow": "none"}}>
+                <button
+                  onClick={handlePopupClose}
+                  className="close-btn"
+                  style={{ boxShadow: "none" }}
+                >
                   <img src={close} alt="" />
                 </button>
               </div>
